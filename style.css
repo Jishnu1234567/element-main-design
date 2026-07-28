@@ -480,7 +480,7 @@ body.dark-header .site-header { color: var(--base-fg); }
   .overlap-intro__footer { flex-direction: row; align-items: flex-start; gap: 4rem; }
 }
 .overlap-intro__mark { display: flex; align-items: center; gap: .85rem; flex: 0 0 auto; }
-.overlap-intro__mark img { width: 2.5rem; height: 2.5rem; }
+.overlap-intro__mark img { height: 2.5rem; width: auto; }
 .overlap-intro__mark span {
   font-size: .75rem;
   font-weight: 600;
@@ -808,9 +808,22 @@ body.dark-header .site-header { color: var(--base-fg); }
 @keyframes fade-scale-in { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
 .testimonial-slide blockquote { margin: clamp(1.5rem,3vw,2rem) 0 1.5rem; font-family: var(--font-display); font-style: italic; font-size: clamp(1.15rem, 1rem + 1.6vw, 1.85rem); font-weight: 400; line-height: 1.4; color: var(--color-brand-teal); }
 .testimonial-slide .credit { text-align: right; font-weight: 600; font-size: clamp(1rem, .9rem + .3vw, 1.25rem); }
-.testimonial-dots { position: absolute; bottom: clamp(1rem, 2vw, 1.5rem); left: 50%; transform: translateX(-50%); display: flex; gap: clamp(.5rem, 1vw, 1rem); z-index: 2; }
-.testimonial-dots button { width: clamp(.6rem, 1vw, .8rem); height: clamp(.6rem, 1vw, .8rem); border-radius: 50%; background: var(--color-brand-teal); opacity: .4; transition: opacity .2s; }
-.testimonial-dots button.is-active { opacity: 1; }
+.testimonial-dots { position: absolute; bottom: clamp(1rem, 2vw, 1.5rem); left: 50%; transform: translateX(-50%); display: flex; z-index: 2; }
+.testimonial-dots button {
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  background: none;
+}
+.testimonial-dots button::before {
+  content: '';
+  width: clamp(.6rem, 1vw, .8rem);
+  height: clamp(.6rem, 1vw, .8rem);
+  border-radius: 50%;
+  background: var(--color-brand-teal);
+  opacity: .4;
+  transition: opacity .2s;
+}
+.testimonial-dots button.is-active::before { opacity: 1; }
 
 /* ---------- Footer ---------- */
 .site-footer { position: relative; z-index: 3; background: var(--color-brand-parchment); color: var(--color-brand-black); padding: clamp(3rem, 5vw, 5rem) 0; }
