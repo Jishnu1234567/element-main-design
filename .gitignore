@@ -3,7 +3,8 @@ node_modules/
 Thumbs.db
 *.log
 
-# Unused raw/leftover footage, not referenced by any page -- exceeds GitHub's
-# 100MB file limit and would bloat the repo for no reason.
-videos/element-v2.mov
-videos/element-v3.mp4
+# Raw, uncompressed source footage kept on disk for future re-encodes --
+# exceeds GitHub's 100MB file limit and would bloat the repo for no reason.
+# Everything else in _archive/ (superseded assets, pre-compression jpg/png
+# originals) is small enough to stay tracked for future reference.
+_archive/videos-raw-source/
