@@ -28,7 +28,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=1" />
+<link rel="stylesheet" href="style.css?v=2" />
 <!-- Structured data: add Facebook to sameAs once the Page URL is confirmed. -->
 <script type="application/ld+json">
 {
@@ -91,8 +91,6 @@
 
 <main>
 
-  <h1 class="hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Programs</h1>
-
   <!-- Hero banner: the studio, in motion -->
   <div class="hero-banner">
     <video autoplay muted loop playsinline poster="public/poster-frames/hero-v1.webp">
@@ -106,97 +104,134 @@
     </div>
   </div>
 
-  <div class="page-container work-toolbar" style="padding-top:clamp(2rem,4vw,3rem);">
-    <span class="tag">Training &amp; Studio Services</span>
-    <a class="filter-btn" href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20know%20more%20about%20your%20training%20programs." target="_blank" rel="noopener">Book Now</a>
-  </div>
-
-  <section class="projects-grid work-grid">
+  <section class="work-grid" style="padding-top:clamp(2.5rem,5vw,4rem);">
     <div class="page-container">
-      <div class="pricing-list">
 
-        <a class="pricing-row" style="--row-color:#C9962E;" href="https://wa.me/919895314555?text=Hi!%20I%20am%20interested%20in%20the%20Vocal%20Training%20program.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener">
-          <span class="pricing-row__index">01</span>
-          <span>
-            <span class="pricing-row__name">Vocal Training</span>
-            <span class="pricing-row__desc">Foundational technique, breath control and confident performance for every level.</span>
-          </span>
-          <span class="pricing-row__price">&#8377;2,500 &middot; 4 Classes</span>
-          <span class="pricing-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="pricing-row" style="--row-color:#B9C79A;" href="#vocal-production">
-          <span class="pricing-row__index">02</span>
-          <span>
-            <span class="pricing-row__name">Vocal Production</span>
-            <span class="pricing-row__desc">Recording, editing, pitch correction and studio-quality vocal processing.</span>
-          </span>
-          <span class="pricing-row__price">&#8377;10,000 &middot; 5 Classes</span>
-          <span class="pricing-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="pricing-row" style="--row-color:#7A2E3A;" href="https://wa.me/919895314555?text=Hi!%20I%20am%20interested%20in%20the%20Music%20Production%20program.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener">
-          <span class="pricing-row__index">03</span>
-          <span>
-            <span class="pricing-row__name">Music Production</span>
-            <span class="pricing-row__desc">Mixing, arrangement and full production workflow, hands-on in our studio.</span>
-          </span>
-          <span class="pricing-row__price">&#8377;20,000 &middot; 5 Classes</span>
-          <span class="pricing-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="pricing-row" style="--row-color:#234C4C;" href="https://wa.me/919895314555?text=Hi!%20I%20am%20interested%20in%20the%20Sound%20Engineering%20program.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener">
-          <span class="pricing-row__index">04</span>
-          <span>
-            <span class="pricing-row__name">Sound Engineering</span>
-            <span class="pricing-row__desc">Signal flow, mic technique and the fundamentals of a great mix.</span>
-          </span>
-          <span class="pricing-row__price">&#8377;20,000 &middot; 5 Classes</span>
-          <span class="pricing-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="pricing-row" style="--row-color:#B85C38;" href="#crochet-classes">
-          <span class="pricing-row__index">05</span>
-          <span>
-            <span class="pricing-row__name">Crochet</span>
-            <span class="pricing-row__desc">Beginner-friendly stitches to handmade creations, in a relaxed group setting.</span>
-          </span>
-          <span class="pricing-row__price">&#8377;2,500 &middot; 5 Classes</span>
-          <span class="pricing-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="pricing-row" style="--row-color:#C97B4A;" href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20book%20studio%20time.%20Could%20you%20share%20availability%3F" target="_blank" rel="noopener">
-          <span class="pricing-row__index">06</span>
-          <span>
-            <span class="pricing-row__name">Studio Time</span>
-            <span class="pricing-row__desc">Book the room by the hour for recording, mixing or production work.</span>
-          </span>
-          <span class="pricing-row__price">&#8377;1,250 / hour</span>
-          <span class="pricing-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
+      <div class="programs-intro">
+        <span class="eyebrow pill">Training &amp; Studio Services</span>
+        <h1 class="display-3">Every program, one studio</h1>
+        <p>Vocal training to full production, sound engineering to hourly studio time &mdash; hands-on programs for every level, taught in the same room where the real sessions happen.</p>
+        <a class="btn-pill" href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20know%20more%20about%20your%20training%20programs." target="_blank" rel="noopener" style="border-color:var(--color-brand-gold);color:var(--color-brand-gold);">Book Now</a>
       </div>
-    </div>
-  </section>
 
-  <!-- Program posters -->
-  <section class="projects-grid" style="padding-top:0;">
-    <div class="page-container">
-      <h2 class="band-heading" style="text-align:center;margin-bottom:.75rem;">A closer look at our programs</h2>
-      <p style="max-width:38rem;margin:0 auto clamp(2rem,4vw,3rem);text-align:center;font-size:clamp(1.1rem,1rem + .4vw,1.375rem);line-height:1.6;opacity:.85;">The details on batches, fees and what each program covers &mdash; straight from our program posters.</p>
-      <div class="poster-grid">
-        <a class="poster-card" href="public/traning/IMG_2909.webp">
-          <img src="public/traning/IMG_2909.webp" width="900" height="1274" alt="Hindustani music classes poster: advanced raga bhed, alaap, taan and sargam training" loading="lazy">
-        </a>
-        <a class="poster-card" href="public/traning/IMG_2907.webp">
-          <img src="public/traning/IMG_2907.webp" width="900" height="1274" alt="Vocal production poster: record, produce and mix your voice" loading="lazy">
-        </a>
-        <a class="poster-card" href="public/traning/IMG_2908.webp">
-          <img src="public/traning/IMG_2908.webp" width="900" height="1274" alt="Music classes poster: online and offline lessons for all levels" loading="lazy">
-        </a>
-        <a class="poster-card" href="public/traning/3856D7FA-F67C-498F-86C7-0506841E79E7.webp">
-          <img src="public/traning/3856D7FA-F67C-498F-86C7-0506841E79E7.webp" width="900" height="1350" alt="Crochet classes poster: beginner-friendly, online and offline, all age groups" loading="lazy">
-        </a>
+      <div class="program-grid">
+
+        <div class="program-card">
+          <a class="program-card__media" href="public/stock/vocalist-mic-800.webp">
+            <img src="public/stock/vocalist-mic-800.webp" width="800" height="534" alt="Vocal training session with microphone" loading="lazy">
+          </a>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Vocal Training</h3>
+            <p class="program-card__desc">Foundational technique, breath control and confident performance for every level.</p>
+            <div class="program-card__foot">
+              <span class="program-card__price">&#8377;2,500 &middot; 4 Classes</span>
+              <a href="https://wa.me/919895314555?text=Hi!%20I%20am%20interested%20in%20the%20Vocal%20Training%20program.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener" class="btn-pill">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <a class="program-card__media" href="public/traning/IMG_2907.webp">
+            <img src="public/traning/IMG_2907.webp" width="900" height="1274" alt="Vocal production poster: record, produce and mix your voice" loading="lazy">
+          </a>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Vocal Production</h3>
+            <p class="program-card__desc">Recording, editing, pitch correction and studio-quality vocal processing.</p>
+            <a class="program-card__details-link" href="#vocal-production">Full details &darr;</a>
+            <div class="program-card__foot">
+              <span class="program-card__price">&#8377;10,000 &middot; 5 Classes</span>
+              <a href="https://wa.me/919895314555?text=Hi!%20I%20am%20interested%20in%20the%20Vocal%20Production%20program.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener" class="btn-pill">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <a class="program-card__media" href="public/stock/production-console-800.webp">
+            <img src="public/stock/production-console-800.webp" width="800" height="533" alt="Music production console detail" loading="lazy">
+          </a>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Music Production</h3>
+            <p class="program-card__desc">Mixing, arrangement and full production workflow, hands-on in our studio.</p>
+            <div class="program-card__foot">
+              <span class="program-card__price">&#8377;20,000 &middot; 5 Classes</span>
+              <a href="https://wa.me/919895314555?text=Hi!%20I%20am%20interested%20in%20the%20Music%20Production%20program.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener" class="btn-pill">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <a class="program-card__media" href="public/stock/mixing-console-800.webp">
+            <img src="public/stock/mixing-console-800.webp" width="800" height="532" alt="Sound engineering at the mixing desk" loading="lazy">
+          </a>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Sound Engineering</h3>
+            <p class="program-card__desc">Signal flow, mic technique and the fundamentals of a great mix.</p>
+            <div class="program-card__foot">
+              <span class="program-card__price">&#8377;20,000 &middot; 5 Classes</span>
+              <a href="https://wa.me/919895314555?text=Hi!%20I%20am%20interested%20in%20the%20Sound%20Engineering%20program.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener" class="btn-pill">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <a class="program-card__media" href="public/traning/IMG_2909.webp">
+            <img src="public/traning/IMG_2909.webp" width="900" height="1274" alt="Hindustani music classes poster: advanced raga bhed, alaap, taan and sargam training" loading="lazy">
+          </a>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Hindustani Classical Music</h3>
+            <p class="program-card__desc">Raga, alaap and taan &mdash; traditional teaching with a structured, performance-oriented curriculum.</p>
+            <a class="program-card__details-link" href="#hindustani">Full details &darr;</a>
+            <div class="program-card__foot">
+              <span class="program-card__price">Batches announced periodically</span>
+              <a href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20enquire%20about%20the%20Hindustani%20Classical%20Music%20program." target="_blank" rel="noopener" class="btn-pill">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <a class="program-card__media" href="public/traning/IMG_2908.webp">
+            <img src="public/traning/IMG_2908.webp" width="900" height="1274" alt="Music classes poster: online and offline lessons for all levels" loading="lazy">
+          </a>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Music Classes</h3>
+            <p class="program-card__desc">Online and offline lessons for every age and skill level, with personalised instruction.</p>
+            <a class="program-card__details-link" href="#music-classes">Full details &darr;</a>
+            <div class="program-card__foot">
+              <span class="program-card__price">Online &amp; Offline &middot; All levels</span>
+              <a href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20enquire%20about%20your%20Music%20Classes." target="_blank" rel="noopener" class="btn-pill">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <a class="program-card__media" href="public/traning/3856D7FA-F67C-498F-86C7-0506841E79E7.webp">
+            <img src="public/traning/3856D7FA-F67C-498F-86C7-0506841E79E7.webp" width="900" height="1350" alt="Crochet classes poster: beginner-friendly, online and offline, all age groups" loading="lazy">
+          </a>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Crochet Classes</h3>
+            <p class="program-card__desc">Beginner-friendly stitches to handmade creations, in a relaxed group setting.</p>
+            <a class="program-card__details-link" href="#crochet-classes">Full details &darr;</a>
+            <div class="program-card__foot">
+              <span class="program-card__price">&#8377;2,500 &middot; 5 Classes</span>
+              <a href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20enquire%20about%20Crochet%20Classes." target="_blank" rel="noopener" class="btn-pill">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <a class="program-card__media" href="public/stock/mixing-console-900.webp">
+            <img src="public/stock/mixing-console-900.webp" width="900" height="601" alt="Studio mixing console available for hourly booking" loading="lazy">
+          </a>
+          <div class="program-card__body">
+            <h3 class="program-card__title">Studio Time</h3>
+            <p class="program-card__desc">Book the room by the hour for recording, mixing or production work.</p>
+            <div class="program-card__foot">
+              <span class="program-card__price">&#8377;1,250 / hour</span>
+              <a href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20book%20studio%20time.%20Could%20you%20share%20availability%3F" target="_blank" rel="noopener" class="btn-pill">Enquire</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -211,16 +246,16 @@
           <p>At Element Culture, we offer comprehensive Hindustani Classical Music training that blends traditional teaching methods with a structured, performance-oriented curriculum. Whether you are a beginner or an experienced vocalist looking to refine your skills, our classes provide the guidance needed to build a strong musical foundation.</p>
 
           <h3>Course Highlights</h3>
-          <ul>
-            <li>Advanced Raga Bhed and Bandish syllabus</li>
-            <li>Alaap, Taan and Sargam pattern training</li>
-            <li>Semi-classical repertoire including Thumri, Dadra and Bhajans</li>
-            <li>Riyaz techniques for voice development and flexibility</li>
-            <li>Understanding Taal and Laya dynamics</li>
-            <li>Gharana-based singing styles and vocal techniques</li>
-            <li>Individual attention with practical learning</li>
-            <li>Performance opportunities and continuous assessment</li>
-          </ul>
+          <div class="highlight-grid">
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Advanced Raga Bhed and Bandish syllabus</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Alaap, Taan and Sargam pattern training</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Semi-classical repertoire including Thumri, Dadra and Bhajans</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Riyaz techniques for voice development and flexibility</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Understanding Taal and Laya dynamics</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Gharana-based singing styles and vocal techniques</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Individual attention with practical learning</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Performance opportunities and continuous assessment</p></div>
+          </div>
         </div>
         <a class="poster-card" href="public/traning/IMG_2909.webp" style="aspect-ratio:4/5;">
           <img src="public/traning/IMG_2909.webp" width="900" height="1274" alt="Hindustani music classes poster: advanced raga bhed, alaap, taan and sargam training" loading="lazy">
@@ -235,22 +270,22 @@
         <div class="copy rte-block">
           <h3 style="margin-top:0;">Who Can Join?</h3>
           <p>Our classes are open to:</p>
-          <ul>
-            <li>Beginners</li>
-            <li>Intermediate and advanced learners</li>
-            <li>Students preparing for performances and examinations</li>
-            <li>Anyone passionate about Indian Classical Music</li>
-          </ul>
+          <div class="highlight-grid" style="grid-template-columns:1fr;">
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg></span><p>Beginners</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg></span><p>Intermediate and advanced learners</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg></span><p>Students preparing for performances and examinations</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg></span><p>Anyone passionate about Indian Classical Music</p></div>
+          </div>
         </div>
         <div class="copy rte-block">
           <h3 style="margin-top:0;">Why Choose Element Culture?</h3>
-          <ul>
-            <li>Experienced faculty</li>
-            <li>Structured curriculum</li>
-            <li>Supportive learning environment</li>
-            <li>Focus on both technique and musical expression</li>
-            <li>Convenient location in Kochi</li>
-          </ul>
+          <div class="highlight-grid" style="grid-template-columns:1fr;">
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4Z"/></svg></span><p>Experienced faculty</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4Z"/></svg></span><p>Structured curriculum</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4Z"/></svg></span><p>Supportive learning environment</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4Z"/></svg></span><p>Focus on both technique and musical expression</p></div>
+            <div class="highlight-item"><span class="highlight-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4Z"/></svg></span><p>Convenient location in Kochi</p></div>
+          </div>
         </div>
       </div>
     </div>
@@ -384,7 +419,7 @@
   <span class="whatsapp-fab__label">Chat on WhatsApp</span>
 </a>
 
-<script src="script.js?v=1"></script>
+<script src="script.js?v=2"></script>
 <script src="vendor/gsap/gsap.min.js"></script>
 <script src="vendor/gsap/ScrollTrigger.min.js"></script>
 <script src="fly-text.js"></script>
