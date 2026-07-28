@@ -28,7 +28,7 @@
      re-jumping every time the native loop restarts at 0) keeps every hero /
      banner / feature video showing real footage only, on every device. */
   var INTRO_SKIP = 3;
-  var skipVideos = document.querySelectorAll('.hero__video, .hero-banner video, .feature-card__video');
+  var skipVideos = document.querySelectorAll('.hero__video, .hero-banner video, .feature-card__video, .lazy-bg-video');
   skipVideos.forEach(function (video) {
     function pastIntro() {
       if (video.duration > INTRO_SKIP + 0.5 && video.currentTime < INTRO_SKIP) {
@@ -39,6 +39,24 @@
     video.addEventListener('playing', pastIntro);
     video.addEventListener('timeupdate', pastIntro);
   });
+
+  /* ---------------- Lazy-load decorative below-the-fold videos ----------------
+     These accompany body copy throughout About/Contact and have no responsive
+     mobile source, so the fix is to simply not fetch them at all until their
+     section is about to be seen (preload="none" in HTML defers the request;
+     this just triggers the actual load+play once nearby). */
+  var lazyBgVideos = document.querySelectorAll('.lazy-bg-video');
+  if (lazyBgVideos.length) {
+    var lazyIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var video = entry.target;
+        if (video.paused) video.play().catch(function () {});
+        lazyIo.unobserve(video);
+      });
+    }, { rootMargin: '200px 0px', threshold: 0.01 });
+    lazyBgVideos.forEach(function (video) { lazyIo.observe(video); });
+  }
 
   /* ---------------- Animated "Passion" heading ---------------- */
   var headingEl = document.getElementById('animatedHeading');
