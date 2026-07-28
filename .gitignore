@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Unused raw/leftover footage, not referenced by any page -- exceeds GitHub's
+# 100MB file limit and would bloat the repo for no reason.
+videos/element-v2.mov
+videos/element-v3.mp4
