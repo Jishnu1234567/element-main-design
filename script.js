@@ -184,7 +184,7 @@
   }
 
   /* ---------------- Image lightbox (poster & gallery previews) ---------------- */
-  var lightboxTriggers = document.querySelectorAll('.poster-card, .photo-gallery__item, .program-feature__poster');
+  var lightboxTriggers = document.querySelectorAll('.poster-card, .photo-gallery__item, .program-feature__poster, .program-card__media');
   if (lightboxTriggers.length) {
     var lightbox = document.createElement('div');
     lightbox.className = 'lightbox';
