@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Raw, uncompressed source footage kept on disk for future re-encodes --
+# exceeds GitHub's 100MB file limit and would bloat the repo for no reason.
+# Everything else in _archive/ (superseded assets, pre-compression jpg/png
+# originals) is small enough to stay tracked for future reference.
+_archive/videos-raw-source/
