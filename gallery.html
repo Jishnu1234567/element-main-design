@@ -31,7 +31,7 @@
 <link rel="preload" href="public/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="style.min.css?v=5" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="style.min.css?v=5"></noscript>
-<link rel="stylesheet" href="gallery.min.css?v=1">
+<link rel="stylesheet" href="gallery.min.css?v=2">
 <!-- Structured data: add Facebook to sameAs once the Page URL is confirmed. -->
 <script type="application/ld+json">
 {
@@ -72,23 +72,6 @@
 </head>
 <body class="dark-header">
 
-<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
-  <defs>
-    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3z"/></symbol>
-    <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
-    <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.4-.3-.4-.5-.9-.5-1.4 0-1.1.9-2 2-2h2.3c2.6 0 4.7-2.1 4.7-4.7C22 6 17.5 2 12 2z"/><circle cx="6.5" cy="11.5" r="1"/><circle cx="9.5" cy="7.5" r="1"/><circle cx="14.5" cy="7.5" r="1"/><circle cx="17.5" cy="11.5" r="1"/></symbol>
-    <symbol id="i-yarn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M6.5 7.5c3 1.5 5 3.5 5 8.5M17.5 7.5c-3 1.5-5 3.5-5 8.5M5 12c3-1 5-1 7 0s4 1 7 0"/></symbol>
-    <symbol id="i-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
-    <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9C1 8.5 2 5 5.5 5c2 0 3.5 1.3 4.5 3 1-1.7 2.5-3 4.5-3C18 5 19 8.5 17.5 12c-2.5 4.5-5.5 9-5.5 9z"/></symbol>
-    <symbol id="i-needle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="18" y2="6"/><circle cx="20" cy="4" r="2"/><path d="M7 17c1.5 1 3 .5 3-1"/></symbol>
-    <symbol id="i-cup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M17 9h1.5a2.5 2.5 0 0 1 0 5H17"/><line x1="7" y1="2.5" x2="7" y2="5"/><line x1="10.5" y1="2.5" x2="10.5" y2="5"/></symbol>
-    <symbol id="i-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></symbol>
-    <symbol id="i-masks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="10" r="5"/><circle cx="16" cy="10" r="5"/><path d="M6 12c.5 1 1.2 1.5 2 1.5s1.5-.5 2-1.5M14 12c.5 1 1.2 1.5 2 1.5s1.5-.5 2-1.5"/></symbol>
-    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></symbol>
-  </defs>
-</svg>
-
 <div class="loader" id="loader"><div class="loader__mark"><img class="loader__logo" src="public/icons/logo-icon-gold.png" width="56" height="50" alt=""><span class="loader__text">Element</span></div></div>
 
 <header class="site-header" id="siteHeader">
@@ -103,230 +86,101 @@
 
 <main>
 
-  <!-- ══════════ TICKER ══════════ -->
-  <div class="g-ticker" aria-hidden="true"><span id="gTickerInner"></span></div>
-
-  <!-- ══════════ HERO ══════════ -->
-  <section class="g-hero" id="gHero">
-    <div class="g-hero__text">
-      <span class="g-chip g-chip--filled"><svg class="g-icon"><use href="#i-star"/></svg> Element Sound Studio — the gallery</span>
-      <h1 class="g-hero__title display-2 fly-text" data-reverse="true" data-wind-angle="90" data-wind-strength="240" data-scatter="70" data-max-rotation="220" data-depth="90" data-order="ltr" data-start-y="0.8">Every session leaves a trace.</h1>
-      <p class="g-hero__sub g-reveal g-reveal--d2">
-        Workshops, live sets, quiet studio time.<br>
-        All recorded in one room in Elamakkara, Kochi.
-      </p>
-      <div class="g-chip-row g-reveal g-reveal--d3">
-        <span class="g-chip"><svg class="g-icon"><use href="#i-mic"/></svg> Recording</span>
-        <span class="g-chip"><svg class="g-icon"><use href="#i-palette"/></svg> Workshops</span>
-        <span class="g-chip"><svg class="g-icon"><use href="#i-yarn"/></svg> Crochet</span>
-        <span class="g-chip"><svg class="g-icon"><use href="#i-note"/></svg> Live Sets</span>
-        <span class="g-chip"><svg class="g-icon"><use href="#i-camera"/></svg> Behind the Scenes</span>
-      </div>
-    </div>
-
-    <div class="g-hero__collage">
-      <img class="g-collage-img" src="public/IMG-20260723-WA0008-thumb.webp" width="600" height="400" alt="Live room with a condenser microphone and the illuminated Element logo on the wall" loading="eager" fetchpriority="high">
-      <img class="g-collage-img" src="public/IMG-20260723-WA0009-thumb.webp" width="600" height="400" alt="Control room with studio monitors and outboard gear" loading="eager">
-      <img class="g-collage-img" src="public/IMG-20260723-WA0013-thumb.webp" width="600" height="496" alt="Live room booth with a red sofa and piano-key wall art" loading="eager">
-      <img class="g-collage-img" src="public/IMG-20260723-WA0014-thumb.webp" width="600" height="400" alt="Live room lounge with a red sofa and floor lamp" loading="eager">
-      <div class="g-collage-label"><svg class="g-icon"><use href="#i-star"/></svg> inside the studio</div>
-    </div>
-  </section>
-
-  <!-- ══════════ CHAPTER 01 — WORLD MUSIC DAY ══════════ -->
-  <section class="g-chapter" id="chWorkshop">
-    <div class="g-chapter__inner">
-      <div class="g-chapter__text g-reveal">
-        <div class="g-chapter__num">01 — Workshop</div>
-        <h2 class="g-chapter__title">Sing. Paint.<br>Connect.<br><span class="g-stroke">Be You.</span></h2>
-        <div class="g-chapter__body">
-          <p>An evening of singing, listening and painting led by vocalist, mentor and storyteller Tejashree Ingawale.</p>
-          <p>World Music Day became an excuse to do what the studio's always been about — finding your voice through folk music and creative expression, no matter your background.</p>
-          <p>No performance pressure. No auditions. Just a circle of people willing to sing a little, laugh a little, and paint while they do it.</p>
-        </div>
-        <div class="g-chapter__tags">
-          <span class="g-chip"><svg class="g-icon"><use href="#i-mic"/></svg> Vocals</span>
-          <span class="g-chip"><svg class="g-icon"><use href="#i-palette"/></svg> Painting</span>
-          <span class="g-chip"><svg class="g-icon"><use href="#i-note"/></svg> Folk Music</span>
-          <span class="g-chip"><svg class="g-icon"><use href="#i-star"/></svg> World Music Day</span>
-        </div>
-      </div>
-
-      <div class="g-chapter__visual">
-        <div class="g-frame g-frame--wmd-1" data-full="public/gallery/world-music-day/photo-01.webp"><img src="public/gallery/world-music-day/photo-01-thumb.webp" width="560" height="373" alt="The full circle gathered for the World Music Day workshop, papers and colour pencils laid out for painting" loading="lazy"></div>
-        <div class="g-frame g-frame--wmd-2" data-full="public/gallery/world-music-day/photo-03.webp"><img src="public/gallery/world-music-day/photo-03-thumb.webp" width="460" height="306" alt="Tejashree Ingawale leading the circle in a guided singing exercise" loading="lazy"></div>
-        <svg class="g-glyph g-glyph--1"><use href="#i-note"/></svg>
-        <svg class="g-glyph g-glyph--2"><use href="#i-note"/></svg>
-        <svg class="g-glyph g-glyph--3"><use href="#i-note"/></svg>
-        <svg class="g-glyph g-glyph--4"><use href="#i-note"/></svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════ CHAPTER 02 — CROCHET CIRCLE ══════════ -->
-  <section class="g-chapter" id="chCrochet">
-    <div class="g-chapter__inner g-chapter__inner--flip">
-      <div class="g-chapter__text g-reveal">
-        <div class="g-chapter__num">02 — Every Saturday</div>
-        <h2 class="g-chapter__title">Stitch by<br>Stitch,<br><span class="g-stroke">Slow Down.</span></h2>
-        <div class="g-chapter__body">
-          <p>Beginner-friendly stitches to handmade creations — a relaxed, hands-on group session away from the studio's usual sound and rhythm.</p>
-          <p>No mic, no monitors, no click track. Just yarn, a hook, and the kind of focus that only comes from making something with your hands.</p>
-          <p>Everyone leaves with a coaster. Some leave with a habit.</p>
-        </div>
-        <div class="g-chapter__tags">
-          <span class="g-chip"><svg class="g-icon"><use href="#i-yarn"/></svg> Yarn</span>
-          <span class="g-chip"><svg class="g-icon"><use href="#i-heart"/></svg> Handmade</span>
-          <span class="g-chip"><svg class="g-icon"><use href="#i-needle"/></svg> Beginner-friendly</span>
-          <span class="g-chip"><svg class="g-icon"><use href="#i-cup"/></svg> Every Saturday</span>
-        </div>
-      </div>
-
-      <div class="g-chapter__visual g-chapter__visual--flip">
-        <div class="g-frame g-frame--crochet-1" data-full="public/gallery/crochet/photo-01.webp"><img src="public/gallery/crochet/photo-01-thumb.webp" width="440" height="782" alt="Close-up of a hand-crocheted coaster taking shape on the hook" loading="lazy"></div>
-        <div class="g-frame g-frame--crochet-2" data-full="public/gallery/crochet/photo-03.webp"><img src="public/gallery/crochet/photo-03-thumb.webp" width="440" height="782" alt="Hands mid-stitch, working the yarn around the hook" loading="lazy"></div>
-        <div class="video-feature g-chapter__video" data-mp4="public/gallery/crochet/highlight.mp4" data-webm="public/gallery/crochet/highlight.webm">
-          <img class="video-feature__poster" src="public/gallery/crochet/video-poster.webp" width="720" height="1280" alt="Crochet in progress, ready to play" loading="lazy">
-          <button type="button" class="video-feature__play" aria-label="Play video">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-          <span class="video-feature__caption">Watch: the stitch, up close</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════ CHAPTER 03 — LIVE MUSIC ══════════ -->
-  <section class="g-chapter" id="chLive">
-    <div class="g-chapter__inner">
-      <div class="g-chapter__text g-reveal">
-        <div class="g-chapter__num">03 — Live at Element Culture</div>
-        <h2 class="g-chapter__title">The Room<br>Goes Quiet.<br><span class="g-stroke">Then It Begins.</span></h2>
-        <div class="g-chapter__body">
-          <p>Solo vocals, full band sets and a chamber quartet — a look at what happens once the lights come up on stage.</p>
-          <p>Listen sessions. Open mic nights. Masterclasses. Whatever the format, the room stays close and the sound stays honest.</p>
-          <p>This is the studio's stage life — where the sound you'd otherwise hear on a recording gets performed in front of people who showed up to listen.</p>
-        </div>
-        <div class="g-chapter__tags">
-          <span class="g-chip"><svg class="g-icon"><use href="#i-note"/></svg> Chamber Quartet</span>
-          <span class="g-chip"><svg class="g-icon"><use href="#i-mic"/></svg> Listen Sessions</span>
-          <span class="g-chip"><svg class="g-icon"><use href="#i-mic"/></svg> Open Mic</span>
-          <span class="g-chip"><svg class="g-icon"><use href="#i-star"/></svg> Live at Element Culture</span>
-        </div>
-      </div>
-
-      <div class="g-chapter__visual">
-        <div class="g-frame g-frame--live-1" data-full="public/gallery/live-music/photo-01.webp"><img src="public/gallery/live-music/photo-01-thumb.webp" width="600" height="400" alt="A vocalist performing solo on stage at an Element Culture listening session" loading="lazy"></div>
-        <div class="g-frame g-frame--live-2" data-full="public/gallery/live-music/photo-08.webp"><img src="public/gallery/live-music/photo-08-thumb.webp" width="600" height="400" alt="The full cast and crew together after the night's performances" loading="lazy"></div>
-        <div class="video-feature g-chapter__video g-chapter__video--live" data-mp4="public/gallery/live-music/jupiter-strings.mp4" data-webm="public/gallery/live-music/jupiter-strings.webm">
-          <img class="video-feature__poster" src="public/gallery/live-music/video-poster.webp" width="608" height="1080" alt="Jupiter Strings quartet performing live, ready to play" loading="lazy">
-          <button type="button" class="video-feature__play" aria-label="Play video">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-          <span class="video-feature__caption">Watch: Jupiter Strings, live and unplugged</span>
-        </div>
-        <svg class="g-glyph g-glyph--1"><use href="#i-note"/></svg>
-        <svg class="g-glyph g-glyph--2"><use href="#i-note"/></svg>
-        <svg class="g-glyph g-glyph--3"><use href="#i-mic"/></svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════ VIDEO BREAK ══════════ -->
-  <div class="g-break">
-    <video class="g-break__video" autoplay muted loop playsinline poster="public/gallery/break/poster-thumb.webp">
-      <source src="public/gallery/break/element-v1-mobile.mp4" media="(max-width: 768px)">
-      <source src="public/gallery/break/element-v1.webm" type="video/webm">
-      <source src="public/gallery/break/element-v1.mp4" type="video/mp4">
+  <!-- Hero banner -->
+  <div class="hero-banner">
+    <video autoplay muted loop playsinline poster="public/poster-frames/live-shows.webp">
+      <source src="videos/live-shows-mobile.mp4" media="(max-width: 768px)">
+      <source src="videos/live-shows.mp4">
     </video>
-    <div class="g-break__text">
-      <span class="g-chip g-chip--filled"><svg class="g-icon"><use href="#i-star"/></svg> interlude</span>
-      <h2 class="g-break__title">Sound Is<br>Memory.<br><span class="g-stroke g-stroke--ink">Keep Making It.</span></h2>
-      <p class="g-break__body">
-        Some things happen quietly in a studio — not performed for an
-        audience, just captured. A breath before a take. A laugh between
-        songs. The feeling that this room remembers everything that
-        happens in it.
-      </p>
-      <span class="g-chip"><svg class="g-icon"><use href="#i-star"/></svg> every session leaves a trace</span>
+    <div class="wave-divider" style="position:absolute;bottom:0;left:0;width:100%;margin-bottom:-1px;">
+      <svg viewBox="0 0 4455 60" xmlns="http://www.w3.org/2000/svg" style="animation:none;">
+        <g fill="#1e1a17"><rect x="0" y="46" width="90" height="14" rx="10"/><rect x="165" y="36" width="90" height="24" rx="10"/><rect x="330" y="24" width="90" height="36" rx="10"/><rect x="495" y="12" width="90" height="48" rx="10"/><rect x="660" y="4" width="90" height="56" rx="10"/><rect x="825" y="12" width="90" height="48" rx="10"/><rect x="990" y="24" width="90" height="36" rx="10"/><rect x="1155" y="36" width="90" height="24" rx="10"/><rect x="1320" y="46" width="90" height="14" rx="10"/><rect x="1485" y="36" width="90" height="24" rx="10"/><rect x="1650" y="24" width="90" height="36" rx="10"/><rect x="1815" y="12" width="90" height="48" rx="10"/><rect x="1980" y="4" width="90" height="56" rx="10"/><rect x="2145" y="12" width="90" height="48" rx="10"/><rect x="2310" y="24" width="90" height="36" rx="10"/><rect x="2475" y="36" width="90" height="24" rx="10"/><rect x="2640" y="46" width="90" height="14" rx="10"/><rect x="2805" y="36" width="90" height="24" rx="10"/><rect x="2970" y="24" width="90" height="36" rx="10"/><rect x="3135" y="12" width="90" height="48" rx="10"/><rect x="3300" y="4" width="90" height="56" rx="10"/><rect x="3465" y="12" width="90" height="48" rx="10"/><rect x="3630" y="24" width="90" height="36" rx="10"/><rect x="3795" y="36" width="90" height="24" rx="10"/><rect x="3960" y="46" width="90" height="14" rx="10"/><rect x="4125" y="36" width="90" height="24" rx="10"/><rect x="4290" y="24" width="90" height="36" rx="10"/></g>
+      </svg>
     </div>
   </div>
 
-  <!-- ══════════ GALLERY STRIP ══════════ -->
-  <div class="g-strip">
-    <div class="g-strip__label"><svg class="g-icon"><use href="#i-star"/></svg> more from the gallery — scroll <svg class="g-icon"><use href="#i-arrow-right"/></svg></div>
-    <div class="g-strip__row" id="gStripRow"></div>
-  </div>
-
-  <!-- ══════════ THREAD ══════════ -->
-  <section class="g-thread">
-    <div class="g-ghost g-ghost--thread" aria-hidden="true">STUDIO</div>
-    <div class="g-thread__inner">
-      <div class="g-thread__text">
-        <h2 class="g-thread__title g-reveal">One Room.<br>Every<br><span class="g-stroke g-stroke--cream">Kind of Sound.</span></h2>
-        <p class="g-thread__quote g-reveal g-reveal--d1">
-          Element Sound Studio isn't just a recording booth. It's a workshop
-          space, a listening room, a Saturday crochet circle, a stage for
-          chamber quartets and open mic nights.
-          <strong>Different people, different reasons, same room in Elamakkara.</strong>
-        </p>
-        <div class="g-timeline g-reveal g-reveal--d3">
-          <div class="g-tnode"><div class="g-tnode__dot"><svg class="g-icon"><use href="#i-mic"/></svg></div><div class="g-tnode__label">Record</div></div>
-          <div class="g-tline"></div>
-          <div class="g-tnode"><div class="g-tnode__dot"><svg class="g-icon"><use href="#i-grad"/></svg></div><div class="g-tnode__label">Train</div></div>
-          <div class="g-tline"></div>
-          <div class="g-tnode"><div class="g-tnode__dot"><svg class="g-icon"><use href="#i-masks"/></svg></div><div class="g-tnode__label">Perform</div></div>
-          <div class="g-tline"></div>
-          <div class="g-tnode"><div class="g-tnode__dot"><svg class="g-icon"><use href="#i-yarn"/></svg></div><div class="g-tnode__label">Create</div></div>
-          <div class="g-tline"></div>
-          <div class="g-tnode"><div class="g-tnode__dot"><svg class="g-icon"><use href="#i-star"/></svg></div><div class="g-tnode__label">Belong</div></div>
-        </div>
-      </div>
-      <div class="g-thread__images">
-        <div class="g-thread__img"><img src="public/gallery/world-music-day/photo-04-thumb.webp" width="460" height="306" alt="A shared laugh between participants during the World Music Day workshop" loading="lazy"></div>
-        <div class="g-thread__img"><img src="public/gallery/crochet/photo-02-thumb.webp" width="360" height="640" alt="A finished crochet coaster beside a fresh ball of yarn" loading="lazy"></div>
-        <div class="g-thread__img"><img src="public/gallery/live-music/photo-06-thumb.webp" width="360" height="540" alt="The host introducing the next act to the audience" loading="lazy"></div>
-        <div class="g-thread__img"><img src="public/IMG-20260723-WA0007-thumb.webp" width="460" height="307" alt="Studio lounge looking through the glass into the live room" loading="lazy"></div>
-      </div>
+  <section class="page-hero" style="padding-top:clamp(2.5rem,4vw,4.5rem);">
+    <div class="page-container">
+      <h1 class="display-2 fly-text" data-reverse="true" data-wind-angle="90" data-wind-strength="240" data-scatter="70" data-max-rotation="220" data-depth="90" data-order="ltr" data-start-y="0.8">Every session leaves a trace.</h1>
+      <p class="lede">Workshops, live sets, a Saturday crochet circle and the quiet studio time in between — a look inside Element Sound Studio, in Elamakkara, Kochi.</p>
     </div>
   </section>
 
-  <!-- ══════════ EPILOGUE ══════════ -->
-  <section class="g-epilogue">
-    <div class="g-ghost g-ghost--epi" aria-hidden="true">ELEMENT</div>
-    <h2 class="g-epilogue__title g-reveal">Come Make<br>Something.<br><span class="g-stroke">We'll Be Here.</span></h2>
-    <div class="g-epi-grid g-reveal g-reveal--d2">
-      <div class="g-epi-card">
-        <div class="g-epi-card__icon"><svg class="g-icon"><use href="#i-mic"/></svg></div>
-        <h3>Every session matters</h3>
-        <p>From a first vocal take to a chamber quartet's soundcheck, the room gives the same care to every session that walks in.</p>
+  <!-- ══════════ WORLD MUSIC DAY ══════════ -->
+  <section class="color-band band-gold" id="worldMusicDay">
+    <div class="color-band__wave"><svg viewBox="0 0 4455 60" xmlns="http://www.w3.org/2000/svg"><g><rect x="0" y="46" width="90" height="14" rx="10"/><rect x="165" y="36" width="90" height="24" rx="10"/><rect x="330" y="24" width="90" height="36" rx="10"/><rect x="495" y="12" width="90" height="48" rx="10"/><rect x="660" y="4" width="90" height="56" rx="10"/><rect x="825" y="12" width="90" height="48" rx="10"/><rect x="990" y="24" width="90" height="36" rx="10"/><rect x="1155" y="36" width="90" height="24" rx="10"/><rect x="1320" y="46" width="90" height="14" rx="10"/><rect x="1485" y="36" width="90" height="24" rx="10"/><rect x="1650" y="24" width="90" height="36" rx="10"/><rect x="1815" y="12" width="90" height="48" rx="10"/><rect x="1980" y="4" width="90" height="56" rx="10"/><rect x="2145" y="12" width="90" height="48" rx="10"/><rect x="2310" y="24" width="90" height="36" rx="10"/><rect x="2475" y="36" width="90" height="24" rx="10"/><rect x="2640" y="46" width="90" height="14" rx="10"/><rect x="2805" y="36" width="90" height="24" rx="10"/><rect x="2970" y="24" width="90" height="36" rx="10"/><rect x="3135" y="12" width="90" height="48" rx="10"/><rect x="3300" y="4" width="90" height="56" rx="10"/><rect x="3465" y="12" width="90" height="48" rx="10"/><rect x="3630" y="24" width="90" height="36" rx="10"/><rect x="3795" y="36" width="90" height="24" rx="10"/><rect x="3960" y="46" width="90" height="14" rx="10"/><rect x="4125" y="36" width="90" height="24" rx="10"/><rect x="4290" y="24" width="90" height="36" rx="10"/></g></svg></div>
+    <div class="page-container">
+      <div class="gallery-section__head">
+        <span class="eyebrow pill" style="margin-bottom:1rem;display:inline-block;">01 — Workshop</span>
+        <h2 class="band-heading">Sing. Paint. Connect.</h2>
+        <p class="lede">An evening of singing, painting and folk music, led by Tejashree Ingawale.</p>
       </div>
-      <div class="g-epi-card">
-        <div class="g-epi-card__icon"><svg class="g-icon"><use href="#i-yarn"/></svg></div>
-        <h3>Slow down sometimes</h3>
-        <p>Not everything here is about output. Some Saturdays are just about making something with your hands.</p>
-      </div>
-      <div class="g-epi-card">
-        <div class="g-epi-card__icon"><svg class="g-icon"><use href="#i-masks"/></svg></div>
-        <h3>The stage is open</h3>
-        <p>Listen sessions, open mics, masterclasses — Element Culture keeps a stage open for Kochi's music and art community.</p>
-      </div>
-      <div class="g-epi-card">
-        <div class="g-epi-card__icon"><svg class="g-icon"><use href="#i-star"/></svg></div>
-        <h3>One room, many rooms</h3>
-        <p>Recording studio, training space, event venue, crochet circle. It's all the same room, just depending on the day.</p>
-      </div>
+
+      <div class="carousel" id="wmdCarousel"></div>
     </div>
-    <div class="g-mottos g-reveal g-reveal--d4">
-      <div class="g-motto">No mic required.</div>
-      <div class="g-motto g-motto--stroke">Every take counts.</div>
-      <div class="g-motto">You show up. You make.</div>
-      <div class="g-motto g-motto--stroke">The room remembers.</div>
-      <div class="g-motto">Not a genre. A room.</div>
-      <div class="g-motto g-motto--stroke">Sing anyway.</div>
+  </section>
+
+  <!-- ══════════ CROCHET CIRCLE ══════════ -->
+  <section class="color-band band-parchment gallery-section--right" id="crochetCircle">
+    <div class="color-band__wave"><svg viewBox="0 0 4455 60" xmlns="http://www.w3.org/2000/svg"><g><rect x="0" y="46" width="90" height="14" rx="10"/><rect x="165" y="36" width="90" height="24" rx="10"/><rect x="330" y="24" width="90" height="36" rx="10"/><rect x="495" y="12" width="90" height="48" rx="10"/><rect x="660" y="4" width="90" height="56" rx="10"/><rect x="825" y="12" width="90" height="48" rx="10"/><rect x="990" y="24" width="90" height="36" rx="10"/><rect x="1155" y="36" width="90" height="24" rx="10"/><rect x="1320" y="46" width="90" height="14" rx="10"/><rect x="1485" y="36" width="90" height="24" rx="10"/><rect x="1650" y="24" width="90" height="36" rx="10"/><rect x="1815" y="12" width="90" height="48" rx="10"/><rect x="1980" y="4" width="90" height="56" rx="10"/><rect x="2145" y="12" width="90" height="48" rx="10"/><rect x="2310" y="24" width="90" height="36" rx="10"/><rect x="2475" y="36" width="90" height="24" rx="10"/><rect x="2640" y="46" width="90" height="14" rx="10"/><rect x="2805" y="36" width="90" height="24" rx="10"/><rect x="2970" y="24" width="90" height="36" rx="10"/><rect x="3135" y="12" width="90" height="48" rx="10"/><rect x="3300" y="4" width="90" height="56" rx="10"/><rect x="3465" y="12" width="90" height="48" rx="10"/><rect x="3630" y="24" width="90" height="36" rx="10"/><rect x="3795" y="36" width="90" height="24" rx="10"/><rect x="3960" y="46" width="90" height="14" rx="10"/><rect x="4125" y="36" width="90" height="24" rx="10"/><rect x="4290" y="24" width="90" height="36" rx="10"/></g></svg></div>
+    <div class="page-container">
+      <div class="gallery-section__head">
+        <span class="eyebrow pill" style="margin-bottom:1rem;display:inline-block;">02 — Every Saturday</span>
+        <h2 class="band-heading">Stitch by Stitch, Slow Down.</h2>
+        <p class="lede">Yarn, a hook, and no mic — a relaxed hands-on circle away from the studio's usual rhythm.</p>
+      </div>
+
+      <div class="carousel" id="crochetCarousel"></div>
     </div>
-    <div class="g-epilogue__cta">
-      <a href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20enquire%20about%20recording%20at%20Element%20Sound%20Studio." target="_blank" rel="noopener" class="btn-pill" style="color:var(--color-brand-gold);border-color:var(--color-brand-gold);">Come record with us</a>
+  </section>
+
+  <!-- ══════════ LIVE MUSIC ══════════ -->
+  <section class="color-band band-teal" id="liveMusic" style="color:#fff;">
+    <div class="color-band__wave"><svg viewBox="0 0 4455 60" xmlns="http://www.w3.org/2000/svg"><g><rect x="0" y="46" width="90" height="14" rx="10"/><rect x="165" y="36" width="90" height="24" rx="10"/><rect x="330" y="24" width="90" height="36" rx="10"/><rect x="495" y="12" width="90" height="48" rx="10"/><rect x="660" y="4" width="90" height="56" rx="10"/><rect x="825" y="12" width="90" height="48" rx="10"/><rect x="990" y="24" width="90" height="36" rx="10"/><rect x="1155" y="36" width="90" height="24" rx="10"/><rect x="1320" y="46" width="90" height="14" rx="10"/><rect x="1485" y="36" width="90" height="24" rx="10"/><rect x="1650" y="24" width="90" height="36" rx="10"/><rect x="1815" y="12" width="90" height="48" rx="10"/><rect x="1980" y="4" width="90" height="56" rx="10"/><rect x="2145" y="12" width="90" height="48" rx="10"/><rect x="2310" y="24" width="90" height="36" rx="10"/><rect x="2475" y="36" width="90" height="24" rx="10"/><rect x="2640" y="46" width="90" height="14" rx="10"/><rect x="2805" y="36" width="90" height="24" rx="10"/><rect x="2970" y="24" width="90" height="36" rx="10"/><rect x="3135" y="12" width="90" height="48" rx="10"/><rect x="3300" y="4" width="90" height="56" rx="10"/><rect x="3465" y="12" width="90" height="48" rx="10"/><rect x="3630" y="24" width="90" height="36" rx="10"/><rect x="3795" y="36" width="90" height="24" rx="10"/><rect x="3960" y="46" width="90" height="14" rx="10"/><rect x="4125" y="36" width="90" height="24" rx="10"/><rect x="4290" y="24" width="90" height="36" rx="10"/></g></svg></div>
+    <div class="page-container">
+      <div class="gallery-section__head">
+        <span class="eyebrow pill" style="margin-bottom:1rem;display:inline-block;color:#fff;border-color:rgba(255,255,255,.4);">03 — Live at Element Culture</span>
+        <h2 class="band-heading">The Room Goes Quiet. Then It Begins.</h2>
+        <p class="lede">Solo vocals, full band sets and a chamber quartet, once the lights come up on stage.</p>
+      </div>
+
+      <div class="carousel" id="liveCarousel"></div>
+    </div>
+  </section>
+
+  <!-- ══════════ INSIDE THE STUDIO ══════════ -->
+  <section class="color-band band-moss gallery-section--right" id="insideStudio">
+    <div class="color-band__wave"><svg viewBox="0 0 4455 60" xmlns="http://www.w3.org/2000/svg"><g><rect x="0" y="46" width="90" height="14" rx="10"/><rect x="165" y="36" width="90" height="24" rx="10"/><rect x="330" y="24" width="90" height="36" rx="10"/><rect x="495" y="12" width="90" height="48" rx="10"/><rect x="660" y="4" width="90" height="56" rx="10"/><rect x="825" y="12" width="90" height="48" rx="10"/><rect x="990" y="24" width="90" height="36" rx="10"/><rect x="1155" y="36" width="90" height="24" rx="10"/><rect x="1320" y="46" width="90" height="14" rx="10"/><rect x="1485" y="36" width="90" height="24" rx="10"/><rect x="1650" y="24" width="90" height="36" rx="10"/><rect x="1815" y="12" width="90" height="48" rx="10"/><rect x="1980" y="4" width="90" height="56" rx="10"/><rect x="2145" y="12" width="90" height="48" rx="10"/><rect x="2310" y="24" width="90" height="36" rx="10"/><rect x="2475" y="36" width="90" height="24" rx="10"/><rect x="2640" y="46" width="90" height="14" rx="10"/><rect x="2805" y="36" width="90" height="24" rx="10"/><rect x="2970" y="24" width="90" height="36" rx="10"/><rect x="3135" y="12" width="90" height="48" rx="10"/><rect x="3300" y="4" width="90" height="56" rx="10"/><rect x="3465" y="12" width="90" height="48" rx="10"/><rect x="3630" y="24" width="90" height="36" rx="10"/><rect x="3795" y="36" width="90" height="24" rx="10"/><rect x="3960" y="46" width="90" height="14" rx="10"/><rect x="4125" y="36" width="90" height="24" rx="10"/><rect x="4290" y="24" width="90" height="36" rx="10"/></g></svg></div>
+    <div class="page-container">
+      <div class="gallery-section__head">
+        <span class="eyebrow pill" style="margin-bottom:1rem;display:inline-block;">04 — Behind the Scenes</span>
+        <h2 class="band-heading">One Room, Every Kind of Sound.</h2>
+        <p class="lede">Different people, different reasons — same room, in Elamakkara.</p>
+      </div>
+
+      <div class="carousel" id="studioCarousel"></div>
+    </div>
+  </section>
+
+  <!-- ══════════ WATCH — every video, one place ══════════ -->
+  <section class="color-band band-dark">
+    <div class="color-band__wave"><svg viewBox="0 0 4455 60" xmlns="http://www.w3.org/2000/svg"><g><rect x="0" y="46" width="90" height="14" rx="10"/><rect x="165" y="36" width="90" height="24" rx="10"/><rect x="330" y="24" width="90" height="36" rx="10"/><rect x="495" y="12" width="90" height="48" rx="10"/><rect x="660" y="4" width="90" height="56" rx="10"/><rect x="825" y="12" width="90" height="48" rx="10"/><rect x="990" y="24" width="90" height="36" rx="10"/><rect x="1155" y="36" width="90" height="24" rx="10"/><rect x="1320" y="46" width="90" height="14" rx="10"/><rect x="1485" y="36" width="90" height="24" rx="10"/><rect x="1650" y="24" width="90" height="36" rx="10"/><rect x="1815" y="12" width="90" height="48" rx="10"/><rect x="1980" y="4" width="90" height="56" rx="10"/><rect x="2145" y="12" width="90" height="48" rx="10"/><rect x="2310" y="24" width="90" height="36" rx="10"/><rect x="2475" y="36" width="90" height="24" rx="10"/><rect x="2640" y="46" width="90" height="14" rx="10"/><rect x="2805" y="36" width="90" height="24" rx="10"/><rect x="2970" y="24" width="90" height="36" rx="10"/><rect x="3135" y="12" width="90" height="48" rx="10"/><rect x="3300" y="4" width="90" height="56" rx="10"/><rect x="3465" y="12" width="90" height="48" rx="10"/><rect x="3630" y="24" width="90" height="36" rx="10"/><rect x="3795" y="36" width="90" height="24" rx="10"/><rect x="3960" y="46" width="90" height="14" rx="10"/><rect x="4125" y="36" width="90" height="24" rx="10"/><rect x="4290" y="24" width="90" height="36" rx="10"/></g></svg></div>
+    <div class="page-container">
+      <div class="gallery-section__head" style="max-width:none;text-align:center;margin:0 auto;">
+        <span class="eyebrow pill" style="margin-bottom:1rem;display:inline-block;color:#fff;border-color:rgba(255,255,255,.4);">On stage &amp; in the room</span>
+        <h2 class="band-heading">Watch</h2>
+      </div>
+      <div class="carousel" id="watchCarousel" style="text-align:center;"></div>
+    </div>
+  </section>
+
+  <!-- ══════════ CLOSING CTA ══════════ -->
+  <section class="color-band band-cream">
+    <div class="color-band__wave"><svg viewBox="0 0 4455 60" xmlns="http://www.w3.org/2000/svg"><g><rect x="0" y="46" width="90" height="14" rx="10"/><rect x="165" y="36" width="90" height="24" rx="10"/><rect x="330" y="24" width="90" height="36" rx="10"/><rect x="495" y="12" width="90" height="48" rx="10"/><rect x="660" y="4" width="90" height="56" rx="10"/><rect x="825" y="12" width="90" height="48" rx="10"/><rect x="990" y="24" width="90" height="36" rx="10"/><rect x="1155" y="36" width="90" height="24" rx="10"/><rect x="1320" y="46" width="90" height="14" rx="10"/><rect x="1485" y="36" width="90" height="24" rx="10"/><rect x="1650" y="24" width="90" height="36" rx="10"/><rect x="1815" y="12" width="90" height="48" rx="10"/><rect x="1980" y="4" width="90" height="56" rx="10"/><rect x="2145" y="12" width="90" height="48" rx="10"/><rect x="2310" y="24" width="90" height="36" rx="10"/><rect x="2475" y="36" width="90" height="24" rx="10"/><rect x="2640" y="46" width="90" height="14" rx="10"/><rect x="2805" y="36" width="90" height="24" rx="10"/><rect x="2970" y="24" width="90" height="36" rx="10"/><rect x="3135" y="12" width="90" height="48" rx="10"/><rect x="3300" y="4" width="90" height="56" rx="10"/><rect x="3465" y="12" width="90" height="48" rx="10"/><rect x="3630" y="24" width="90" height="36" rx="10"/><rect x="3795" y="36" width="90" height="24" rx="10"/><rect x="3960" y="46" width="90" height="14" rx="10"/><rect x="4125" y="36" width="90" height="24" rx="10"/><rect x="4290" y="24" width="90" height="36" rx="10"/></g></svg></div>
+    <div class="page-container" style="text-align:center;">
+      <h2 class="band-heading">Come Make Something. We'll Be Here.</h2>
+      <p class="lede" style="margin-top:1.25rem;">No mic required. Every take counts. You show up, you make — the room remembers.</p>
+      <a href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20enquire%20about%20recording%20at%20Element%20Sound%20Studio." target="_blank" rel="noopener" class="btn-pill" style="margin-top:2rem;">Come record with us</a>
     </div>
   </section>
 
@@ -375,97 +229,140 @@
 <script src="vendor/gsap/ScrollTrigger.min.js" defer></script>
 <script src="fly-text.min.js?v=5" defer></script>
 
-<!-- Ticker content -->
-
-
-<!-- Video feature cards: click the poster/play button to swap in a real
-     <video> and start playback, instead of a bare native player sitting
-     on the page from the start. -->
+<!-- Gallery data + photo-grid build + video-feature wiring + shared lightbox -->
 <script>
 (function () {
-  var cards = document.querySelectorAll('.video-feature');
-  if (!cards.length) return;
-
-  cards.forEach(function (card) {
-    function play() {
-      var video = document.createElement('video');
-      video.controls = true;
-      video.autoplay = true;
-      video.playsInline = true;
-      video.poster = card.querySelector('.video-feature__poster').src;
-
-      var webm = card.dataset.webm;
-      var mp4 = card.dataset.mp4;
-      if (webm) {
-        var s1 = document.createElement('source');
-        s1.src = webm; s1.type = 'video/webm';
-        video.appendChild(s1);
-      }
-      if (mp4) {
-        var s2 = document.createElement('source');
-        s2.src = mp4; s2.type = 'video/mp4';
-        video.appendChild(s2);
-      }
-
-      card.innerHTML = '';
-      card.appendChild(video);
-      card.style.cursor = 'default';
-      video.play().catch(function () {});
-    }
-
-    card.addEventListener('click', play);
-    card.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
-    });
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', 'Play video');
-  });
-})();
-</script>
-
-<!-- Gallery strip: builds the horizontal-scroll row from the photos not
-     already featured as a chapter frame or hero collage image, so every
-     photo from the three stories stays reachable, then wires the shared
-     lightbox for the whole page (strip items + chapter frames). -->
-<script>
-(function () {
-  var STRIP = [
-    { src: 'public/gallery/world-music-day/photo-02.webp', thumb: 'public/gallery/world-music-day/photo-02-thumb.webp', alt: 'Wide view of the studio floor set up for the World Music Day workshop circle', cap: 'World Music Day' },
-    { src: 'public/gallery/world-music-day/photo-05.webp', thumb: 'public/gallery/world-music-day/photo-05-thumb.webp', alt: 'A group vocal rehearsal, participants singing together from printed lyric sheets', cap: 'World Music Day' },
-    { src: 'public/gallery/world-music-day/photo-06.webp', thumb: 'public/gallery/world-music-day/photo-06-thumb.webp', alt: 'A warm greeting between a young participant and the facilitator', cap: 'World Music Day' },
-    { src: 'public/gallery/world-music-day/photo-07.webp', thumb: 'public/gallery/world-music-day/photo-07-thumb.webp', alt: 'A parting hug beside the tanpura as the workshop wraps up', cap: 'World Music Day' },
-    { src: 'public/gallery/crochet/photo-02.webp', thumb: 'public/gallery/crochet/photo-02-thumb.webp', alt: 'A finished crochet coaster beside a fresh ball of yarn', cap: 'Crochet Circle' },
-    { src: 'public/gallery/crochet/photo-04.webp', thumb: 'public/gallery/crochet/photo-04-thumb.webp', alt: 'Overhead view of a crochet hook drawing yarn through a loop', cap: 'Crochet Circle' },
-    { src: 'public/gallery/crochet/photo-05.webp', thumb: 'public/gallery/crochet/photo-05-thumb.webp', alt: 'Close overhead detail of a stitch in progress', cap: 'Crochet Circle' },
-    { src: 'public/gallery/live-music/photo-02.webp', thumb: 'public/gallery/live-music/photo-02-thumb.webp', alt: 'A vocalist performing with a full band on stage', cap: 'Live Music' },
-    { src: 'public/gallery/live-music/photo-03.webp', thumb: 'public/gallery/live-music/photo-03-thumb.webp', alt: 'Wide view of the stage and band mid-performance', cap: 'Live Music' },
-    { src: 'public/gallery/live-music/photo-04.webp', thumb: 'public/gallery/live-music/photo-04-thumb.webp', alt: 'A flute performer smiling mid-performance', cap: 'Live Music' },
-    { src: 'public/gallery/live-music/photo-05.webp', thumb: 'public/gallery/live-music/photo-05-thumb.webp', alt: 'The same flute performer in quiet concentration beside a ghatam', cap: 'Live Music' },
-    { src: 'public/gallery/live-music/photo-06.webp', thumb: 'public/gallery/live-music/photo-06-thumb.webp', alt: "The host introducing the next act to the audience", cap: 'Live Music' },
-    { src: 'public/gallery/live-music/photo-07.webp', thumb: 'public/gallery/live-music/photo-07-thumb.webp', alt: 'Three performers sharing a warm moment after the show', cap: 'Live Music' },
-    { src: 'public/IMG-20260723-WA0007.webp', thumb: 'public/IMG-20260723-WA0007-thumb.webp', alt: 'Studio lounge looking through the glass into the live room', cap: 'Inside the Studio' },
-    { src: 'public/IMG-20260723-WA0010.webp', thumb: 'public/IMG-20260723-WA0010-thumb.webp', alt: 'Team member at a workstation during a studio session', cap: 'Inside the Studio' },
-    { src: 'public/IMG-20260723-WA0011.webp', thumb: 'public/IMG-20260723-WA0011-thumb.webp', alt: 'Control desk with dual monitors and studio speakers facing the live room window', cap: 'Inside the Studio' },
-    { src: 'public/IMG-20260723-WA0012.webp', thumb: 'public/IMG-20260723-WA0012-thumb.webp', alt: 'Producer workstation with laptop, monitors and outboard processing gear', cap: 'Inside the Studio' }
+  var WMD_PHOTOS = [
+    { thumb: 'public/gallery/world-music-day/photo-01-thumb.webp', full: 'public/gallery/world-music-day/photo-01.webp', alt: 'The full circle gathered for the World Music Day workshop, papers and colour pencils laid out for painting' },
+    { thumb: 'public/gallery/world-music-day/photo-02-thumb.webp', full: 'public/gallery/world-music-day/photo-02.webp', alt: 'Wide view of the studio floor set up for the World Music Day workshop circle' },
+    { thumb: 'public/gallery/world-music-day/photo-03-thumb.webp', full: 'public/gallery/world-music-day/photo-03.webp', alt: 'Tejashree Ingawale leading the circle in a guided singing exercise' },
+    { thumb: 'public/gallery/world-music-day/photo-04-thumb.webp', full: 'public/gallery/world-music-day/photo-04.webp', alt: 'A shared laugh between participants during the World Music Day workshop' },
+    { thumb: 'public/gallery/world-music-day/photo-05-thumb.webp', full: 'public/gallery/world-music-day/photo-05.webp', alt: 'A group vocal rehearsal, participants singing together from printed lyric sheets' },
+    { thumb: 'public/gallery/world-music-day/photo-06-thumb.webp', full: 'public/gallery/world-music-day/photo-06.webp', alt: 'A warm greeting between a young participant and the facilitator' },
+    { thumb: 'public/gallery/world-music-day/photo-07-thumb.webp', full: 'public/gallery/world-music-day/photo-07.webp', alt: 'A parting hug beside the tanpura as the workshop wraps up' },
+    { thumb: 'public/gallery/world-music-day/photo-08-thumb.webp', full: 'public/gallery/world-music-day/photo-08.webp', alt: 'The full group posing together after the World Music Day workshop' },
+    { thumb: 'public/gallery/world-music-day/photo-09-thumb.webp', full: 'public/gallery/world-music-day/photo-09.webp', alt: 'Performers and hosts posing together in the studio' },
+    { thumb: 'public/gallery/world-music-day/photo-10-thumb.webp', full: 'public/gallery/world-music-day/photo-10.webp', alt: 'The wider crowd gathered for the World Music Day evening' }
+  ];
+  var CROCHET_PHOTOS = [
+    { thumb: 'public/gallery/crochet/photo-01-thumb.webp', full: 'public/gallery/crochet/photo-01.webp', alt: 'Close-up of a hand-crocheted coaster taking shape on the hook' },
+    { thumb: 'public/gallery/crochet/photo-02-thumb.webp', full: 'public/gallery/crochet/photo-02.webp', alt: 'A finished crochet coaster beside a fresh ball of yarn' },
+    { thumb: 'public/gallery/crochet/photo-03-thumb.webp', full: 'public/gallery/crochet/photo-03.webp', alt: 'Hands mid-stitch, working the yarn around the hook' },
+    { thumb: 'public/gallery/crochet/photo-04-thumb.webp', full: 'public/gallery/crochet/photo-04.webp', alt: 'Overhead view of a crochet hook drawing yarn through a loop' },
+    { thumb: 'public/gallery/crochet/photo-05-thumb.webp', full: 'public/gallery/crochet/photo-05.webp', alt: 'Close overhead detail of a stitch in progress' },
+    { thumb: 'public/gallery/crochet/photo-06-thumb.webp', full: 'public/gallery/crochet/photo-06.webp', alt: 'Overhead view of the maroon coaster taking shape beside a fresh ball of yarn' },
+    { thumb: 'public/gallery/crochet/photo-07-thumb.webp', full: 'public/gallery/crochet/photo-07.webp', alt: 'A participant working the hook through a stitch in natural light' }
+  ];
+  var LIVE_PHOTOS = [
+    { thumb: 'public/gallery/live-music/photo-01-thumb.webp', full: 'public/gallery/live-music/photo-01.webp', alt: 'A vocalist performing solo on stage at an Element Culture listening session' },
+    { thumb: 'public/gallery/live-music/photo-02-thumb.webp', full: 'public/gallery/live-music/photo-02.webp', alt: 'A vocalist performing with a full band on stage' },
+    { thumb: 'public/gallery/live-music/photo-03-thumb.webp', full: 'public/gallery/live-music/photo-03.webp', alt: 'Wide view of the stage and band mid-performance' },
+    { thumb: 'public/gallery/live-music/photo-04-thumb.webp', full: 'public/gallery/live-music/photo-04.webp', alt: 'A flute performer smiling mid-performance' },
+    { thumb: 'public/gallery/live-music/photo-05-thumb.webp', full: 'public/gallery/live-music/photo-05.webp', alt: 'The same flute performer in quiet concentration beside a ghatam' },
+    { thumb: 'public/gallery/live-music/photo-06-thumb.webp', full: 'public/gallery/live-music/photo-06.webp', alt: "The host introducing the next act to the audience" },
+    { thumb: 'public/gallery/live-music/photo-07-thumb.webp', full: 'public/gallery/live-music/photo-07.webp', alt: 'Three performers sharing a warm moment after the show' },
+    { thumb: 'public/gallery/live-music/photo-08-thumb.webp', full: 'public/gallery/live-music/photo-08.webp', alt: "The full cast and crew together after the night's performances" }
+  ];
+  var STUDIO_PHOTOS = [
+    { thumb: 'public/IMG-20260723-WA0007-thumb.webp', full: 'public/IMG-20260723-WA0007.webp', alt: 'Studio lounge looking through the glass into the live room' },
+    { thumb: 'public/IMG-20260723-WA0008-thumb.webp', full: 'public/IMG-20260723-WA0008.webp', alt: 'Live room with a condenser microphone and the illuminated Element logo on the wall' },
+    { thumb: 'public/IMG-20260723-WA0009-thumb.webp', full: 'public/IMG-20260723-WA0009.webp', alt: 'Control room with studio monitors and outboard gear' },
+    { thumb: 'public/IMG-20260723-WA0010-thumb.webp', full: 'public/IMG-20260723-WA0010.webp', alt: 'Team member at a workstation during a studio session' },
+    { thumb: 'public/IMG-20260723-WA0011-thumb.webp', full: 'public/IMG-20260723-WA0011.webp', alt: 'Control desk with dual monitors and studio speakers facing the live room window' },
+    { thumb: 'public/IMG-20260723-WA0012-thumb.webp', full: 'public/IMG-20260723-WA0012.webp', alt: 'Producer workstation with laptop, monitors and outboard processing gear' },
+    { thumb: 'public/IMG-20260723-WA0013-thumb.webp', full: 'public/IMG-20260723-WA0013.webp', alt: 'Live room booth with a red sofa and piano-key wall art' },
+    { thumb: 'public/IMG-20260723-WA0014-thumb.webp', full: 'public/IMG-20260723-WA0014.webp', alt: 'Live room lounge with a red sofa and floor lamp' }
   ];
 
-  var row = document.getElementById('gStripRow');
-  if (row) {
-    STRIP.forEach(function (g) {
-      var item = document.createElement('a');
-      item.className = 'g-strip-item';
-      item.href = g.src;
-      item.innerHTML = '<img src="' + g.thumb + '" alt="' + g.alt + '" loading="lazy">';
-      row.appendChild(item);
-    });
-  }
+  var ALL_VIDEOS = [
+    { mp4: 'public/gallery/world-music-day/wmd-6219.mp4', poster: 'public/gallery/world-music-day/wmd-6219-poster.webp', alt: 'Tejashree Ingawale singing with the tanpura, ready to play', cap: 'The opening song', tag: 'World Music Day' },
+    { mp4: 'public/gallery/world-music-day/wmd-6230.mp4', poster: 'public/gallery/world-music-day/wmd-6230-poster.webp', alt: 'Tejashree Ingawale performing to the circle, ready to play', cap: 'Singing to the circle', tag: 'World Music Day' },
+    { mp4: 'public/gallery/world-music-day/wmd-6234.mp4', poster: 'public/gallery/world-music-day/wmd-6234-poster.webp', alt: 'The full World Music Day performance, ready to play', cap: 'The full session', tag: 'World Music Day' },
+    { mp4: 'public/gallery/world-music-day/wmd-6252.mp4', poster: 'public/gallery/world-music-day/wmd-6252-poster.webp', alt: 'View of the performance from the circle, ready to play', cap: 'From the circle', tag: 'World Music Day' },
+    { mp4: 'public/gallery/world-music-day/wmd-6264.mp4', poster: 'public/gallery/world-music-day/wmd-6264-poster.webp', alt: 'A conversation on stage during the workshop, ready to play', cap: 'In conversation', tag: 'World Music Day' },
+    { mp4: 'public/gallery/world-music-day/wmd-reel.mp4', poster: 'public/gallery/world-music-day/wmd-reel-poster.webp', alt: 'Element Culture World Music Day highlight reel, ready to play', cap: 'The highlight reel', tag: 'World Music Day' },
+    { mp4: 'public/gallery/crochet/highlight.mp4', poster: 'public/gallery/crochet/video-poster.webp', alt: 'Crochet in progress, ready to play', cap: 'The stitch, up close', tag: 'Crochet Circle' },
+    { mp4: 'public/gallery/crochet/crochet-3052.mp4', poster: 'public/gallery/crochet/crochet-3052-poster.webp', alt: 'Getting started on a new coaster, ready to play', cap: 'Getting started', tag: 'Crochet Circle' },
+    { mp4: 'public/gallery/crochet/crochet-3058.mp4', poster: 'public/gallery/crochet/crochet-3058-poster.webp', alt: 'Working the hook round by round, ready to play', cap: 'Working the hook', tag: 'Crochet Circle' },
+    { mp4: 'public/gallery/live-music/jupiter-strings.mp4', poster: 'public/gallery/live-music/video-poster.webp', alt: 'Jupiter Strings quartet performing live, ready to play', cap: 'Jupiter Strings, live and unplugged', tag: 'Live Music' },
+    { mp4: 'public/gallery/break/element-v1.mp4', poster: 'public/gallery/break/poster-large.webp', alt: 'A quiet moment in the studio, ready to play', cap: 'Sound is memory', tag: 'Inside the Studio' }
+  ];
 
-  // Shared lightbox: every .g-strip-item and .g-frame on the page,
-  // treated as one big set with prev/next navigation.
-  var triggers = Array.prototype.slice.call(document.querySelectorAll('.g-strip-item, .g-frame'));
-  if (!triggers.length) return;
+  /* Real pixel widths of the thumb/full files above, so the srcset built
+     in createCarousel() gives the browser accurate width descriptors —
+     sharp on retina desktop, smaller download on phones. */
+  var THUMB_W = {
+    'public/IMG-20260723-WA0007-thumb.webp': 460,
+    'public/IMG-20260723-WA0008-thumb.webp': 600,
+    'public/IMG-20260723-WA0009-thumb.webp': 600,
+    'public/IMG-20260723-WA0010-thumb.webp': 300,
+    'public/IMG-20260723-WA0011-thumb.webp': 360,
+    'public/IMG-20260723-WA0012-thumb.webp': 360,
+    'public/IMG-20260723-WA0013-thumb.webp': 600,
+    'public/IMG-20260723-WA0014-thumb.webp': 600,
+    'public/gallery/crochet/photo-01-thumb.webp': 440,
+    'public/gallery/crochet/photo-02-thumb.webp': 360,
+    'public/gallery/crochet/photo-03-thumb.webp': 440,
+    'public/gallery/crochet/photo-04-thumb.webp': 300,
+    'public/gallery/crochet/photo-05-thumb.webp': 300,
+    'public/gallery/crochet/photo-06-thumb.webp': 300,
+    'public/gallery/crochet/photo-07-thumb.webp': 300,
+    'public/gallery/live-music/photo-01-thumb.webp': 440,
+    'public/gallery/live-music/photo-02-thumb.webp': 440,
+    'public/gallery/live-music/photo-03-thumb.webp': 440,
+    'public/gallery/live-music/photo-04-thumb.webp': 440,
+    'public/gallery/live-music/photo-05-thumb.webp': 440,
+    'public/gallery/live-music/photo-06-thumb.webp': 440,
+    'public/gallery/live-music/photo-07-thumb.webp': 440,
+    'public/gallery/live-music/photo-08-thumb.webp': 440,
+    'public/gallery/world-music-day/photo-01-thumb.webp': 560,
+    'public/gallery/world-music-day/photo-02-thumb.webp': 360,
+    'public/gallery/world-music-day/photo-03-thumb.webp': 460,
+    'public/gallery/world-music-day/photo-04-thumb.webp': 460,
+    'public/gallery/world-music-day/photo-05-thumb.webp': 360,
+    'public/gallery/world-music-day/photo-06-thumb.webp': 360,
+    'public/gallery/world-music-day/photo-07-thumb.webp': 360,
+    'public/gallery/world-music-day/photo-08-thumb.webp': 360,
+    'public/gallery/world-music-day/photo-09-thumb.webp': 360,
+    'public/gallery/world-music-day/photo-10-thumb.webp': 360
+  };
+  var FULL_W = {
+    'public/IMG-20260723-WA0007.webp': 900,
+    'public/IMG-20260723-WA0008.webp': 900,
+    'public/IMG-20260723-WA0009.webp': 900,
+    'public/IMG-20260723-WA0010.webp': 854,
+    'public/IMG-20260723-WA0011.webp': 900,
+    'public/IMG-20260723-WA0012.webp': 900,
+    'public/IMG-20260723-WA0013.webp': 900,
+    'public/IMG-20260723-WA0014.webp': 900,
+    'public/gallery/crochet/photo-01.webp': 788,
+    'public/gallery/crochet/photo-02.webp': 788,
+    'public/gallery/crochet/photo-03.webp': 788,
+    'public/gallery/crochet/photo-04.webp': 788,
+    'public/gallery/crochet/photo-05.webp': 788,
+    'public/gallery/crochet/photo-06.webp': 788,
+    'public/gallery/crochet/photo-07.webp': 788,
+    'public/gallery/live-music/photo-01.webp': 1400,
+    'public/gallery/live-music/photo-02.webp': 1400,
+    'public/gallery/live-music/photo-03.webp': 933,
+    'public/gallery/live-music/photo-04.webp': 933,
+    'public/gallery/live-music/photo-05.webp': 933,
+    'public/gallery/live-music/photo-06.webp': 933,
+    'public/gallery/live-music/photo-07.webp': 933,
+    'public/gallery/live-music/photo-08.webp': 1400,
+    'public/gallery/world-music-day/photo-01.webp': 1280,
+    'public/gallery/world-music-day/photo-02.webp': 1280,
+    'public/gallery/world-music-day/photo-03.webp': 1280,
+    'public/gallery/world-music-day/photo-04.webp': 1280,
+    'public/gallery/world-music-day/photo-05.webp': 1280,
+    'public/gallery/world-music-day/photo-06.webp': 1280,
+    'public/gallery/world-music-day/photo-07.webp': 1280,
+    'public/gallery/world-music-day/photo-08.webp': 1280,
+    'public/gallery/world-music-day/photo-09.webp': 1280,
+    'public/gallery/world-music-day/photo-10.webp': 1280
+  };
 
+  /* ---------------- Shared lightbox (used by every photo carousel) ---------------- */
   var lb = document.createElement('div');
   lb.className = 'gallery-lightbox';
   lb.innerHTML =
@@ -486,76 +383,205 @@
 
   var lbImg = lb.querySelector('.gallery-lightbox__img');
   var counter = lb.querySelector('.gallery-lightbox__counter');
-  var closeBtn = lb.querySelector('.gallery-lightbox__close');
-  var prevBtn = lb.querySelector('.gallery-lightbox__nav--prev');
-  var nextBtn = lb.querySelector('.gallery-lightbox__nav--next');
-  var activeIndex = 0;
+  var lbItems = [];
+  var lbIndex = 0;
+  var lbOnClose = null;
 
-  function show(index) {
-    activeIndex = (index + triggers.length) % triggers.length;
-    var trigger = triggers[activeIndex];
-    var triggerImg = trigger.querySelector('img');
+  function lbShow(index) {
+    lbIndex = (index + lbItems.length) % lbItems.length;
+    var item = lbItems[lbIndex];
     lbImg.classList.remove('is-shown');
     window.requestAnimationFrame(function () {
-      lbImg.src = trigger.getAttribute('data-full') || trigger.getAttribute('href') || triggerImg.src;
-      lbImg.alt = triggerImg.alt || '';
+      lbImg.src = item.full;
+      lbImg.alt = item.alt || '';
       window.requestAnimationFrame(function () { lbImg.classList.add('is-shown'); });
     });
-    counter.textContent = (activeIndex + 1) + ' / ' + triggers.length;
+    counter.textContent = (lbIndex + 1) + ' / ' + lbItems.length;
   }
-  function openLightbox(trigger) {
-    show(triggers.indexOf(trigger));
+  function openLightbox(items, index, onClose) {
+    lbItems = items;
+    lbOnClose = onClose || null;
+    lbShow(index);
     lb.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   }
   function closeLightbox() {
     lb.classList.remove('is-open');
     document.body.style.overflow = '';
+    if (lbOnClose) { var cb = lbOnClose; lbOnClose = null; cb(); }
   }
-
-  triggers.forEach(function (trigger) {
-    trigger.addEventListener('click', function (e) {
-      e.preventDefault();
-      openLightbox(trigger);
-    });
-  });
-
-  closeBtn.addEventListener('click', closeLightbox);
-  prevBtn.addEventListener('click', function () { show(activeIndex - 1); });
-  nextBtn.addEventListener('click', function () { show(activeIndex + 1); });
+  lb.querySelector('.gallery-lightbox__close').addEventListener('click', closeLightbox);
+  lb.querySelector('.gallery-lightbox__nav--prev').addEventListener('click', function () { lbShow(lbIndex - 1); });
+  lb.querySelector('.gallery-lightbox__nav--next').addEventListener('click', function () { lbShow(lbIndex + 1); });
   lb.addEventListener('click', function (e) { if (e.target === lb) closeLightbox(); });
   document.addEventListener('keydown', function (e) {
     if (!lb.classList.contains('is-open')) return;
     if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') show(activeIndex - 1);
-    if (e.key === 'ArrowRight') show(activeIndex + 1);
+    if (e.key === 'ArrowLeft') lbShow(lbIndex - 1);
+    if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
   });
-})();
-</script>
 
-<!-- Scroll reveal for .g-reveal blocks and the ghost-text parallax -->
-<script>
-(function () {
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.g-reveal').forEach(function (el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.g-reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  /* ---------------- Carousel: 3D coverflow, mixes photos and videos ---------------- */
+  function playInline(card, mp4, poster) {
+    var video = document.createElement('video');
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.poster = poster;
+    var s = document.createElement('source');
+    s.src = mp4; s.type = 'video/mp4';
+    video.appendChild(s);
+    card.innerHTML = '';
+    card.appendChild(video);
+    video.play().catch(function () {});
   }
 
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.addEventListener('scroll', function () {
-      document.querySelectorAll('.g-ghost').forEach(function (g) {
-        g.style.transform = 'translateY(' + (window.scrollY * 0.08) + 'px)';
+  function createCarousel(id, items) {
+    var root = document.getElementById(id);
+    if (!root) return;
+    root.innerHTML =
+      '<div class="carousel__stage"></div>' +
+      '<div class="carousel__controls">' +
+        '<button type="button" class="carousel__btn carousel__btn--prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>' +
+        '<div class="carousel__dots"></div>' +
+        '<button type="button" class="carousel__btn carousel__btn--next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>' +
+      '</div>';
+
+    var stage = root.querySelector('.carousel__stage');
+    var dotsWrap = root.querySelector('.carousel__dots');
+    var photoItems = items.filter(function (it) { return it.kind !== 'video'; });
+    var activeIndex = Math.floor(items.length / 2);
+
+    items.forEach(function (it, i) {
+      var isVideo = it.kind === 'video';
+      var slide = document.createElement('div');
+      slide.className = 'carousel__slide' + (isVideo ? ' carousel__slide--video' : '');
+      if (isVideo) {
+        slide.innerHTML =
+          '<img src="' + it.poster + '" alt="' + it.alt + '" loading="lazy">' +
+          '<span class="carousel__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>' +
+          (it.cap ? '<span class="carousel__caption">' + it.cap + '</span>' : '');
+      } else {
+        var srcset = (THUMB_W[it.thumb] ? it.thumb + ' ' + THUMB_W[it.thumb] + 'w, ' : '') + (FULL_W[it.full] ? it.full + ' ' + FULL_W[it.full] + 'w' : '');
+        slide.innerHTML =
+          '<img src="' + it.full + '" srcset="' + srcset + '" sizes="(max-width: 640px) 160px, 240px" alt="' + it.alt + '" loading="lazy">' +
+          '<span class="carousel__slide__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>' +
+          (it.cap ? '<span class="carousel__caption">' + it.cap + '</span>' : '');
+      }
+      function activate() {
+        if (i !== activeIndex) { userSetActive(i); return; }
+        if (isVideo) {
+          stopAutoplay();
+          playInline(slide, it.mp4, it.poster);
+        } else {
+          pauseForLightbox();
+          openLightbox(photoItems, photoItems.indexOf(it), resumeAfterLightbox);
+        }
+      }
+      slide.addEventListener('click', activate);
+      slide.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
       });
-    }, { passive: true });
+      slide.setAttribute('tabindex', '0');
+      slide.setAttribute('role', 'button');
+      slide.setAttribute('aria-label', isVideo ? 'Play video: ' + (it.cap || it.alt) : 'View photo: ' + it.alt);
+      stage.appendChild(slide);
+
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel__dot';
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', function () { userSetActive(i); });
+      dotsWrap.appendChild(dot);
+    });
+
+    var slides = stage.querySelectorAll('.carousel__slide');
+    var dots = dotsWrap.querySelectorAll('.carousel__dot');
+
+    function render() {
+      slides.forEach(function (slide, i) {
+        var offset = i - activeIndex;
+        var isActive = i === activeIndex;
+        slide.style.transform = 'translateX(calc(-50% + ' + offset * 96 + 'px)) rotateY(' + offset * -36 + 'deg) scale(' + (isActive ? 1 : 0.78) + ')';
+        slide.style.zIndex = String(100 - Math.abs(offset));
+        slide.style.opacity = Math.abs(offset) > 4 ? '0' : '1';
+        slide.classList.toggle('is-active', isActive);
+      });
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === activeIndex); });
+    }
+
+    function setActive(i) {
+      activeIndex = (i + items.length) % items.length;
+      render();
+    }
+    function userSetActive(i) {
+      setActive(i);
+      restartAutoplay();
+    }
+
+    root.querySelector('.carousel__btn--prev').addEventListener('click', function () { userSetActive(activeIndex - 1); });
+    root.querySelector('.carousel__btn--next').addEventListener('click', function () { userSetActive(activeIndex + 1); });
+    render();
+
+    /* ---------------- Auto-advance every 2s ----------------
+       Keeps running while the user is simply looking at it — no
+       pause-on-hover, since resting the cursor near the carousel is the
+       normal way to view it, and pausing there made autoplay look broken.
+       It only stops for good once a video is played in this carousel, and
+       pauses while that carousel's lightbox is open (so photos don't
+       silently drift on while enlarged), resuming when it's closed. */
+    var autoplayTimer = null;
+    var autoplayStopped = false;
+    var lightboxOpenCount = 0;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function clearAutoplayTimer() {
+      if (autoplayTimer) { window.clearInterval(autoplayTimer); autoplayTimer = null; }
+    }
+    function startAutoplay() {
+      if (reduceMotion || autoplayStopped || autoplayTimer || lightboxOpenCount > 0 || items.length < 2) return;
+      autoplayTimer = window.setInterval(function () { setActive(activeIndex + 1); }, 2000);
+    }
+    function restartAutoplay() {
+      clearAutoplayTimer();
+      startAutoplay();
+    }
+    function stopAutoplay() {
+      autoplayStopped = true;
+      clearAutoplayTimer();
+    }
+    function pauseForLightbox() {
+      lightboxOpenCount++;
+      clearAutoplayTimer();
+    }
+    function resumeAfterLightbox() {
+      lightboxOpenCount = Math.max(0, lightboxOpenCount - 1);
+      startAutoplay();
+    }
+
+    if ('IntersectionObserver' in window) {
+      var rio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          root.classList.add('is-visible');
+          startAutoplay();
+          rio.unobserve(entry.target);
+        });
+      }, { threshold: 0.15 });
+      rio.observe(root);
+    } else {
+      startAutoplay();
+      root.classList.add('is-visible');
+    }
   }
+
+  createCarousel('wmdCarousel', WMD_PHOTOS);
+  createCarousel('crochetCarousel', CROCHET_PHOTOS);
+  createCarousel('liveCarousel', LIVE_PHOTOS);
+  createCarousel('studioCarousel', STUDIO_PHOTOS);
+  createCarousel('watchCarousel', ALL_VIDEOS.map(function (v) {
+    v.kind = 'video';
+    return v;
+  }));
 })();
 </script>
 </body>
