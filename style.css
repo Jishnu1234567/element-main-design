@@ -269,6 +269,7 @@ h1, h2, h3, h4 {
   letter-spacing: .04em;
 }
 .wordmark__flip { display: inline-block; transform: scaleX(-1); }
+.wordmark__flip--v { display: inline-block; transform: scaleY(-1); }
 .loader__text.wordmark { color: var(--color-brand-gold); }
 
 @keyframes loader-logo-pop {
