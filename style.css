@@ -80,6 +80,7 @@
 
 :root {
   --color-brand-gold:      #C9962E;
+  --color-brand-gold-text: #8C6416; /* darker gold for text/icons on light backgrounds; keeps AA contrast */
   --color-brand-teal:      #234C4C;
   --color-brand-cream:     #F3EAD8;
   --color-brand-sage:      #6E7B4F;
@@ -192,7 +193,7 @@ h1, h2, h3, h4 {
 }
 .btn-pill:hover { transform: scale(1.05); background: currentColor; border-radius: .4rem 1.75rem .4rem 1.75rem; }
 .btn-pill:hover span { color: var(--btn-hover-fg, var(--base-bg)); }
-.btn-pill span { transition: color .25s ease; }
+.btn-pill span { transition: color .25s ease; display: inline-flex; align-items: center; gap: .5rem; }
 
 /* ---------- Loader ---------- */
 .loader {
@@ -298,6 +299,7 @@ h1, h2, h3, h4 {
   padding: clamp(1rem, .8rem + .8vw, 2.125rem) clamp(1.25rem, 1rem + 1vw, 2.4rem);
   pointer-events: none;
   color: rgb(var(--accent-fg));
+  text-shadow: 0 1px 3px rgba(0,0,0,.5), 0 1px 10px rgba(0,0,0,.3);
   mix-blend-mode: normal;
   opacity: 0;
   transition: opacity .6s ease .3s, color .3s ease;
@@ -334,6 +336,7 @@ body.dark-header .site-header { color: var(--base-fg); }
   height: 2px;
   background: currentColor;
   border-radius: 2px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.45));
   transition: transform .35s cubic-bezier(.68,-.4,.27,1.4), opacity .25s ease;
 }
 .menu-toggle.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
@@ -574,8 +577,9 @@ body.dark-header .site-header { color: var(--base-fg); }
   z-index: 0;
   background-size: cover;
   background-position: center;
+  pointer-events: none;
 }
-.features-section__scrim { position: absolute; inset: 0; z-index: 1; background: rgba(10,8,6,.74); }
+.features-section__scrim { position: absolute; inset: 0; z-index: 1; background: rgba(10,8,6,.74); pointer-events: none; }
 .features-section__grid {
   position: relative;
   z-index: 2;
@@ -1477,7 +1481,8 @@ body.dark-header .site-header { color: var(--base-fg); }
 /* Capabilities: two plain columns of skills, no borders */
 .capability-columns { display: grid; gap: var(--gutter); grid-template-columns: 1fr; margin-top: var(--gutter); }
 @media (min-width: 640px) { .capability-columns { grid-template-columns: 1fr 1fr; } }
-.capability-columns p { font-size: clamp(1.1rem, 1rem + .4vw, 1.375rem); line-height: 1.9; }
+.capability-columns p { font-size: clamp(1.1rem, 1rem + .4vw, 1.375rem); line-height: 1.9; margin-bottom: 1rem; }
+.capability-columns p:last-child { margin-bottom: 0; }
 
 .band-heading { font-size: clamp(2rem, 1.4rem + 3vw, 3.75rem); font-weight: 600; letter-spacing: -.02em; line-height: 1; }
 .section-heading { font-size: clamp(2rem, 1.4rem + 3vw, 4.5rem); text-align: center; margin-bottom: var(--gutter); letter-spacing: -.02em; }
