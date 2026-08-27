@@ -26,8 +26,9 @@
 <!-- Fonts -->
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="style.min.css?v=9" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.min.css?v=9"></noscript>
+<link rel="preload" href="style.min.css?v=14" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.min.css?v=14"></noscript>
+<link rel="stylesheet" href="chatbot.css?v=1">
 
 <!-- Tailwind CSS (precompiled — see vendor/tailwind/programs.min.css) -->
 <link rel="stylesheet" href="vendor/tailwind/programs.min.css">
@@ -37,7 +38,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="programs-page.min.css?v=2">
+<link rel="stylesheet" href="programs-page.min.css?v=3">
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -125,6 +126,65 @@
   </div>
 </section>
 
+<!-- Live at Element Culture: natural-ratio cards -->
+<section class="projects-grid" style="padding-top:clamp(3rem,5vw,4rem);">
+  <div class="page-container">
+    <h2 class="band-heading" style="text-align:center;margin-bottom:.75rem; color:#fff;">Live at Element Culture</h2>
+    <p style="max-width:38rem;margin:0 auto clamp(3rem,6vw,4.5rem);text-align:center;font-size:clamp(1.1rem,1rem + .4vw,1.375rem);line-height:1.6;color:rgba(255,255,255,.85);">Our events arm hosts listening sessions, open mics, masterclasses and workshops for Kochi&rsquo;s music community &mdash; here&rsquo;s a look at what&rsquo;s happened on stage.</p>
+
+    <div class="live-grid" id="liveGrid">
+      <a class="live-card" href="public/poster/EF3A1ED9-0968-4508-AC8C-62C7E5776F64.webp">
+        <div class="live-card__media">
+          <img src="public/poster/EF3A1ED9-0968-4508-AC8C-62C7E5776F64.webp" width="900" height="1148" alt="Listen: an intimate concert featuring Tejashree Ingawale and Bhadra Rajin at Element Culture" loading="lazy">
+        </div>
+        <div class="live-card__caption">
+          <h3 style="color:#fff;">Tejashree Ingawale &amp; Bhadra Rajin</h3>
+          <p style="color:rgba(255,255,255,.7);">An intimate listening session blending voice and strings.</p>
+        </div>
+      </a>
+      <a class="live-card" href="public/poster/IMG_2911.webp">
+        <div class="live-card__media">
+          <img src="public/poster/IMG_2911.webp" width="900" height="1126" alt="Listen: a concert featuring the Jupiter Strings quartet" loading="lazy">
+        </div>
+        <div class="live-card__caption">
+          <h3 style="color:#fff;">Jupiter Strings</h3>
+          <p style="color:rgba(255,255,255,.7);">A chamber quartet session, live and unplugged.</p>
+        </div>
+      </a>
+      <a class="live-card" href="public/poster/1f702618-6d98-40d3-8f14-9c155be0da4d.webp">
+        <div class="live-card__media">
+          <img src="public/poster/1f702618-6d98-40d3-8f14-9c155be0da4d.webp" width="900" height="1200" alt="Listen: Manu Manjith performing new songs at Element Culture" loading="lazy">
+        </div>
+        <div class="live-card__caption">
+          <h3 style="color:#fff;">Manu Manjith</h3>
+          <p style="color:rgba(255,255,255,.7);">New songs performed live, straight from the artist.</p>
+        </div>
+      </a>
+      <a class="live-card" href="public/poster/DBC6F6D3-0160-4FD6-A62F-770EEC9E8287.webp">
+        <div class="live-card__media">
+          <img src="public/poster/DBC6F6D3-0160-4FD6-A62F-770EEC9E8287.webp" width="900" height="1350" alt="Masterclass with musician and author Francis Manakkil" loading="lazy">
+        </div>
+        <div class="live-card__caption">
+          <h3 style="color:#fff;">Francis Manakkil</h3>
+          <p style="color:rgba(255,255,255,.7);">A masterclass with the musician and author.</p>
+        </div>
+      </a>
+      <a class="live-card" href="public/poster/CED9A60D-268D-42A4-A66B-20643A38387C.webp">
+        <div class="live-card__media">
+          <img src="public/poster/CED9A60D-268D-42A4-A66B-20643A38387C.webp" width="900" height="1200" alt="Open Mic night, open to all musicians, any genre and any instrument" loading="lazy">
+        </div>
+        <div class="live-card__caption">
+          <h3 style="color:#fff;">Open Mic Night</h3>
+          <p style="color:rgba(255,255,255,.7);">Open to all musicians &mdash; any genre, any instrument.</p>
+        </div>
+      </a>
+    </div>
+
+    <div style="text-align:center;margin-top:clamp(2rem,4vw,3rem);">
+      <a href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20enquire%20about%20hosting%20an%20event%20at%20Element%20Culture." target="_blank" rel="noopener" class="btn-pill" style="color:var(--color-brand-gold);border-color:var(--color-brand-gold);"><span>Host an event with us</span></a>
+    </div>
+  </div>
+</section>
 
 <!-- BIG TICKER -->
 <div class="overflow-hidden py-6 border-y border-black-10 bg-element-dark">
@@ -321,6 +381,7 @@
 <div class="menu-overlay" id="menuOverlay">
   <nav class="menu-overlay__list">
     <a class="menu-overlay__item" href="programs.html" data-color="#C9962E" data-hover="#F3EAD8">Programs</a>
+    <a class="menu-overlay__item" href="index.html" data-color="#C97B4A" data-hover="#F3EAD8">Home</a>
     <a class="menu-overlay__item" href="about.html" data-color="#234C4C" data-hover="#B9C79A">About</a>
     <a class="menu-overlay__item" href="team.html" data-color="#7A2E3A" data-hover="#E8C4B8">Team</a>
     <a class="menu-overlay__item" href="gallery.html" data-color="#6E7B4F" data-hover="#F3EAD8">Gallery</a>
@@ -343,6 +404,7 @@
 </div>
 
 <script src="script.min.js?v=5"></script>
+<script src="chatbot.js?v=2" defer></script>
 <script src="vendor/gsap/gsap.min.js"></script>
 <script src="vendor/gsap/ScrollTrigger.min.js"></script>
 <script src="fly-text.min.js?v=5" defer></script>
@@ -580,9 +642,18 @@ gsap.from("[data-anim='poster']", {
 
   // 1. Event Delegation for opening (Works on dynamic content!)
   document.addEventListener('click', function(e) {
+    // Live at Element Culture cards are <a href="..."> wrapping the image —
+    // open the lightbox instead of navigating to the image URL directly.
+    const liveCard = e.target.closest('.live-card');
+    if (liveCard) {
+      e.preventDefault();
+      const img = liveCard.querySelector('img');
+      if (img) openLightbox(img.src, img.alt);
+      return;
+    }
     // Check if the clicked element (or its parent) is a poster or program card
     const container = e.target.closest('.poster-container, .program-card-rossi__media');
-    
+
     if (container) {
       const img = container.querySelector('img');
       if (img) {
@@ -612,7 +683,25 @@ gsap.from("[data-anim='poster']", {
   });
 })();
 
-
+// Live at Element Culture: staggered scroll reveal
+(function () {
+  var cards = document.querySelectorAll('.live-card');
+  if (!cards.length) return;
+  cards.forEach(function (c, i) { c.style.setProperty('--i', i % 6); });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    cards.forEach(function (c) { observer.observe(c); });
+  } else {
+    cards.forEach(function (c) { c.classList.add('is-visible'); });
+  }
+})();
 </script>
 
 </body>

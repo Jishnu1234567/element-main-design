@@ -28,8 +28,8 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="style.min.css?v=9" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.min.css?v=9"></noscript>
+<link rel="preload" href="style.min.css?v=14" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.min.css?v=14"></noscript>
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -102,7 +102,8 @@
 }
 </script>
 
-<link rel="stylesheet" href="index-page.min.css?v=5">
+<link rel="stylesheet" href="index-page.min.css?v=12">
+<link rel="stylesheet" href="chatbot.css?v=1">
 </head>
 <body>
 
@@ -113,6 +114,14 @@
     <span class="loader__text wordmark">ELEM<span class="wordmark__flip">E</span><span class="wordmark__flip">N</span><span class="wordmark__flip--v">T</span></span>
   </div>
 </div>
+
+<audio id="introAudio" src="public/audio/logo-voiceover.mp3" preload="auto" playsinline autoplay></audio>
+<script>
+  /* Earliest possible play attempt — fires the instant this point in the
+     HTML is parsed, before the header/hero/video markup below it, so the
+     browser's play attempt lines up with the loading screen appearing. */
+  document.getElementById('introAudio').play().catch(function () {});
+</script>
 
 <main>
 
@@ -129,9 +138,15 @@
         <img src="public/icons/logo-icon-gold.png" width="200" height="180" alt="">
         <span class="wordmark">ELEM<span class="wordmark__flip">E</span><span class="wordmark__flip">N</span><span class="wordmark__flip--v">T</span></span>
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="hero-navbar__controls">
+        <button class="audio-toggle" id="audioToggle" type="button" aria-label="Mute intro audio" aria-pressed="false">
+          <svg class="audio-toggle__icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
+          <svg class="audio-toggle__icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m23 9-6 6"/><path d="m17 9 6 6"/></svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
     <div class="hero-kinetic" id="heroKinetic">
@@ -140,6 +155,7 @@
           <span class="hk-line"><span class="hk-word"><span class="hk-word__inner">A</span></span> <span class="hk-word"><span class="hk-word__inner">creative</span></span> <span class="hk-word"><span class="hk-word__inner">music</span></span> <span class="hk-word"><span class="hk-word__inner">hub</span></span></span>
           <span class="hk-line"><span class="hk-word"><span class="hk-word__inner">in</span></span> <span class="hk-word"><span class="hk-word__inner">the</span></span> <span class="hk-word"><span class="hk-word__inner">heart</span></span> <span class="hk-word"><span class="hk-word__inner">of</span></span> <span class="hk-word hk-word--accent"><span class="hk-word__inner">Kochi</span></span></span>
         </h1>
+        <span class="hero-tagline" id="heroTagline">Listen<span class="hero-tagline__dot">&middot;</span>Feel<span class="hero-tagline__dot">&middot;</span>Create</span>
       </div>
       <div class="hero-kinetic__secondary" id="heroSecondary">
         <span class="hero-kinetic__rule" aria-hidden="true"></span>
@@ -309,72 +325,33 @@
     </div>
   </section>
 
-  <!-- Live shows / events: natural-ratio cards -->
+  <!-- Gallery teaser: a taste of the real studio, pointing through to the full gallery -->
   <section class="projects-grid" style="padding-top:0;">
     <div class="page-container">
-      <h2 class="band-heading" style="text-align:center;margin-bottom:.75rem;">Live at Element Culture</h2>
-      <p style="max-width:38rem;margin:0 auto clamp(4.5rem,8vw,6.5rem);text-align:center;font-size:clamp(1.1rem,1rem + .4vw,1.375rem);line-height:1.6;opacity:.85;">Our events arm hosts listening sessions, open mics, masterclasses and workshops for Kochi&rsquo;s music community &mdash; here&rsquo;s a look at what&rsquo;s happened on stage.</p>
+      <h2 class="band-heading" style="text-align:center;margin-bottom:.75rem;">From the gallery</h2>
+      <p style="max-width:38rem;margin:0 auto clamp(3rem,6vw,4rem);text-align:center;font-size:clamp(1.1rem,1rem + .4vw,1.375rem);line-height:1.6;opacity:.85;">Real sessions, real sound, straight from the room — a peek from the archive.</p>
 
-      <div class="live-grid" id="liveGrid">
-        <a class="live-card" href="public/poster/EF3A1ED9-0968-4508-AC8C-62C7E5776F64.webp">
-          <div class="live-card__media">
-            <img src="public/poster/EF3A1ED9-0968-4508-AC8C-62C7E5776F64.webp" width="900" height="1148" alt="Listen: an intimate concert featuring Tejashree Ingawale and Bhadra Rajin at Element Culture" loading="lazy">
+      <a href="gallery.html" class="gallery-teaser" aria-label="View the full gallery of photos and videos">
+        <div class="gallery-teaser__grid">
+          <div class="gallery-teaser__item">
+            <img src="public/gallery/live-music/photo-02-thumb.webp" alt="A vocalist performing with a full band on stage at Element Culture" loading="lazy">
           </div>
-          <div class="live-card__caption">
-            <h3>Tejashree Ingawale &amp; Bhadra Rajin</h3>
-            <p>An intimate listening session blending voice and strings.</p>
+          <div class="gallery-teaser__item">
+            <img src="public/IMG-20260723-WA0008-thumb.webp" alt="Live room with a condenser microphone and the illuminated Element logo on the wall" loading="lazy">
           </div>
-        </a>
-        <a class="live-card live-card--caption-top" href="public/poster/IMG_2916.webp">
-          <div class="live-card__caption">
-            <h3>Be in Your Element</h3>
-            <p>A World Music Day workshop led by Tejashree Ingawale.</p>
+          <div class="gallery-teaser__item">
+            <img src="public/gallery/world-music-day/photo-06-thumb.webp" alt="A warm greeting between a participant and the facilitator at the World Music Day workshop" loading="lazy">
           </div>
-          <div class="live-card__media">
-            <img src="public/poster/IMG_2916.webp" width="900" height="896" alt="Be in Your Element: a World Music Day workshop with Tejashree Ingawale" loading="lazy">
+          <div class="gallery-teaser__item gallery-teaser__item--video">
+            <img src="public/gallery/world-music-day/wmd-6219-poster.webp" alt="Tejashree Ingawale singing with the tanpura at the World Music Day workshop" loading="lazy">
+            <span class="gallery-teaser__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           </div>
-        </a>
-        <a class="live-card" href="public/poster/IMG_2911.webp">
-          <div class="live-card__media">
-            <img src="public/poster/IMG_2911.webp" width="900" height="1126" alt="Listen: a concert featuring the Jupiter Strings quartet" loading="lazy">
-          </div>
-          <div class="live-card__caption">
-            <h3>Jupiter Strings</h3>
-            <p>A chamber quartet session, live and unplugged.</p>
-          </div>
-        </a>
-        <a class="live-card" href="public/poster/1f702618-6d98-40d3-8f14-9c155be0da4d.webp">
-          <div class="live-card__media">
-            <img src="public/poster/1f702618-6d98-40d3-8f14-9c155be0da4d.webp" width="900" height="1200" alt="Listen: Manu Manjith performing new songs at Element Culture" loading="lazy">
-          </div>
-          <div class="live-card__caption">
-            <h3>Manu Manjith</h3>
-            <p>New songs performed live, straight from the artist.</p>
-          </div>
-        </a>
-        <a class="live-card" href="public/poster/DBC6F6D3-0160-4FD6-A62F-770EEC9E8287.webp">
-          <div class="live-card__media">
-            <img src="public/poster/DBC6F6D3-0160-4FD6-A62F-770EEC9E8287.webp" width="900" height="1350" alt="Masterclass with musician and author Francis Manakkil" loading="lazy">
-          </div>
-          <div class="live-card__caption">
-            <h3>Francis Manakkil</h3>
-            <p>A masterclass with the musician and author.</p>
-          </div>
-        </a>
-        <a class="live-card" href="public/poster/CED9A60D-268D-42A4-A66B-20643A38387C.webp">
-          <div class="live-card__media">
-            <img src="public/poster/CED9A60D-268D-42A4-A66B-20643A38387C.webp" width="900" height="1200" alt="Open Mic night, open to all musicians, any genre and any instrument" loading="lazy">
-          </div>
-          <div class="live-card__caption">
-            <h3>Open Mic Night</h3>
-            <p>Open to all musicians &mdash; any genre, any instrument.</p>
-          </div>
-        </a>
-      </div>
-
-      <div style="text-align:center;margin-top:clamp(2rem,4vw,3rem);">
-        <a href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20enquire%20about%20hosting%20an%20event%20at%20Element%20Culture." target="_blank" rel="noopener" class="btn-pill" style="color:var(--color-brand-gold);border-color:var(--color-brand-gold);"><span>Host an event with us</span></a>
-      </div>
+        </div>
+        <span class="gallery-teaser__cta">
+          View the full gallery
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </span>
+      </a>
     </div>
   </section>
 
@@ -469,6 +446,7 @@
 <!-- Fullscreen menu overlay -->
 <div class="menu-overlay" id="menuOverlay">
   <nav class="menu-overlay__list">
+    <a class="menu-overlay__item" href="index.html" data-color="#C97B4A" data-hover="#F3EAD8">Home</a>
     <a class="menu-overlay__item" href="about.html" data-color="#234C4C" data-hover="#B9C79A">About</a>
     <a class="menu-overlay__item" href="programs.html" data-color="#C9962E" data-hover="#F3EAD8">Programs</a>
     <a class="menu-overlay__item" href="team.html" data-color="#7A2E3A" data-hover="#E8C4B8">Team</a>
@@ -477,21 +455,14 @@
   </nav>
 </div>
 
-<!-- Lightbox: popup viewer for the "Live at Element Culture" images -->
-<!-- FIX: Removed aria-hidden to prevent focus conflict warnings. visibility: hidden handles accessibility natively. -->
-<div class="lightbox" id="lightbox">
-  <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Close image">&times;</button>
-  <div class="lightbox__stage">
-    <img src="" alt="" id="lightboxImg">
-  </div>
-</div>
-
 <a class="whatsapp-fab" href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20know%20more%20about%20Element%20Sound%20Studio." target="_blank" rel="noopener" aria-label="Chat with Element Sound Studio on WhatsApp">
   <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.376 3 4 8.373 4 15c0 2.386.703 4.605 1.912 6.463L4 29l7.716-1.878A11.9 11.9 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.75c-1.94 0-3.745-.57-5.264-1.55l-.377-.24-4.583 1.116 1.145-4.47-.246-.39A9.7 9.7 0 0 1 5.25 15c0-5.938 4.816-10.75 10.754-10.75S26.75 9.062 26.75 15 21.94 24.75 16.004 24.75zm5.63-8.02c-.31-.155-1.828-.902-2.11-1.005-.283-.103-.489-.155-.694.155-.207.31-.797 1.005-.978 1.21-.18.207-.36.232-.668.078-.31-.155-1.306-.481-2.487-1.534-.919-.82-1.539-1.832-1.72-2.14-.18-.31-.02-.478.135-.633.14-.138.31-.36.464-.54.155-.18.207-.31.31-.516.103-.207.052-.387-.026-.542-.078-.155-.694-1.672-.951-2.29-.25-.6-.505-.52-.694-.53l-.592-.01c-.207 0-.542.078-.826.387-.283.31-1.08 1.056-1.08 2.574s1.106 2.988 1.26 3.194c.155.207 2.177 3.324 5.276 4.66.737.318 1.312.508 1.76.65.74.235 1.412.202 1.944.123.593-.089 1.828-.747 2.086-1.468.258-.72.258-1.337.18-1.468-.077-.13-.283-.207-.593-.362z"/></svg>
   <span class="whatsapp-fab__label">Chat on WhatsApp</span>
 </a>
 
 <script src="script.min.js?v=5"></script>
+<script src="intro-audio.js?v=3"></script>
+<script src="chatbot.js?v=2" defer></script>
 <script src="vendor/gsap/gsap.min.js" defer></script>
 <script src="vendor/gsap/ScrollTrigger.min.js" defer></script>
 <script src="fly-text.min.js?v=5" defer></script>
@@ -740,82 +711,6 @@
 })();
 </script>
 
-<!-- 3. Live at Element Culture: staggered scroll reveal -->
-<script>
-(function () {
-  var cards = document.querySelectorAll('.live-card');
-  if (!cards.length) return;
-
-  cards.forEach(function (c, i) { c.style.setProperty('--i', i % 6); });
-
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    cards.forEach(function (c) { observer.observe(c); });
-  } else {
-    cards.forEach(function (c) { c.classList.add('is-visible'); });
-  }
-})();
-</script>
-
-<!-- 3b. Live at Element Culture: click an image to open it in a popup -->
-<!-- FIX: Removed aria-hidden toggling. visibility: hidden natively handles screen readers. Added slight delay to focus() to prevent race condition warnings. -->
-<script>
-(function () {
-  var lightbox = document.getElementById('lightbox');
-  var img = document.getElementById('lightboxImg');
-  var closeBtn = document.getElementById('lightboxClose');
-  var cards = document.querySelectorAll('.live-card');
-  if (!lightbox || !img || !closeBtn || !cards.length) return;
-
-  function open(src, alt) {
-    img.src = src;
-    img.alt = alt || '';
-    lightbox.classList.add('is-open');
-    document.body.classList.add('lightbox-open');
-    
-    // Slight delay ensures the element is fully visible and rendered before focusing
-    setTimeout(function() {
-      closeBtn.focus();
-    }, 50);
-  }
-
-  function close() {
-    lightbox.classList.remove('is-open');
-    document.body.classList.remove('lightbox-open');
-    
-    // Clear image source after transition to prevent flash on next open
-    setTimeout(function() {
-      if (!lightbox.classList.contains('is-open')) {
-        img.src = '';
-      }
-    }, 350);
-  }
-
-  cards.forEach(function (card) {
-    card.addEventListener('click', function (e) {
-      e.preventDefault();
-      var full = card.getAttribute('href');
-      var thumb = card.querySelector('img');
-      open(full, thumb ? thumb.alt : '');
-    });
-  });
-
-  closeBtn.addEventListener('click', close);
-  lightbox.addEventListener('click', function (e) {
-    if (e.target === lightbox) close();
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) close();
-  });
-})();
-</script>
 
 <!-- 4. Testimonials: 2s autoplay + prev/next + dots + swipe -->
 <script>
