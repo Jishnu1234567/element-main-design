@@ -102,7 +102,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="index-page.min.css?v=13">
+<link rel="stylesheet" href="index-page.min.css?v=14">
 <link rel="stylesheet" href="chatbot.css?v=1">
 </head>
 <body>
@@ -208,7 +208,7 @@
       <h2 class="band-heading" style="text-align:center;margin-bottom:.75rem;">Inside the studio</h2>
       <p style="max-width:38rem;margin:0 auto clamp(2.5rem,5vw,3.5rem);text-align:center;font-size:clamp(1.1rem,1rem + .4vw,1.375rem);line-height:1.6;opacity:.85;">Our live room, control desk and the equipment behind every session.</p>
 
-      <a href="gallery.html" class="studio-showcase" aria-label="View the full gallery of the studio and equipment">
+      <a href="gallery.html#insideStudio" class="studio-showcase" aria-label="View the full gallery of the studio and equipment">
         <div class="studio-showcase__grid">
           <div class="studio-showcase__item studio-showcase__item--a">
             <img src="public/equipments/IMG-20260723-WA0008-thumb.webp" alt="Live room with a condenser microphone and the illuminated Element logo on the wall" loading="lazy">
@@ -366,27 +366,27 @@
       <h2 class="band-heading" style="text-align:center;margin-bottom:.75rem;">From the gallery</h2>
       <p style="max-width:38rem;margin:0 auto clamp(3rem,6vw,4rem);text-align:center;font-size:clamp(1.1rem,1rem + .4vw,1.375rem);line-height:1.6;opacity:.85;">Real sessions, real sound, straight from the room — a peek from the archive.</p>
 
-      <a href="gallery.html" class="gallery-teaser" aria-label="View the full gallery of photos and videos">
+      <div class="gallery-teaser">
         <div class="gallery-teaser__grid">
-          <div class="gallery-teaser__item">
+          <a href="gallery.html#liveMusic" class="gallery-teaser__item" aria-label="View the Live Music section of the gallery">
             <img src="public/gallery/live-music/photo-02-thumb.webp" alt="A vocalist performing with a full band on stage at Element Culture" loading="lazy">
-          </div>
-          <div class="gallery-teaser__item">
+          </a>
+          <a href="gallery.html#crochetCircle" class="gallery-teaser__item" aria-label="View the Crochet Circle section of the gallery">
             <img src="public/gallery/crochet/photo-03-thumb.webp" alt="A participant focused on a crochet craft activity at Element Culture" loading="lazy">
-          </div>
-          <div class="gallery-teaser__item">
+          </a>
+          <a href="gallery.html#worldMusicDay" class="gallery-teaser__item" aria-label="View the World Music Day section of the gallery">
             <img src="public/gallery/world-music-day/photo-06-thumb.webp" alt="A warm greeting between a participant and the facilitator at the World Music Day workshop" loading="lazy">
-          </div>
-          <div class="gallery-teaser__item gallery-teaser__item--video">
+          </a>
+          <a href="gallery.html#worldMusicDay" class="gallery-teaser__item gallery-teaser__item--video" aria-label="Watch World Music Day videos in the gallery">
             <img src="public/gallery/world-music-day/wmd-6219-poster.webp" alt="Tejashree Ingawale singing with the tanpura at the World Music Day workshop" loading="lazy">
             <span class="gallery-teaser__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-          </div>
+          </a>
         </div>
-        <span class="gallery-teaser__cta">
+        <a href="gallery.html" class="gallery-teaser__cta">
           View the full gallery
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </span>
-      </a>
+        </a>
+      </div>
     </div>
   </section>
 
