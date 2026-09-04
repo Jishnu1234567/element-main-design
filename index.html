@@ -28,8 +28,8 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="style.min.css?v=21" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.min.css?v=21"></noscript>
+<link rel="preload" href="style.min.css?v=24" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.min.css?v=24"></noscript>
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -201,35 +201,78 @@
     </div>
   </section>
 
-  <!-- Studio & equipment showcase: a real look at the room and the gear -->
-  <section class="projects-grid" style="padding-bottom:0;">
-    <div class="page-container">
-      <h2 class="band-heading" style="text-align:center;margin-bottom:.75rem;">Inside the studio</h2>
-      <p style="max-width:38rem;margin:0 auto clamp(2.5rem,5vw,3.5rem);text-align:center;font-size:clamp(1.1rem,1rem + .4vw,1.375rem);line-height:1.6;opacity:.85;">Our live room, control desk and the equipment behind every session.</p>
-
-      <a href="gallery.html#insideStudio" class="studio-showcase" aria-label="View the full gallery of the studio and equipment">
-        <div class="studio-showcase__grid">
-          <div class="studio-showcase__item studio-showcase__item--a tilt-card">
-            <img src="public/equipments/IMG-20260723-WA0008-thumb.webp" alt="Live room with a condenser microphone and the illuminated Element logo on the wall" loading="lazy">
-          </div>
-          
-          <div class="studio-showcase__item studio-showcase__item--c tilt-card">
-            <img src="public/equipments/IMG-20260723-WA0009-thumb.webp" alt="Control room with studio monitors and outboard gear" loading="lazy">
-          </div>
-          <div class="studio-showcase__item studio-showcase__item--d tilt-card">
-            <img src="public/equipments/IMG-20260723-WA0013-thumb.webp" alt="Live room booth with a red sofa and piano-key wall art" loading="lazy">
-          </div>
-          <div class="studio-showcase__item studio-showcase__item--e tilt-card">
-            <img src="public/equipments/IMG-20260723-WA0011-thumb.webp" alt="Control desk with dual monitors and studio speakers facing the live room window" loading="lazy">
-          </div>
-          <div class="studio-showcase__item studio-showcase__item--f tilt-card">
-            <img src="public/equipments/IMG-20260723-WA0012-thumb.webp" alt="Producer workstation with laptop, monitors and outboard processing gear" loading="lazy">
-          </div>
+  <!-- Inside the studio / gallery: drifting tilted photo wall -->
+  <section class="drift-wall-section">
+    <div class="drift-wall" aria-hidden="true">
+      <div class="drift-wall__col" style="--dw-duration:38s;">
+        <div class="drift-wall__track">
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0007-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0008-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3612-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-01-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0007-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0008-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3612-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-01-thumb.webp" loading="lazy" alt=""></div>
         </div>
-        <span class="studio-showcase__cta">
-          See the full studio &amp; equipment gallery
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </span>
+      </div>
+      <div class="drift-wall__col drift-wall__col--reverse" style="--dw-duration:52s;">
+        <div class="drift-wall__track">
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0009-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-02-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3615-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-01-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0009-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-02-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3615-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-01-thumb.webp" loading="lazy" alt=""></div>
+        </div>
+      </div>
+      <div class="drift-wall__col" style="--dw-duration:44s;">
+        <div class="drift-wall__track">
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0013-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-06-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3617-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-04-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0013-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-06-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3617-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-04-thumb.webp" loading="lazy" alt=""></div>
+        </div>
+      </div>
+      <div class="drift-wall__col drift-wall__col--reverse" style="--dw-duration:34s;">
+        <div class="drift-wall__track">
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0011-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-03-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3611-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-04-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0011-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-03-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3611-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-04-thumb.webp" loading="lazy" alt=""></div>
+        </div>
+      </div>
+      <div class="drift-wall__col" style="--dw-duration:48s;">
+        <div class="drift-wall__track">
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0012-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-08-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3623-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0014-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0012-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-08-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3623-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0014-thumb.webp" loading="lazy" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="drift-wall__overlay"></div>
+    <div class="drift-wall__content page-container">
+      <span class="eyebrow pill">Inside the studio</span>
+      <h2 class="band-heading">Every session leaves a trace</h2>
+      <p>Our live room, control desk and the people behind every session &mdash; real sessions, real sound, straight from the room.</p>
+      <a href="gallery.html" class="btn-pill" style="border-color:#fff;color:#fff;--btn-hover-fg:#060010;">
+        <span>View the full gallery
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-3px;margin-left:.35rem;width:1rem;height:1rem;"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
     </div>
   </section>
@@ -357,36 +400,6 @@
     </div>
   </section>
 
-  <!-- Gallery teaser: a taste of the real studio, pointing through to the full gallery -->
-  <section class="projects-grid" style="padding-top:0;">
-    <div class="page-container">
-      <h2 class="band-heading" style="text-align:center;margin-bottom:.75rem;">From the gallery</h2>
-      <p style="max-width:38rem;margin:0 auto clamp(3rem,6vw,4rem);text-align:center;font-size:clamp(1.1rem,1rem + .4vw,1.375rem);line-height:1.6;opacity:.85;">Real sessions, real sound, straight from the room — a peek from the archive.</p>
-
-      <div class="gallery-teaser">
-        <div class="gallery-teaser__grid">
-          <a href="gallery.html#liveMusic" class="gallery-teaser__item gallery-teaser__item--a tilt-card" aria-label="View the Live Music section of the gallery">
-            <img src="public/gallery/live-music/photo-02.webp" alt="A vocalist performing with a full band on stage at Element Culture" loading="lazy">
-          </a>
-          <a href="gallery.html#worldMusicDay" class="gallery-teaser__item gallery-teaser__item--video gallery-teaser__item--b tilt-card" aria-label="Watch World Music Day videos in the gallery">
-            <img src="public/gallery/world-music-day/wmd-6219-poster.webp" alt="Tejashree Ingawale singing with the tanpura at the World Music Day workshop" loading="lazy">
-            <span class="gallery-teaser__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-          </a>
-          <a href="gallery.html#crochetCircle" class="gallery-teaser__item gallery-teaser__item--c tilt-card" aria-label="View the Crochet Circle section of the gallery">
-            <img src="public/gallery/crochet/photo-01.webp" alt="A participant focused on a crochet craft activity at Element Culture" loading="lazy">
-          </a>
-          <a href="gallery.html#worldMusicDay" class="gallery-teaser__item gallery-teaser__item--d tilt-card" aria-label="View the World Music Day section of the gallery">
-            <img src="public/gallery/world-music-day/photo-06.webp" alt="A warm greeting between a participant and the facilitator at the World Music Day workshop" loading="lazy">
-          </a>
-        </div>
-        <a href="gallery.html" class="gallery-teaser__cta">
-          View the full gallery
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Watch: featured reels, straight from the room -->
   <section class="projects-grid" style="padding-top:0;">
     <div class="page-container">
@@ -486,34 +499,34 @@
     <div class="page-container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="public/icons/logo-icon-white.png?v=3" width="40" height="36" alt="" class="footer-brand__icon">
-          <span class="wordmark footer-brand__mark">ELEM<span class="wordmark__flip">E</span><span class="wordmark__flip">N</span><span class="wordmark__flip--v">T</span></span>
+          <img src="public/icons/logo-icon-white.png?v=3" width="32" height="29" alt="" class="footer-brand__icon">
         </div>
-        <p class="footer-tagline">Listen. Feel. Create.</p>
         <div class="footer-eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
       </div>
-      <div class="footer-grid">
-        <div class="footer-col">
-          <span class="footer-col__label">Visit the studio</span>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=Meenakshi+Kripa+Puliyat+Lane+Peerandoor+Elamakkara+Kochi+682026" target="_blank" rel="noopener">48/2123b, Meenakshi Kripa, Puliyat Lane,<br>Peerandoor, Elamakkara, Kochi &ndash; 682026</a></p>
-        </div>
-        <div class="footer-col">
-          <span class="footer-col__label">Call us</span>
-          <p><a href="tel:+919895314555">+91 98953 14555</a><br><a href="https://wa.me/919895314555" target="_blank" rel="noopener">WhatsApp us</a></p>
-        </div>
-        <div class="footer-col">
-          <span class="footer-col__label">Follow us</span>
-          <div class="footer-socials">
-            <a class="footer-social" href="https://www.facebook.com/ranjith.meleppat/" target="_blank" rel="noopener"><span class="footer-social__bars" aria-hidden="true"><i></i><i></i><i></i></span>Facebook</a>
-            <a class="footer-social" href="https://www.instagram.com/elementsoundstudio_kochi/" target="_blank" rel="noopener"><span class="footer-social__bars" aria-hidden="true"><i></i><i></i><i></i></span>Instagram</a>
-            <a class="footer-social" href="https://wa.me/919895314555" target="_blank" rel="noopener"><span class="footer-social__bars" aria-hidden="true"><i></i><i></i><i></i></span>WhatsApp</a>
-            <a class="footer-social" href="https://www.linkedin.com/posts/ranjith-meleppat-a00a542a_elementsoundstudio-elementculture-kochi-ugcPost-7476931120618475520-7l0K/" target="_blank" rel="noopener"><span class="footer-social__bars" aria-hidden="true"><i></i><i></i><i></i></span>LinkedIn</a>
+
+      <div class="footer-hero">
+        <div class="footer-hero__intro">
+          <p class="footer-tagline">Let&rsquo;s make something worth listening to.</p>
+          <div class="footer-hero__links">
+            <a href="tel:+919895314555">Call us <span aria-hidden="true">&rarr;</span></a>
+            <a href="https://wa.me/919895314555" target="_blank" rel="noopener">WhatsApp us <span aria-hidden="true">&nearr;</span></a>
           </div>
         </div>
+        <nav class="footer-hero__socials" aria-label="Social media">
+          <a href="https://www.facebook.com/ranjith.meleppat/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/elementsoundstudio_kochi/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/posts/ranjith-meleppat-a00a542a_elementsoundstudio-elementculture-kochi-ugcPost-7476931120618475520-7l0K/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
       </div>
+
+      <div class="footer-wordmark">
+        <span class="wordmark footer-wordmark__mark">ELEM<span class="wordmark__flip">E</span><span class="wordmark__flip">N</span><span class="wordmark__flip--v">T</span></span>
+      </div>
+
       <div class="footer-bottom">
+        <p class="footer-legal"><a href="https://www.google.com/maps/search/?api=1&query=Meenakshi+Kripa+Puliyat+Lane+Peerandoor+Elamakkara+Kochi+682026" target="_blank" rel="noopener">48/2123b, Meenakshi Kripa, Puliyat Lane, Peerandoor, Elamakkara, Kochi &ndash; 682026</a></p>
         <p class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a></p>
-        <p class="footer-legal">Element Sound Studio by RM Productions &copy;2026. All rights reserved.</p>
+        <p class="footer-legal">Element Sound Studio by RM Productions &copy;2026.</p>
       </div>
     </div>
   </footer>
