@@ -28,8 +28,8 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="style.min.css?v=20" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.min.css?v=20"></noscript>
+<link rel="preload" href="style.min.css?v=21" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.min.css?v=21"></noscript>
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -387,6 +387,31 @@
     </div>
   </section>
 
+  <!-- Watch: featured reels, straight from the room -->
+  <section class="projects-grid" style="padding-top:0;">
+    <div class="page-container">
+      <h2 class="band-heading" style="text-align:center;margin-bottom:.75rem;">Straight from the room</h2>
+      <p style="max-width:38rem;margin:0 auto clamp(2.5rem,5vw,3.5rem);text-align:center;font-size:clamp(1.1rem,1rem + .4vw,1.375rem);line-height:1.6;opacity:.85;">A few moments worth pressing play on &mdash; tap to watch with sound.</p>
+      <div class="reel-grid">
+        <button type="button" class="reel-card" data-mp4="videos/reels/onam-pookalam.mp4" data-poster="public/poster-frames/reels/onam-pookalam.webp" aria-label="Watch: Onam at Element">
+          <img src="public/poster-frames/reels/onam-pookalam.webp" alt="An Onam pookalam flower design featuring the Element logo" loading="lazy">
+          <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="reel-card__label">Onam at Element</span>
+        </button>
+        <button type="button" class="reel-card" data-mp4="videos/reels/live-highlights.mp4" data-poster="public/poster-frames/reels/live-highlights.webp" aria-label="Watch: Live session highlights">
+          <img src="public/poster-frames/reels/live-highlights.webp" alt="Highlights from a live session at Element Sound Studio" loading="lazy">
+          <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="reel-card__label">Live session highlights</span>
+        </button>
+        <button type="button" class="reel-card" data-mp4="videos/reels/open-mic.mp4" data-poster="public/poster-frames/reels/open-mic.webp" aria-label="Watch: Open mic night">
+          <img src="public/poster-frames/reels/open-mic.webp" alt="A performer at an Element Culture open mic night" loading="lazy">
+          <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="reel-card__label">Open mic night</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- Marquee -->
   <section class="marquee-section">
     <div class="marquee-track" id="marqueeTrack"></div>
@@ -512,7 +537,7 @@
   <span class="whatsapp-fab__label">Chat on WhatsApp</span>
 </a>
 
-<script src="script.min.js?v=7"></script>
+<script src="script.min.js?v=8"></script>
 <script src="intro-audio.js?v=3"></script>
 <script src="chatbot.js?v=2" defer></script>
 <script src="vendor/gsap/gsap.min.js" defer></script>

@@ -28,8 +28,8 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="style.min.css?v=20" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.min.css?v=20"></noscript>
+<link rel="preload" href="style.min.css?v=21" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.min.css?v=21"></noscript>
 <link rel="stylesheet" href="chatbot.css?v=1">
 <!-- Structured data: add Facebook to sameAs once the Page URL is confirmed. -->
 <script type="application/ld+json">
@@ -213,6 +213,26 @@
     </div>
   </section>
 
+  <!-- Cream band: the family, in motion -->
+  <section class="color-band band-cream" style="padding-top:0;">
+    <div class="page-container">
+      <span class="eyebrow pill" style="margin-bottom:1rem;display:inline-block;">See it in action</span>
+      <h2 class="band-heading" style="margin-bottom:.75rem;">The family, in motion</h2>
+      <div class="reel-grid" style="max-width:32rem;">
+        <button type="button" class="reel-card" data-mp4="videos/reels/onam-pookalam.mp4" data-poster="public/poster-frames/reels/onam-pookalam.webp" aria-label="Watch: Onam at Element">
+          <img src="public/poster-frames/reels/onam-pookalam.webp" alt="An Onam pookalam flower design featuring the Element logo" loading="lazy">
+          <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="reel-card__label">Onam at Element</span>
+        </button>
+        <button type="button" class="reel-card" data-mp4="videos/reels/crochet-reveal.mp4" data-poster="public/poster-frames/reels/crochet-reveal.webp" aria-label="Watch: A crochet piece comes together">
+          <img src="public/poster-frames/reels/crochet-reveal.webp" alt="A finished crochet wall hanging from the Crochet Circle" loading="lazy">
+          <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="reel-card__label">Stitch by stitch</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <section class="split-block dark" style="padding-top:0;">
     <div class="page-container">
       <video class="lazy-bg-video" muted loop playsinline preload="none" poster="public/poster-frames/music-11.webp" src="videos/music-11.mp4" style="border-radius:1.25rem;width:100%;aspect-ratio:21/9;object-fit:cover;"></video>
@@ -337,7 +357,7 @@
   <span class="whatsapp-fab__label">Chat on WhatsApp</span>
 </a>
 
-<script src="script.min.js?v=7"></script>
+<script src="script.min.js?v=8"></script>
 <script src="chatbot.js?v=2" defer></script>
 <script src="vendor/gsap/gsap.min.js" defer></script>
 <script src="vendor/gsap/ScrollTrigger.min.js" defer></script>

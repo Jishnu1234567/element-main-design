@@ -259,6 +259,24 @@
     }
   }
 
+  /* ---------------- Featured reels: click-to-play ---------------- */
+  document.querySelectorAll('.reel-card[data-mp4]').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var video = document.createElement('video');
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.poster = card.dataset.poster || '';
+      var source = document.createElement('source');
+      source.src = card.dataset.mp4;
+      source.type = 'video/mp4';
+      video.appendChild(source);
+      card.innerHTML = '';
+      card.appendChild(video);
+      video.play().catch(function () {});
+    }, { once: true });
+  });
+
   /* ---------------- Cinematic tilt + glare cards ---------------- */
   var tiltCards = document.querySelectorAll('.tilt-card');
   if (tiltCards.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(hover: hover)').matches) {

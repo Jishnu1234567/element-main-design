@@ -1585,6 +1585,17 @@ body.dark-header .site-header { color: var(--base-fg); }
 @media (hover: none) { .tilt-card { transform: none !important; } .tilt-card::after { display: none; } }
 .brand-family__whatsapp svg { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
 
+/* ---------- Featured reels: click-to-play portrait video cards ---------- */
+.reel-grid { display: grid; gap: clamp(1rem, 2vw, 1.5rem); grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
+.reel-card { position: relative; aspect-ratio: 9/16; border-radius: 1rem; overflow: hidden; cursor: pointer; background: #000; border: 0; padding: 0; display: block; width: 100%; box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 12px 28px -18px rgba(0,0,0,.45); transition: box-shadow .4s ease; }
+.reel-card:hover, .reel-card:focus-visible { box-shadow: 0 4px 10px rgba(0,0,0,.1), 0 18px 34px -16px rgba(0,0,0,.55); }
+.reel-card img, .reel-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.reel-card::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,.16); pointer-events: none; }
+.reel-card__play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.reel-card__play svg { width: 2.75rem; height: 2.75rem; color: #fff; filter: drop-shadow(0 2px 10px rgba(0,0,0,.55)); transition: transform .3s ease; }
+.reel-card:hover .reel-card__play svg, .reel-card:focus-visible .reel-card__play svg { transform: scale(1.12); }
+.reel-card__label { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem .9rem .85rem; background: linear-gradient(to top, rgba(0,0,0,.72), transparent); color: #fff; font-family: 'Sora', sans-serif; font-weight: 600; font-size: clamp(.85rem, .8rem + .2vw, .95rem); pointer-events: none; }
+
 .band-heading { font-size: clamp(2rem, 1.4rem + 3vw, 3.75rem); font-weight: 600; letter-spacing: -.02em; line-height: 1; }
 .section-heading { font-size: clamp(2rem, 1.4rem + 3vw, 4.5rem); text-align: center; margin-bottom: var(--gutter); letter-spacing: -.02em; }
 
