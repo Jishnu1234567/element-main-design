@@ -28,8 +28,8 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="style.min.css?v=16" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.min.css?v=16"></noscript>
+<link rel="preload" href="style.min.css?v=20" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.min.css?v=20"></noscript>
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -41,7 +41,6 @@
   "description": "Recording studio and music production studio in Elamakkara, Kochi offering professional audio recording, mixing and mastering, vocal recording, sound engineering training, music production and live music events.",
   "url": "https://elementkochi.com/index.html",
   "telephone": "+919895314555",
-  "priceRange": "₹1,250 - ₹20,000",
   "image": "https://elementkochi.com/public/element-logo-2.png",
   "address": {
     "@type": "PostalAddress",
@@ -57,12 +56,12 @@
     "https://www.linkedin.com/posts/ranjith-meleppat-a00a542a_elementsoundstudio-elementculture-kochi-ugcPost-7476931120618475520-7l0K/"
   ],
   "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vocal Training" }, "price": "2500", "priceCurrency": "INR" },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vocal Production" }, "price": "10000", "priceCurrency": "INR" },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Music Production" }, "price": "20000", "priceCurrency": "INR" },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sound Engineering" }, "price": "20000", "priceCurrency": "INR" },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Crochet Classes" }, "price": "2500", "priceCurrency": "INR" },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Studio Time (per hour)" }, "price": "1250", "priceCurrency": "INR" }
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vocal Training" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vocal Production" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Music Production" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sound Engineering" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Crochet Classes" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Studio Schedule (per hour)" } }
   ]
 }
 </script>
@@ -102,7 +101,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="index-page.min.css?v=14">
+<link rel="stylesheet" href="index-page.min.css?v=15">
 <link rel="stylesheet" href="chatbot.css?v=1">
 </head>
 <body>
@@ -210,20 +209,20 @@
 
       <a href="gallery.html#insideStudio" class="studio-showcase" aria-label="View the full gallery of the studio and equipment">
         <div class="studio-showcase__grid">
-          <div class="studio-showcase__item studio-showcase__item--a">
+          <div class="studio-showcase__item studio-showcase__item--a tilt-card">
             <img src="public/equipments/IMG-20260723-WA0008-thumb.webp" alt="Live room with a condenser microphone and the illuminated Element logo on the wall" loading="lazy">
           </div>
           
-          <div class="studio-showcase__item studio-showcase__item--c">
+          <div class="studio-showcase__item studio-showcase__item--c tilt-card">
             <img src="public/equipments/IMG-20260723-WA0009-thumb.webp" alt="Control room with studio monitors and outboard gear" loading="lazy">
           </div>
-          <div class="studio-showcase__item studio-showcase__item--d">
+          <div class="studio-showcase__item studio-showcase__item--d tilt-card">
             <img src="public/equipments/IMG-20260723-WA0013-thumb.webp" alt="Live room booth with a red sofa and piano-key wall art" loading="lazy">
           </div>
-          <div class="studio-showcase__item studio-showcase__item--e">
+          <div class="studio-showcase__item studio-showcase__item--e tilt-card">
             <img src="public/equipments/IMG-20260723-WA0011-thumb.webp" alt="Control desk with dual monitors and studio speakers facing the live room window" loading="lazy">
           </div>
-          <div class="studio-showcase__item studio-showcase__item--f">
+          <div class="studio-showcase__item studio-showcase__item--f tilt-card">
             <img src="public/equipments/IMG-20260723-WA0012-thumb.webp" alt="Producer workstation with laptop, monitors and outboard processing gear" loading="lazy">
           </div>
         </div>
@@ -273,8 +272,8 @@
                 <span class="studio-row__num">01 &mdash; Recording</span>
                 <h3 class="studio-row__title"><span class="sr-word-mask"><span class="sr-word">Recording</span></span> <span class="sr-word-mask"><span class="sr-word">Studio</span></span></h3>
                 <p class="studio-row__desc">Professional recording, mixing &amp; mastering for artists and bands, in a space built for focus and clean takes.</p>
-                <a class="studio-row__cta" href="https://wa.me/919895314555?text=Hi!%20I%27d%20like%20to%20book%20studio%20time%20at%20Element%20Sound%20Studio." target="_blank" rel="noopener">
-                  Book studio time
+                <a class="studio-row__cta" href="https://wa.me/919895314555?text=Hi!%20I%27d%20like%20to%20book%20studio%20schedule%20at%20Element%20Sound%20Studio." target="_blank" rel="noopener">
+                  Book studio schedule
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
               </div>
@@ -366,18 +365,18 @@
 
       <div class="gallery-teaser">
         <div class="gallery-teaser__grid">
-          <a href="gallery.html#liveMusic" class="gallery-teaser__item" aria-label="View the Live Music section of the gallery">
-            <img src="public/gallery/live-music/photo-02-thumb.webp" alt="A vocalist performing with a full band on stage at Element Culture" loading="lazy">
+          <a href="gallery.html#liveMusic" class="gallery-teaser__item gallery-teaser__item--a tilt-card" aria-label="View the Live Music section of the gallery">
+            <img src="public/gallery/live-music/photo-02.webp" alt="A vocalist performing with a full band on stage at Element Culture" loading="lazy">
           </a>
-          <a href="gallery.html#crochetCircle" class="gallery-teaser__item" aria-label="View the Crochet Circle section of the gallery">
-            <img src="public/gallery/crochet/photo-03-thumb.webp" alt="A participant focused on a crochet craft activity at Element Culture" loading="lazy">
-          </a>
-          <a href="gallery.html#worldMusicDay" class="gallery-teaser__item" aria-label="View the World Music Day section of the gallery">
-            <img src="public/gallery/world-music-day/photo-06-thumb.webp" alt="A warm greeting between a participant and the facilitator at the World Music Day workshop" loading="lazy">
-          </a>
-          <a href="gallery.html#worldMusicDay" class="gallery-teaser__item gallery-teaser__item--video" aria-label="Watch World Music Day videos in the gallery">
+          <a href="gallery.html#worldMusicDay" class="gallery-teaser__item gallery-teaser__item--video gallery-teaser__item--b tilt-card" aria-label="Watch World Music Day videos in the gallery">
             <img src="public/gallery/world-music-day/wmd-6219-poster.webp" alt="Tejashree Ingawale singing with the tanpura at the World Music Day workshop" loading="lazy">
             <span class="gallery-teaser__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </a>
+          <a href="gallery.html#crochetCircle" class="gallery-teaser__item gallery-teaser__item--c tilt-card" aria-label="View the Crochet Circle section of the gallery">
+            <img src="public/gallery/crochet/photo-01.webp" alt="A participant focused on a crochet craft activity at Element Culture" loading="lazy">
+          </a>
+          <a href="gallery.html#worldMusicDay" class="gallery-teaser__item gallery-teaser__item--d tilt-card" aria-label="View the World Music Day section of the gallery">
+            <img src="public/gallery/world-music-day/photo-06.webp" alt="A warm greeting between a participant and the facilitator at the World Music Day workshop" loading="lazy">
           </a>
         </div>
         <a href="gallery.html" class="gallery-teaser__cta">
@@ -452,6 +451,8 @@
 
   <!-- Footer -->
   <footer class="site-footer">
+    <div class="footer-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="footer-spotlight" aria-hidden="true"></div>
     <div class="footer-eq-divider" aria-hidden="true">
       <svg viewBox="0 0 4455 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <g><rect x="0" y="46" width="90" height="14" rx="10"/><rect x="165" y="36" width="90" height="24" rx="10"/><rect x="330" y="24" width="90" height="36" rx="10"/><rect x="495" y="12" width="90" height="48" rx="10"/><rect x="660" y="4" width="90" height="56" rx="10"/><rect x="825" y="12" width="90" height="48" rx="10"/><rect x="990" y="24" width="90" height="36" rx="10"/><rect x="1155" y="36" width="90" height="24" rx="10"/><rect x="1320" y="46" width="90" height="14" rx="10"/><rect x="1485" y="36" width="90" height="24" rx="10"/><rect x="1650" y="24" width="90" height="36" rx="10"/><rect x="1815" y="12" width="90" height="48" rx="10"/><rect x="1980" y="4" width="90" height="56" rx="10"/><rect x="2145" y="12" width="90" height="48" rx="10"/><rect x="2310" y="24" width="90" height="36" rx="10"/><rect x="2475" y="36" width="90" height="24" rx="10"/><rect x="2640" y="46" width="90" height="14" rx="10"/><rect x="2805" y="36" width="90" height="24" rx="10"/><rect x="2970" y="24" width="90" height="36" rx="10"/><rect x="3135" y="12" width="90" height="48" rx="10"/><rect x="3300" y="4" width="90" height="56" rx="10"/><rect x="3465" y="12" width="90" height="48" rx="10"/><rect x="3630" y="24" width="90" height="36" rx="10"/><rect x="3795" y="36" width="90" height="24" rx="10"/><rect x="3960" y="46" width="90" height="14" rx="10"/><rect x="4125" y="36" width="90" height="24" rx="10"/><rect x="4290" y="24" width="90" height="36" rx="10"/></g>
@@ -469,7 +470,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <span class="footer-col__label">Visit the studio</span>
-          <p>48/2123b, Meenakshi Kripa, Puliyat Lane,<br>Peerandoor, Elamakkara, Kochi &ndash; 682026</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Meenakshi+Kripa+Puliyat+Lane+Peerandoor+Elamakkara+Kochi+682026" target="_blank" rel="noopener">48/2123b, Meenakshi Kripa, Puliyat Lane,<br>Peerandoor, Elamakkara, Kochi &ndash; 682026</a></p>
         </div>
         <div class="footer-col">
           <span class="footer-col__label">Call us</span>
@@ -511,7 +512,7 @@
   <span class="whatsapp-fab__label">Chat on WhatsApp</span>
 </a>
 
-<script src="script.min.js?v=5"></script>
+<script src="script.min.js?v=7"></script>
 <script src="intro-audio.js?v=3"></script>
 <script src="chatbot.js?v=2" defer></script>
 <script src="vendor/gsap/gsap.min.js" defer></script>

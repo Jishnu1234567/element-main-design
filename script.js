@@ -258,4 +258,59 @@
       });
     }
   }
+
+  /* ---------------- Cinematic tilt + glare cards ---------------- */
+  var tiltCards = document.querySelectorAll('.tilt-card');
+  if (tiltCards.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(hover: hover)').matches) {
+    tiltCards.forEach(function (card) {
+      var ticking = false;
+      var rx = 0, ry = 0, gx = 50, gy = 50;
+      card.addEventListener('pointermove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var px = (e.clientX - rect.left) / rect.width;
+        var py = (e.clientY - rect.top) / rect.height;
+        ry = (px - 0.5) * 14;
+        rx = (0.5 - py) * 14;
+        gx = px * 100;
+        gy = py * 100;
+        card.classList.add('is-tilting');
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(function () {
+            card.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+            card.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+            card.style.setProperty('--gx', gx.toFixed(1) + '%');
+            card.style.setProperty('--gy', gy.toFixed(1) + '%');
+            ticking = false;
+          });
+        }
+      });
+      card.addEventListener('pointerleave', function () {
+        card.classList.remove('is-tilting');
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      });
+    });
+  }
+
+  /* ---------------- Footer: cursor-follow spotlight ---------------- */
+  var footerEl = document.querySelector('.site-footer');
+  var footerSpotlight = footerEl && footerEl.querySelector('.footer-spotlight');
+  if (footerEl && footerSpotlight && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var spotlightTicking = false;
+    var spotlightX = 50, spotlightY = 50;
+    footerEl.addEventListener('pointermove', function (e) {
+      var rect = footerEl.getBoundingClientRect();
+      spotlightX = ((e.clientX - rect.left) / rect.width) * 100;
+      spotlightY = ((e.clientY - rect.top) / rect.height) * 100;
+      if (!spotlightTicking) {
+        spotlightTicking = true;
+        requestAnimationFrame(function () {
+          footerEl.style.setProperty('--fx', spotlightX + '%');
+          footerEl.style.setProperty('--fy', spotlightY + '%');
+          spotlightTicking = false;
+        });
+      }
+    });
+  }
 })();

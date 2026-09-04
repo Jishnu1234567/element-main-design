@@ -29,8 +29,8 @@
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="style.min.css?v=16" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.min.css?v=16"></noscript>
+<link rel="preload" href="style.min.css?v=20" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.min.css?v=20"></noscript>
 <link rel="stylesheet" href="chatbot.css?v=1">
 <link rel="stylesheet" href="gallery.min.css?v=3">
 <!-- Structured data: add Facebook to sameAs once the Page URL is confirmed. -->
@@ -43,7 +43,6 @@
   "description": "Recording studio and music production studio in Elamakkara, Kochi offering professional audio recording, mixing and mastering, vocal recording, sound engineering training, music production and live music events.",
   "url": "https://elementkochi.com/gallery.html",
   "telephone": "+919895314555",
-  "priceRange": "₹1,250 - ₹20,000",
   "image": "https://elementkochi.com/public/element-logo-2.png",
   "address": {
     "@type": "PostalAddress",
@@ -103,7 +102,7 @@
   <section class="page-hero" style="padding-top:clamp(2.5rem,4vw,4.5rem);">
     <div class="page-container">
       <h1 class="display-2 fly-text" data-reverse="true" data-wind-angle="90" data-wind-strength="240" data-scatter="70" data-max-rotation="220" data-depth="90" data-order="ltr" data-start-y="0.8">Every session leaves a trace.</h1>
-      <p class="lede">Workshops, live sets, a Saturday crochet circle and the quiet studio time in between — a look inside Element Sound Studio, in Elamakkara, Kochi.</p>
+      <p class="lede">Workshops, live sets, a Saturday crochet circle and the quiet studio schedule in between — a look inside Element Sound Studio, in Elamakkara, Kochi.</p>
     </div>
   </section>
 
@@ -186,6 +185,8 @@
   </section>
 
   <footer class="site-footer">
+    <div class="footer-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="footer-spotlight" aria-hidden="true"></div>
     <div class="footer-eq-divider" aria-hidden="true">
       <svg viewBox="0 0 4455 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <g><rect x="0" y="46" width="90" height="14" rx="10"/><rect x="165" y="36" width="90" height="24" rx="10"/><rect x="330" y="24" width="90" height="36" rx="10"/><rect x="495" y="12" width="90" height="48" rx="10"/><rect x="660" y="4" width="90" height="56" rx="10"/><rect x="825" y="12" width="90" height="48" rx="10"/><rect x="990" y="24" width="90" height="36" rx="10"/><rect x="1155" y="36" width="90" height="24" rx="10"/><rect x="1320" y="46" width="90" height="14" rx="10"/><rect x="1485" y="36" width="90" height="24" rx="10"/><rect x="1650" y="24" width="90" height="36" rx="10"/><rect x="1815" y="12" width="90" height="48" rx="10"/><rect x="1980" y="4" width="90" height="56" rx="10"/><rect x="2145" y="12" width="90" height="48" rx="10"/><rect x="2310" y="24" width="90" height="36" rx="10"/><rect x="2475" y="36" width="90" height="24" rx="10"/><rect x="2640" y="46" width="90" height="14" rx="10"/><rect x="2805" y="36" width="90" height="24" rx="10"/><rect x="2970" y="24" width="90" height="36" rx="10"/><rect x="3135" y="12" width="90" height="48" rx="10"/><rect x="3300" y="4" width="90" height="56" rx="10"/><rect x="3465" y="12" width="90" height="48" rx="10"/><rect x="3630" y="24" width="90" height="36" rx="10"/><rect x="3795" y="36" width="90" height="24" rx="10"/><rect x="3960" y="46" width="90" height="14" rx="10"/><rect x="4125" y="36" width="90" height="24" rx="10"/><rect x="4290" y="24" width="90" height="36" rx="10"/></g>
@@ -203,7 +204,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <span class="footer-col__label">Visit the studio</span>
-          <p>48/2123b, Meenakshi Kripa, Puliyat Lane,<br>Peerandoor, Elamakkara, Kochi &ndash; 682026</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Meenakshi+Kripa+Puliyat+Lane+Peerandoor+Elamakkara+Kochi+682026" target="_blank" rel="noopener">48/2123b, Meenakshi Kripa, Puliyat Lane,<br>Peerandoor, Elamakkara, Kochi &ndash; 682026</a></p>
         </div>
         <div class="footer-col">
           <span class="footer-col__label">Call us</span>
@@ -244,7 +245,7 @@
   <span class="whatsapp-fab__label">Chat on WhatsApp</span>
 </a>
 
-<script src="script.min.js?v=5"></script>
+<script src="script.min.js?v=7"></script>
 <script src="chatbot.js?v=2" defer></script>
 <script src="vendor/gsap/gsap.min.js" defer></script>
 <script src="vendor/gsap/ScrollTrigger.min.js" defer></script>
@@ -256,7 +257,6 @@
   var WMD_PHOTOS = [
     { thumb: 'public/gallery/world-music-day/photo-01-thumb.webp', full: 'public/gallery/world-music-day/photo-01.webp', alt: 'The full circle gathered for the World Music Day workshop, papers and colour pencils laid out for painting' },
     { thumb: 'public/gallery/world-music-day/photo-02-thumb.webp', full: 'public/gallery/world-music-day/photo-02.webp', alt: 'Wide view of the studio floor set up for the World Music Day workshop circle' },
-    { thumb: 'public/gallery/world-music-day/photo-03-thumb.webp', full: 'public/gallery/world-music-day/photo-03.webp', alt: 'Tejashree Ingawale leading the circle in a guided singing exercise' },
     { thumb: 'public/gallery/world-music-day/photo-04-thumb.webp', full: 'public/gallery/world-music-day/photo-04.webp', alt: 'A shared laugh between participants during the World Music Day workshop' },
     { thumb: 'public/gallery/world-music-day/photo-05-thumb.webp', full: 'public/gallery/world-music-day/photo-05.webp', alt: 'A group vocal rehearsal, participants singing together from printed lyric sheets' },
     { thumb: 'public/gallery/world-music-day/photo-06-thumb.webp', full: 'public/gallery/world-music-day/photo-06.webp', alt: 'A warm greeting between a young participant and the facilitator' },
@@ -267,11 +267,7 @@
   ];
   var CROCHET_PHOTOS = [
     { thumb: 'public/gallery/crochet/photo-01-thumb.webp', full: 'public/gallery/crochet/photo-01.webp', alt: 'Close-up of a hand-crocheted coaster taking shape on the hook' },
-    { thumb: 'public/gallery/crochet/photo-02-thumb.webp', full: 'public/gallery/crochet/photo-02.webp', alt: 'A finished crochet coaster beside a fresh ball of yarn' },
-    { thumb: 'public/gallery/crochet/photo-03-thumb.webp', full: 'public/gallery/crochet/photo-03.webp', alt: 'Hands mid-stitch, working the yarn around the hook' },
     { thumb: 'public/gallery/crochet/photo-04-thumb.webp', full: 'public/gallery/crochet/photo-04.webp', alt: 'Overhead view of a crochet hook drawing yarn through a loop' },
-    { thumb: 'public/gallery/crochet/photo-05-thumb.webp', full: 'public/gallery/crochet/photo-05.webp', alt: 'Close overhead detail of a stitch in progress' },
-    { thumb: 'public/gallery/crochet/photo-06-thumb.webp', full: 'public/gallery/crochet/photo-06.webp', alt: 'Overhead view of the maroon coaster taking shape beside a fresh ball of yarn' },
     { thumb: 'public/gallery/crochet/photo-07-thumb.webp', full: 'public/gallery/crochet/photo-07.webp', alt: 'A participant working the hook through a stitch in natural light' }
   ];
   var LIVE_PHOTOS = [
@@ -279,10 +275,8 @@
     { thumb: 'public/gallery/live-music/photo-02-thumb.webp', full: 'public/gallery/live-music/photo-02.webp', alt: 'A vocalist performing with a full band on stage' },
     { thumb: 'public/gallery/live-music/photo-03-thumb.webp', full: 'public/gallery/live-music/photo-03.webp', alt: 'Wide view of the stage and band mid-performance' },
     { thumb: 'public/gallery/live-music/photo-04-thumb.webp', full: 'public/gallery/live-music/photo-04.webp', alt: 'A flute performer smiling mid-performance' },
-    { thumb: 'public/gallery/live-music/photo-05-thumb.webp', full: 'public/gallery/live-music/photo-05.webp', alt: 'The same flute performer in quiet concentration beside a ghatam' },
     { thumb: 'public/gallery/live-music/photo-06-thumb.webp', full: 'public/gallery/live-music/photo-06.webp', alt: "The host introducing the next act to the audience" },
-    { thumb: 'public/gallery/live-music/photo-07-thumb.webp', full: 'public/gallery/live-music/photo-07.webp', alt: 'Three performers sharing a warm moment after the show' },
-    { thumb: 'public/gallery/live-music/photo-08-thumb.webp', full: 'public/gallery/live-music/photo-08.webp', alt: "The full cast and crew together after the night's performances" }
+    { thumb: 'public/gallery/live-music/photo-07-thumb.webp', full: 'public/gallery/live-music/photo-07.webp', alt: 'Three performers sharing a warm moment after the show' }
   ];
   var STUDIO_PHOTOS = [
     { thumb: 'public/equipments/IMG-20260723-WA0007-thumb.webp', full: 'public/equipments/IMG-20260723-WA0007.webp', alt: 'Studio lounge looking through the glass into the live room' },
@@ -301,7 +295,6 @@
     { mp4: 'public/gallery/world-music-day/wmd-6234.mp4', poster: 'public/gallery/world-music-day/wmd-6234-poster.webp', alt: 'The full World Music Day performance, ready to play', cap: 'The full session', tag: 'World Music Day' },
     { mp4: 'public/gallery/world-music-day/wmd-6252.mp4', poster: 'public/gallery/world-music-day/wmd-6252-poster.webp', alt: 'View of the performance from the circle, ready to play', cap: 'From the circle', tag: 'World Music Day' },
     { mp4: 'public/gallery/world-music-day/wmd-6264.mp4', poster: 'public/gallery/world-music-day/wmd-6264-poster.webp', alt: 'A conversation on stage during the workshop, ready to play', cap: 'In conversation', tag: 'World Music Day' },
-    { mp4: 'public/gallery/world-music-day/wmd-reel.mp4', poster: 'public/gallery/world-music-day/wmd-reel-poster.webp', alt: 'Element Culture World Music Day highlight reel, ready to play', cap: 'The highlight reel', tag: 'World Music Day' },
     { mp4: 'public/gallery/crochet/highlight.mp4', poster: 'public/gallery/crochet/video-poster.webp', alt: 'Crochet in progress, ready to play', cap: 'The stitch, up close', tag: 'Crochet Circle' },
     { mp4: 'public/gallery/crochet/crochet-3052.mp4', poster: 'public/gallery/crochet/crochet-3052-poster.webp', alt: 'Getting started on a new coaster, ready to play', cap: 'Getting started', tag: 'Crochet Circle' },
     { mp4: 'public/gallery/crochet/crochet-3058.mp4', poster: 'public/gallery/crochet/crochet-3058-poster.webp', alt: 'Working the hook round by round, ready to play', cap: 'Working the hook', tag: 'Crochet Circle' },
@@ -313,14 +306,14 @@
      in createCarousel() gives the browser accurate width descriptors —
      sharp on retina desktop, smaller download on phones. */
   var THUMB_W = {
-    'public/equipments/IMG-20260723-WA0007-thumb.webp': 460,
-    'public/equipments/IMG-20260723-WA0008-thumb.webp': 600,
-    'public/equipments/IMG-20260723-WA0009-thumb.webp': 600,
-    'public/equipments/IMG-20260723-WA0010-thumb.webp': 300,
-    'public/equipments/IMG-20260723-WA0011-thumb.webp': 360,
-    'public/equipments/IMG-20260723-WA0012-thumb.webp': 360,
-    'public/equipments/IMG-20260723-WA0013-thumb.webp': 600,
-    'public/equipments/IMG-20260723-WA0014-thumb.webp': 600,
+    'public/equipments/IMG-20260723-WA0007-thumb.webp': 440,
+    'public/equipments/IMG-20260723-WA0008-thumb.webp': 440,
+    'public/equipments/IMG-20260723-WA0009-thumb.webp': 440,
+    'public/equipments/IMG-20260723-WA0010-thumb.webp': 440,
+    'public/equipments/IMG-20260723-WA0011-thumb.webp': 440,
+    'public/equipments/IMG-20260723-WA0012-thumb.webp': 440,
+    'public/equipments/IMG-20260723-WA0013-thumb.webp': 440,
+    'public/equipments/IMG-20260723-WA0014-thumb.webp': 440,
     'public/gallery/crochet/photo-01-thumb.webp': 440,
     'public/gallery/crochet/photo-02-thumb.webp': 360,
     'public/gallery/crochet/photo-03-thumb.webp': 440,
@@ -348,14 +341,14 @@
     'public/gallery/world-music-day/photo-10-thumb.webp': 360
   };
   var FULL_W = {
-    'public/equipments/IMG-20260723-WA0007.webp': 900,
-    'public/equipments/IMG-20260723-WA0008.webp': 900,
-    'public/equipments/IMG-20260723-WA0009.webp': 900,
-    'public/equipments/IMG-20260723-WA0010.webp': 854,
-    'public/equipments/IMG-20260723-WA0011.webp': 900,
-    'public/equipments/IMG-20260723-WA0012.webp': 900,
-    'public/equipments/IMG-20260723-WA0013.webp': 900,
-    'public/equipments/IMG-20260723-WA0014.webp': 900,
+    'public/equipments/IMG-20260723-WA0007.webp': 1280,
+    'public/equipments/IMG-20260723-WA0008.webp': 1280,
+    'public/equipments/IMG-20260723-WA0009.webp': 1280,
+    'public/equipments/IMG-20260723-WA0010.webp': 1280,
+    'public/equipments/IMG-20260723-WA0011.webp': 1280,
+    'public/equipments/IMG-20260723-WA0012.webp': 1280,
+    'public/equipments/IMG-20260723-WA0013.webp': 1280,
+    'public/equipments/IMG-20260723-WA0014.webp': 1280,
     'public/gallery/crochet/photo-01.webp': 788,
     'public/gallery/crochet/photo-02.webp': 788,
     'public/gallery/crochet/photo-03.webp': 788,
