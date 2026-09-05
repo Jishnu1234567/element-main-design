@@ -960,9 +960,10 @@ body.dark-header .site-header { color: var(--base-fg); }
 .footer-hero__links a:hover, .footer-hero__links a:focus-visible { color: var(--color-brand-gold); border-color: var(--color-brand-gold); }
 .footer-hero__links a span { transition: transform .2s ease; }
 .footer-hero__links a:hover span { transform: translate(2px, -1px); }
-.footer-hero__socials { display: flex; flex-direction: column; align-items: flex-end; gap: .5rem; text-align: right; }
-.footer-hero__socials a { font-family: var(--font-body); font-size: .95rem; font-weight: 600; color: var(--color-brand-ivory); opacity: .75; text-decoration: none; transition: opacity .2s ease, color .2s ease; }
-.footer-hero__socials a:hover, .footer-hero__socials a:focus-visible { opacity: 1; color: var(--color-brand-gold); }
+.footer-hero__socials { display: flex; flex-direction: column; align-items: flex-end; gap: .7rem; text-align: right; }
+.footer-hero__socials a { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--font-body); font-size: .95rem; font-weight: 600; color: var(--color-brand-ivory); opacity: .75; text-decoration: none; transition: opacity .2s ease, color .2s ease, transform .2s ease; }
+.footer-hero__socials a svg { width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
+.footer-hero__socials a:hover, .footer-hero__socials a:focus-visible { opacity: 1; color: var(--color-brand-gold); transform: translateX(-2px); }
 
 /* ---------- Footer wordmark: the massive brand moment ---------- */
 .footer-wordmark { text-align: center; margin: clamp(1rem, 3vw, 2rem) -.02em clamp(2rem, 5vw, 3.5rem); line-height: .82; overflow: hidden; }
@@ -1562,6 +1563,7 @@ body.dark-header .site-header { color: var(--base-fg); }
 .brand-family__profile { padding-top: clamp(2rem, 4vw, 2.5rem); border-top: 1px solid rgba(30,26,23,.12); }
 .brand-family__profile:first-child { padding-top: 0; border-top: 0; }
 .brand-family__logo { height: clamp(3rem, 6vw, 4rem); display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1.25rem; }
+.brand-family__logo--badge { height: clamp(6.5rem, 11vw, 9rem); }
 .brand-family__logo img { max-height: 100%; max-width: 100%; width: auto; height: auto; aspect-ratio: auto; object-fit: contain; border-radius: 0; }
 .brand-family__profile p { font-size: clamp(1.05rem, 1rem + .2vw, 1.2rem); line-height: 1.7; color: var(--color-brand-black); opacity: .85; margin: 0 0 1rem; max-width: 46rem; }
 .brand-family__profile p:last-of-type { margin-bottom: 0; }
