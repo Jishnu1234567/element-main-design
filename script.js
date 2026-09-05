@@ -331,4 +331,79 @@
       }
     });
   }
+
+  /* ---------------- Footer: scroll-expand cinematic media reveal ----------------
+     A media frame starts small mid-screen and grows to fill the viewport as the
+     visitor scrolls through the tall wrapper section, holds full-bleed while the
+     tagline/CTA/socials fade in, then releases into the legal bar below. Sizing
+     is written as --se-* custom properties the CSS reads with fallbacks. */
+  var expandSections = document.querySelectorAll('[data-scroll-expand]');
+  if (expandSections.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    expandSections.forEach(function (section) {
+      var frame = section.querySelector('.scroll-expand__frame');
+      if (!frame) return;
+      var scrollDistance = parseFloat(section.dataset.scrollDistance) || 1.1;
+      var holdDistance = parseFloat(section.dataset.holdDistance) || 0.4;
+      var expandFraction = scrollDistance / (scrollDistance + holdDistance);
+      var startW = 44, startH = 60, startR = 28, startZoom = 1.18, startScrim = .35;
+      var current = { w: startW, h: startH, r: startR, zoom: startZoom, scrim: startScrim, content: 0 };
+      var target = { w: startW, h: startH, r: startR, zoom: startZoom, scrim: startScrim, content: 0 };
+      var smoothing = .16;
+      var running = false;
+
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function computeTarget() {
+        var rect = section.getBoundingClientRect();
+        var total = rect.height - window.innerHeight;
+        var progress = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 0;
+        var expandProgress = Math.min(progress / expandFraction, 1);
+        var eased = easeOutCubic(expandProgress);
+        target.w = startW + (100 - startW) * eased;
+        target.h = startH + (100 - startH) * eased;
+        target.r = startR * (1 - eased);
+        target.zoom = startZoom - (startZoom - 1) * eased;
+        target.scrim = startScrim + .3 * eased;
+        var contentStart = .7;
+        target.content = expandProgress <= contentStart ? 0 : Math.min((expandProgress - contentStart) / (1 - contentStart), 1);
+      }
+
+      function tick() {
+        current.w += (target.w - current.w) * smoothing;
+        current.h += (target.h - current.h) * smoothing;
+        current.r += (target.r - current.r) * smoothing;
+        current.zoom += (target.zoom - current.zoom) * smoothing;
+        current.scrim += (target.scrim - current.scrim) * smoothing;
+        current.content += (target.content - current.content) * smoothing;
+
+        frame.style.setProperty('--se-w', current.w + '%');
+        frame.style.setProperty('--se-h', current.h + '%');
+        frame.style.setProperty('--se-r', current.r + 'px');
+        frame.style.setProperty('--se-zoom', current.zoom.toFixed(3));
+        frame.style.setProperty('--se-scrim', current.scrim.toFixed(3));
+        frame.style.setProperty('--se-content', current.content.toFixed(3));
+
+        var settled = Math.abs(target.w - current.w) < .05 && Math.abs(target.content - current.content) < .004;
+        if (!settled) {
+          requestAnimationFrame(tick);
+        } else {
+          running = false;
+        }
+      }
+
+      function onScroll() {
+        computeTarget();
+        if (!running) {
+          running = true;
+          requestAnimationFrame(tick);
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      computeTarget();
+      current = { w: target.w, h: target.h, r: target.r, zoom: target.zoom, scrim: target.scrim, content: target.content };
+      onScroll();
+    });
+  }
 })();
