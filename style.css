@@ -1000,8 +1000,9 @@ body.dark-header .site-header { color: var(--base-fg); }
 .scroll-expand__legal a { color: inherit; text-decoration: underline; text-decoration-color: rgba(243,234,216,.3); text-underline-offset: 2px; }
 .scroll-expand__legal a:hover { color: var(--color-brand-gold); text-decoration-color: var(--color-brand-gold); }
 @media (max-width: 560px) {
-  .scroll-expand__meta { max-width: 100%; }
-  .scroll-expand__map { display: none; }
+  .scroll-expand__meta { max-width: 100%; gap: .7rem; padding: .7rem .85rem; }
+  .scroll-expand__map { width: 4.5rem; height: 4rem; }
+  .scroll-expand__legal { font-size: .72rem; }
 }
 
 /* ---------- Social rail (contact page — icon chips that expand to
