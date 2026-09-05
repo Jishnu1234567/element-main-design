@@ -350,9 +350,13 @@
       var target = { w: startW, h: startH, r: startR, zoom: startZoom, scrim: startScrim, content: 0 };
       var smoothing = .16;
       var running = false;
+      var nearby = false;
 
       function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 
+      // Layout-forcing (getBoundingClientRect) — must only ever run inside a
+      // rAF callback, never straight from a scroll/resize event handler, or
+      // fast scrolling thrashes layout on every single scroll tick site-wide.
       function computeTarget() {
         var rect = section.getBoundingClientRect();
         var total = rect.height - window.innerHeight;
@@ -369,6 +373,7 @@
       }
 
       function tick() {
+        computeTarget();
         current.w += (target.w - current.w) * smoothing;
         current.h += (target.h - current.h) * smoothing;
         current.r += (target.r - current.r) * smoothing;
@@ -384,26 +389,30 @@
         frame.style.setProperty('--se-content', current.content.toFixed(3));
 
         var settled = Math.abs(target.w - current.w) < .05 && Math.abs(target.content - current.content) < .004;
-        if (!settled) {
+        if (!settled && nearby) {
           requestAnimationFrame(tick);
         } else {
           running = false;
         }
       }
 
-      function onScroll() {
-        computeTarget();
-        if (!running) {
+      function requestTick() {
+        if (!running && nearby) {
           running = true;
           requestAnimationFrame(tick);
         }
       }
 
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
-      computeTarget();
-      current = { w: target.w, h: target.h, r: target.r, zoom: target.zoom, scrim: target.scrim, content: target.content };
-      onScroll();
+      // Only listen/compute while the section is near the viewport, so
+      // scrolling anywhere else on the page costs this section nothing.
+      var nearbyIo = new IntersectionObserver(function (entries) {
+        nearby = entries[0].isIntersecting;
+        if (nearby) requestTick();
+      }, { rootMargin: '50% 0px 50% 0px' });
+      nearbyIo.observe(section);
+
+      window.addEventListener('scroll', requestTick, { passive: true });
+      window.addEventListener('resize', requestTick);
     });
   }
 })();
