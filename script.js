@@ -345,9 +345,13 @@
       var scrollDistance = parseFloat(section.dataset.scrollDistance) || 1.1;
       var holdDistance = parseFloat(section.dataset.holdDistance) || 0.4;
       var expandFraction = scrollDistance / (scrollDistance + holdDistance);
-      var startW = 44, startH = 60, startR = 28, startZoom = 1.18, startScrim = .35;
-      var current = { w: startW, h: startH, r: startR, zoom: startZoom, scrim: startScrim, content: 0 };
-      var target = { w: startW, h: startH, r: startR, zoom: startZoom, scrim: startScrim, content: 0 };
+      var startR = 28, startZoom = 1.18, startScrim = .35;
+      function startDims() {
+        return window.innerWidth <= 720 ? { w: 78, h: 46 } : { w: 50, h: 68 };
+      }
+      var initialDims = startDims();
+      var current = { w: initialDims.w, h: initialDims.h, r: startR, zoom: startZoom, scrim: startScrim, content: 0 };
+      var target = { w: initialDims.w, h: initialDims.h, r: startR, zoom: startZoom, scrim: startScrim, content: 0 };
       var smoothing = .16;
       var running = false;
       var nearby = false;
@@ -358,13 +362,14 @@
       // rAF callback, never straight from a scroll/resize event handler, or
       // fast scrolling thrashes layout on every single scroll tick site-wide.
       function computeTarget() {
+        var dims = startDims();
         var rect = section.getBoundingClientRect();
         var total = rect.height - window.innerHeight;
         var progress = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 0;
         var expandProgress = Math.min(progress / expandFraction, 1);
         var eased = easeOutCubic(expandProgress);
-        target.w = startW + (100 - startW) * eased;
-        target.h = startH + (100 - startH) * eased;
+        target.w = dims.w + (100 - dims.w) * eased;
+        target.h = dims.h + (100 - dims.h) * eased;
         target.r = startR * (1 - eased);
         target.zoom = startZoom - (startZoom - 1) * eased;
         target.scrim = startScrim + .3 * eased;

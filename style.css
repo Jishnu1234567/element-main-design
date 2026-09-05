@@ -942,7 +942,7 @@ body.dark-header .site-header { color: var(--base-fg); }
 .site-footer:hover .footer-spotlight { opacity: 1; }
 
 .site-footer > .page-container { position: relative; z-index: 2; }
-.footer-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: clamp(2.5rem, 6vw, 5rem); padding-top: clamp(1.5rem, 3vw, 2.25rem); }
+.footer-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: clamp(1rem, 2vw, 1.5rem); padding-top: clamp(1.5rem, 3vw, 2.25rem); }
 .footer-brand { display: flex; align-items: center; }
 .footer-brand__icon { height: 1.8rem; width: auto; }
 
@@ -963,7 +963,7 @@ body.dark-header .site-header { color: var(--base-fg); }
    is driven by --se-* custom properties written from script.js. ---------- */
 .scroll-expand { position: relative; height: 250vh; background: var(--color-brand-black, #1a1717); }
 .scroll-expand__sticky { position: sticky; top: 0; height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.scroll-expand__frame { position: relative; overflow: hidden; width: var(--se-w, 44%); height: var(--se-h, 60%); border-radius: var(--se-r, 28px); box-shadow: 0 30px 90px rgba(0,0,0,.5); }
+.scroll-expand__frame { position: relative; overflow: hidden; width: var(--se-w, 50%); height: var(--se-h, 68%); border-radius: var(--se-r, 28px); box-shadow: 0 30px 90px rgba(0,0,0,.5); }
 .scroll-expand__media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(var(--se-zoom, 1.18)); }
 .scroll-expand__scrim { position: absolute; inset: 0; background: rgba(10,8,6, var(--se-scrim, .35)); }
 .scroll-expand__content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.35rem; text-align: center; padding: 2rem; opacity: var(--se-content, 0); transform: translateY(calc((1 - var(--se-content, 0)) * 18px)); }
