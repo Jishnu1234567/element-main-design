@@ -1622,26 +1622,18 @@ body.dark-header .site-header { color: var(--base-fg); }
 .reel-card:hover .reel-card__play svg, .reel-card:focus-visible .reel-card__play svg { transform: scale(1.12); }
 .reel-card__label { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem .9rem .85rem; background: linear-gradient(to top, rgba(0,0,0,.72), transparent); color: #fff; font-family: 'Sora', sans-serif; font-weight: 600; font-size: clamp(.85rem, .8rem + .2vw, .95rem); pointer-events: none; }
 
-/* ---------- Bounce cards: a fanned, elastic-in row of reel thumbnails
-   (gallery "Watch" section). Below 760px it's a plain scrollable row —
-   an absolutely-positioned fan doesn't work with touch scrolling. ---------- */
+/* ---------- Bounce cards: a fanned row of reel thumbnails that spring into
+   place with real elastic easing (GSAP, see gallery.html's inline script —
+   matches the reactbits BounceCards component this was modelled on:
+   rotate+translate transformStyles, elastic.out(1,0.5), staggered delay,
+   no hover interaction). Below 760px it's a plain scrollable row — an
+   absolutely-positioned fan doesn't work with touch scrolling, so GSAP
+   skips the fan transform there and this CSS handles the resting layout. ---------- */
 .bounce-cards { display: flex; flex-wrap: nowrap; gap: 1rem; overflow-x: auto; padding: 2.5rem 1.25rem 1rem; margin: 0 -1.25rem; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
-.bounce-cards__card { flex: 0 0 auto; width: 9.5rem; opacity: 0; scroll-snap-align: center; animation: bounce-cards-in .8s cubic-bezier(.22,1.6,.4,1) forwards; animation-play-state: paused; }
-.bounce-cards.is-visible .bounce-cards__card { animation-play-state: running; }
-.bounce-cards__card:nth-child(1) { animation-delay: .05s; }
-.bounce-cards__card:nth-child(2) { animation-delay: .16s; }
-.bounce-cards__card:nth-child(3) { animation-delay: .27s; }
-.bounce-cards__card:nth-child(4) { animation-delay: .38s; }
-.bounce-cards__card:nth-child(5) { animation-delay: .49s; }
-@keyframes bounce-cards-in {
-  0% { opacity: 0; transform: translateX(var(--bc-x, 0)) rotate(var(--bc-rot, 0deg)) scale(.55) translateY(26px); }
-  70% { opacity: 1; transform: translateX(var(--bc-x, 0)) rotate(var(--bc-rot, 0deg)) scale(1.06); }
-  100% { opacity: 1; transform: translateX(var(--bc-x, 0)) rotate(var(--bc-rot, 0deg)) scale(1); }
-}
+.bounce-cards__card { flex: 0 0 auto; width: 9.5rem; scroll-snap-align: center; }
 @media (min-width: 760px) {
   .bounce-cards { display: block; position: relative; overflow: visible; margin: 0 auto; padding: 3.5rem 1.25rem 2.5rem; height: 21rem; max-width: 56rem; }
-  .bounce-cards__card { position: absolute; left: 50%; top: 50%; width: 12rem; margin: -9.5rem 0 0 -6rem; transform: translateX(var(--bc-x, 0)) rotate(var(--bc-rot, 0deg)); transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease; }
-  .bounce-cards__card:hover, .bounce-cards__card:focus-visible { transform: translateX(var(--bc-x, 0)) rotate(0deg) translateY(-1rem) scale(1.06); z-index: 5; }
+  .bounce-cards__card { position: absolute; left: 50%; top: 50%; width: 12rem; margin: -9.5rem 0 0 -6rem; transform: translateX(var(--bc-x, 0)) rotate(var(--bc-rot, 0deg)); }
   .bounce-cards__card:nth-child(1) { --bc-x: -13.5rem; --bc-rot: 6deg; }
   .bounce-cards__card:nth-child(2) { --bc-x: -6.75rem; --bc-rot: -4deg; }
   .bounce-cards__card:nth-child(3) { --bc-x: 0rem; --bc-rot: 3deg; z-index: 1; }
@@ -1649,8 +1641,7 @@ body.dark-header .site-header { color: var(--base-fg); }
   .bounce-cards__card:nth-child(5) { --bc-x: 13.5rem; --bc-rot: 4deg; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .bounce-cards__card { animation: none !important; opacity: 1; }
-  .bounce-cards__card:hover, .bounce-cards__card:focus-visible { transform: translateX(var(--bc-x, 0)) rotate(var(--bc-rot, 0deg)) !important; }
+  .bounce-cards__card { opacity: 1 !important; }
 }
 
 .band-heading { font-size: clamp(2rem, 1.4rem + 3vw, 3.75rem); font-weight: 600; letter-spacing: -.02em; line-height: 1; }

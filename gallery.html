@@ -29,8 +29,8 @@
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="style.min.css?v=35" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.min.css?v=35"></noscript>
+<link rel="preload" href="style.min.css?v=36" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.min.css?v=36"></noscript>
 <link rel="stylesheet" href="gallery.min.css?v=3">
 <!-- Structured data: add Facebook to sameAs once the Page URL is confirmed. -->
 <script type="application/ld+json">
@@ -690,19 +690,49 @@
   createCarousel('studioCarousel', STUDIO_PHOTOS);
   createCarousel('artistsCarousel', ARTIST_PHOTOS);
 
+  /* BounceCards-style entrance for the Watch reels: rotate+translate fan
+     (transformStyles) sprung in with real elastic easing via GSAP, matching
+     animationDelay/animationStagger/easeType from the reactbits component
+     this was modelled on. enableHover is false there, so no hover effect. */
   var watchBounce = document.getElementById('watchBounce');
   if (watchBounce) {
+    var bounceTransforms = [
+      { x: -13.5 * 16, rotate: 6 },
+      { x: -6.75 * 16, rotate: -4 },
+      { x: 0, rotate: 3 },
+      { x: 6.75 * 16, rotate: -6 },
+      { x: 13.5 * 16, rotate: 4 }
+    ];
+    var runBounce = function () {
+      var cards = watchBounce.querySelectorAll('.bounce-cards__card');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (window.gsap && window.innerWidth >= 760 && !reduceMotion) {
+        gsap.set(cards, { x: 0, rotate: 0, scale: 0, opacity: 0 });
+        gsap.to(cards, {
+          x: function (i) { return bounceTransforms[i].x; },
+          rotate: function (i) { return bounceTransforms[i].rotate; },
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          delay: 1,
+          stagger: 0.08,
+          ease: 'elastic.out(1, 0.5)'
+        });
+      } else {
+        gsap && gsap.set(cards, { clearProps: 'all' });
+      }
+    };
     if ('IntersectionObserver' in window) {
       var bounceIo = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          watchBounce.classList.add('is-visible');
+          runBounce();
           bounceIo.unobserve(entry.target);
         });
       }, { threshold: 0.25 });
       bounceIo.observe(watchBounce);
     } else {
-      watchBounce.classList.add('is-visible');
+      runBounce();
     }
   }
 
