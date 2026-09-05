@@ -26,8 +26,8 @@
 <!-- Fonts -->
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="style.min.css?v=36" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.min.css?v=36"></noscript>
+<link rel="preload" href="style.min.css?v=37" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.min.css?v=37"></noscript>
 
 <!-- Tailwind CSS (precompiled — see vendor/tailwind/programs.min.css) -->
 <link rel="stylesheet" href="vendor/tailwind/programs.min.css">
@@ -342,13 +342,13 @@
       <span class="handwritten-accent text-[32px] uppercase block mb-2" style="color: #fff;">Watch</span>
       <h2 class="font-display font-bold uppercase text-[36px] lg:text-[48px] leading-[0.96] tracking-[-1.5px]" style="color: #fff;">From the room</h2>
     </div>
-    <div class="reel-grid" style="max-width:32rem;margin:0 auto;">
-      <button type="button" class="reel-card" data-mp4="videos/reels/open-mic.mp4" data-poster="public/poster-frames/reels/open-mic.webp" aria-label="Watch: Open mic night">
+    <div class="bounce-cards bounce-cards--2" id="programsWatchBounce">
+      <button type="button" class="reel-card bounce-cards__card" data-mp4="videos/reels/open-mic.mp4" data-poster="public/poster-frames/reels/open-mic.webp" aria-label="Watch: Open mic night">
         <img src="public/poster-frames/reels/open-mic.webp" alt="A performer at an Element Culture open mic night" loading="lazy">
         <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
         <span class="reel-card__label">Open mic night</span>
       </button>
-      <button type="button" class="reel-card" data-mp4="videos/reels/artist-talk.mp4" data-poster="public/poster-frames/reels/artist-talk.webp" aria-label="Watch: In conversation at Element">
+      <button type="button" class="reel-card bounce-cards__card" data-mp4="videos/reels/artist-talk.mp4" data-poster="public/poster-frames/reels/artist-talk.webp" aria-label="Watch: In conversation at Element">
         <img src="public/poster-frames/reels/artist-talk.webp" alt="An artist in conversation at Element Sound Studio" loading="lazy">
         <span class="reel-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
         <span class="reel-card__label">In conversation</span>
@@ -456,7 +456,7 @@
   </div>
 </div>
 
-<script src="script.min.js?v=11"></script>
+<script src="script.min.js?v=12"></script>
 <script src="vendor/gsap/gsap.min.js"></script>
 <script src="vendor/gsap/ScrollTrigger.min.js"></script>
 <script src="fly-text.min.js?v=5" defer></script>
