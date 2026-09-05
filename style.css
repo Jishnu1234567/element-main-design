@@ -1630,7 +1630,7 @@ body.dark-header .site-header { color: var(--base-fg); }
    absolutely-positioned fan doesn't work with touch scrolling, so GSAP
    skips the fan transform there and this CSS handles the resting layout. ---------- */
 .bounce-cards { display: flex; flex-wrap: nowrap; gap: 1rem; overflow-x: auto; padding: 2.5rem 1.25rem 1rem; margin: 0 -1.25rem; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
-.bounce-cards__card { flex: 0 0 auto; width: 9.5rem; scroll-snap-align: center; }
+.bounce-cards__card { flex: 0 0 auto; width: 11.5rem; scroll-snap-align: center; }
 @media (min-width: 760px) {
   .bounce-cards { display: block; position: relative; overflow: visible; margin: 0 auto; padding: 3.5rem 1.25rem 2.5rem; height: 21rem; max-width: 56rem; }
   .bounce-cards__card { position: absolute; left: 50%; top: 50%; width: 12rem; margin: -9.5rem 0 0 -6rem; transform: translateX(var(--bc-x, 0)) rotate(var(--bc-rot, 0deg)); }
@@ -1640,6 +1640,14 @@ body.dark-header .site-header { color: var(--base-fg); }
   .bounce-cards__card:nth-child(3) { --bc-x: 0rem; --bc-rot: 3deg; z-index: 1; }
   .bounce-cards__card:nth-child(4) { --bc-x: 6.75rem; --bc-rot: -6deg; }
   .bounce-cards__card:nth-child(5) { --bc-x: 13.5rem; --bc-rot: 4deg; }
+  /* 5 cards, larger (homepage "Straight from the room") */
+  .bounce-cards--home { max-width: 72rem; height: 27rem; }
+  .bounce-cards--home .bounce-cards__card { width: 15rem; margin: -11.75rem 0 0 -7.5rem; }
+  .bounce-cards--home .bounce-cards__card:nth-child(1) { --bc-x: -17rem; --bc-rot: 6deg; }
+  .bounce-cards--home .bounce-cards__card:nth-child(2) { --bc-x: -8.5rem; --bc-rot: -4deg; }
+  .bounce-cards--home .bounce-cards__card:nth-child(3) { --bc-x: 0rem; --bc-rot: 3deg; z-index: 1; }
+  .bounce-cards--home .bounce-cards__card:nth-child(4) { --bc-x: 8.5rem; --bc-rot: -6deg; }
+  .bounce-cards--home .bounce-cards__card:nth-child(5) { --bc-x: 17rem; --bc-rot: 4deg; }
   /* 3 cards */
   .bounce-cards--3 { max-width: 44rem; height: 20rem; }
   .bounce-cards--3 .bounce-cards__card:nth-child(1) { --bc-x: -9.5rem; --bc-rot: 5deg; }
@@ -1649,6 +1657,9 @@ body.dark-header .site-header { color: var(--base-fg); }
   .bounce-cards--2 { max-width: 32rem; height: 20rem; }
   .bounce-cards--2 .bounce-cards__card:nth-child(1) { --bc-x: -5.5rem; --bc-rot: -4deg; }
   .bounce-cards--2 .bounce-cards__card:nth-child(2) { --bc-x: 5.5rem; --bc-rot: 4deg; }
+}
+@media (max-width: 759px) {
+  .bounce-cards--home .bounce-cards__card { width: 12.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .bounce-cards__card { opacity: 1 !important; }
