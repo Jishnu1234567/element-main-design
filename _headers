@@ -1,0 +1,33 @@
+# Netlify-style headers file — sets long cache lifetimes for static assets
+# (fonts, videos, audio, images, icons, versioned CSS/JS) while keeping HTML
+# always-revalidated so content updates go live immediately. Harmless if the
+# host doesn't read this file; picked up automatically by Netlify.
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/audio/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/public/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
