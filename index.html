@@ -27,6 +27,7 @@
 <link rel="apple-touch-icon" href="public/icons/apple-touch-icon.png?v=3">
 <link rel="manifest" href="site.webmanifest">
 <style>*{box-sizing:border-box}body{margin:0;background:#1E1A17}.hero{position:relative;height:100dvh;overflow:hidden;background:#1E1A17}.hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}.hero__overlay{position:absolute;inset:0;z-index:2;background:rgba(0,0,0,.2)}</style>
+<link rel="preload" href="public/poster-frames/element-v2.webp" as="image" fetchpriority="high">
 <link rel="preload" href="public/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="public/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -116,7 +117,7 @@
   </div>
 </div>
 
-<audio id="introAudio" src="public/audio/logo-voiceover.mp3" preload="auto" playsinline autoplay></audio>
+<audio id="introAudio" src="public/audio/logo-voiceover.mp3" preload="metadata" playsinline autoplay></audio>
 <script>
   /* Earliest possible play attempt — fires the instant this point in the
      HTML is parsed, before the header/hero/video markup below it, so the
@@ -128,7 +129,7 @@
 
   <!-- Hero -->
   <section class="hero">
-    <video class="hero__video" autoplay muted loop playsinline poster="public/poster-frames/element-v2.webp" fetchpriority="high">
+    <video class="hero__video" autoplay muted loop playsinline poster="public/poster-frames/element-v2.webp">
       <source src="videos/element-v2-mobile.mp4" media="(max-width: 768px)">
       <source src="videos/element-v2.mp4">
     </video>
@@ -208,62 +209,62 @@
     <div class="drift-wall" aria-hidden="true">
       <div class="drift-wall__col" style="--dw-duration:38s;">
         <div class="drift-wall__track">
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0007-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0008-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3612-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-01-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0007-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0008-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3612-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-01-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0007-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0008-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3612-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-01-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0007-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0008-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3612-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-01-thumb-tile.webp" loading="lazy" alt=""></div>
         </div>
       </div>
       <div class="drift-wall__col drift-wall__col--reverse" style="--dw-duration:52s;">
         <div class="drift-wall__track">
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0009-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-02-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3615-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-01-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0009-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-02-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3615-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-01-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0009-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-02-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3615-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-01-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0009-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-02-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3615-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-01-thumb-tile.webp" loading="lazy" alt=""></div>
         </div>
       </div>
       <div class="drift-wall__col" style="--dw-duration:44s;">
         <div class="drift-wall__track">
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0013-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-06-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3617-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-04-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0013-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-06-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3617-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-04-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0013-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-06-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3617-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-04-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0013-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-06-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3617-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/crochet/photo-04-thumb-tile.webp" loading="lazy" alt=""></div>
         </div>
       </div>
       <div class="drift-wall__col drift-wall__col--reverse" style="--dw-duration:34s;">
         <div class="drift-wall__track">
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0011-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-03-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3611-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-04-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0011-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-03-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3611-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-04-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0011-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-03-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3611-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-04-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0011-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-03-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3611-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/live-music/photo-04-thumb-tile.webp" loading="lazy" alt=""></div>
         </div>
       </div>
       <div class="drift-wall__col" style="--dw-duration:48s;">
         <div class="drift-wall__track">
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0012-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-08-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3623-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0014-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0012-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-08-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3623-thumb.webp" loading="lazy" alt=""></div>
-          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0014-thumb.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0012-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-08-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3623-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0014-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0012-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/world-music-day/photo-08-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/gallery/artists/session-3623-thumb-tile.webp" loading="lazy" alt=""></div>
+          <div class="drift-wall__tile"><img src="public/equipments/IMG-20260723-WA0014-thumb-tile.webp" loading="lazy" alt=""></div>
         </div>
       </div>
     </div>
