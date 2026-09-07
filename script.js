@@ -277,53 +277,51 @@
     }, { once: true });
   });
 
-  /* ---------------- BounceCards: fanned reel thumbnails that spring into
-     place with real elastic easing (GSAP), matching the reactbits
-     BounceCards component: rotate+translate fan, elastic.out(1, 0.5),
-     staggered entrance, no hover interaction. Reads each card's own
-     --bc-x/--bc-rot custom properties (set in CSS per nth-child) so the
-     same script drives any card count on any page. GSAP may load via a
-     deferred <script> after this file runs, so gsap is only ever touched
-     inside the IntersectionObserver callback below, never at top level. */
-  document.querySelectorAll('.bounce-cards').forEach(function (container) {
-    var cards = container.querySelectorAll('.bounce-cards__card');
-    if (!cards.length) return;
-    function run() {
-      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!window.gsap || window.innerWidth < 760 || reduceMotion) {
-        if (window.gsap) gsap.set(cards, { clearProps: 'all' });
-        return;
-      }
-      var targets = Array.prototype.map.call(cards, function (card) {
-        var cs = getComputedStyle(card);
-        return {
-          x: cs.getPropertyValue('--bc-x').trim() || '0px',
-          rotate: cs.getPropertyValue('--bc-rot').trim() || '0deg'
-        };
-      });
-      gsap.set(cards, { x: 0, rotate: 0, scale: 0, opacity: 0 });
-      gsap.to(cards, {
-        x: function (i) { return targets[i].x; },
-        rotate: function (i) { return targets[i].rotate; },
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        delay: 1,
-        stagger: 0.08,
-        ease: 'elastic.out(1, 0.5)'
-      });
+  /* ---------------- Accordion gallery: hover-expand video panels ----------------
+     One panel is active (expanded, full colour) at a time; the rest sit
+     collapsed (grayscale + dark overlay). Desktop: hover/focus sets the
+     active panel, clicking the already-active one plays its video. A
+     hover-driven expand doesn't exist on touch, so below 760px (or with
+     no hover capability) every panel is just a plain immediate
+     click-to-play card, matching .reel-card's own behaviour. */
+  document.querySelectorAll('.accordion-gallery').forEach(function (container) {
+    var panels = container.querySelectorAll('.accordion-gallery__panel');
+    if (!panels.length) return;
+
+    function playVideo(panel) {
+      var video = document.createElement('video');
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.poster = panel.dataset.poster || '';
+      var source = document.createElement('source');
+      source.src = panel.dataset.mp4;
+      source.type = 'video/mp4';
+      video.appendChild(source);
+      panel.innerHTML = '';
+      panel.appendChild(video);
+      video.play().catch(function () {});
     }
-    if ('IntersectionObserver' in window) {
-      var bounceIo = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          run();
-          bounceIo.unobserve(entry.target);
+
+    var isDesktop = window.matchMedia('(hover: hover)').matches && window.innerWidth >= 760;
+    if (isDesktop) {
+      var defaultIndex = parseInt(container.dataset.defaultIndex, 10) || 0;
+      function setActive(panel) {
+        panels.forEach(function (p) { p.classList.toggle('is-active', p === panel); });
+      }
+      if (panels[defaultIndex]) setActive(panels[defaultIndex]);
+      panels.forEach(function (panel) {
+        panel.addEventListener('mouseenter', function () { setActive(panel); });
+        panel.addEventListener('focus', function () { setActive(panel); });
+        panel.addEventListener('click', function () {
+          if (!panel.classList.contains('is-active')) { setActive(panel); return; }
+          playVideo(panel);
         });
-      }, { threshold: 0.25 });
-      bounceIo.observe(container);
+      });
     } else {
-      run();
+      panels.forEach(function (panel) {
+        panel.addEventListener('click', function () { playVideo(panel); }, { once: true });
+      });
     }
   });
 
