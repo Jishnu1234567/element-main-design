@@ -981,12 +981,6 @@ body.dark-header .site-header { color: var(--base-fg); }
 @media (max-width: 720px) {
   .scroll-expand { height: 200vh; }
   .scroll-expand__frame { width: var(--se-w, 78%); height: var(--se-h, 46%); }
-  /* The intro image is a landscape frame with a wide title graphic — on a
-     narrow/tall phone, object-fit:cover crops so much width that the title
-     text gets cut off. Show the whole frame instead (letterboxed against
-     the section's own dark background) and drop the continuous zoom, which
-     would otherwise crop back into it via the frame's overflow:hidden. */
-  .scroll-expand__media { object-fit: contain; background: var(--color-brand-black); transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .scroll-expand { height: auto; }
