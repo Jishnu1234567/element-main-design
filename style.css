@@ -835,7 +835,6 @@ body.dark-header .site-header { color: var(--base-fg); }
   font-size: clamp(.9rem, .8rem + .3vw, 1.1rem);
   text-transform: uppercase;
   letter-spacing: .08em;
-  opacity: .75;
 }
 
 .all-projects { text-align: center; padding: var(--block-gap) 0; background: var(--base-bg); position: relative; z-index: 3; }
@@ -1599,7 +1598,7 @@ body.dark-header .site-header { color: var(--base-fg); }
 .brand-family__profile .capability-columns p { max-width: none; opacity: .78; font-size: clamp(1rem, .95rem + .15vw, 1.1rem); line-height: 1.6; }
 .brand-family__pillars { grid-template-columns: 1fr; }
 @media (min-width: 640px) { .brand-family__pillars { grid-template-columns: repeat(3, 1fr); } }
-.brand-family__whatsapp { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem 1.1rem; border-radius: 2rem; background: #25D366; color: #fff; font-weight: 600; font-size: .9rem; text-decoration: none !important; transition: transform .2s ease, box-shadow .2s ease; }
+.brand-family__whatsapp { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem 1.1rem; border-radius: 2rem; background: #075E54; color: #fff; font-weight: 600; font-size: .9rem; text-decoration: none !important; transition: transform .2s ease, box-shadow .2s ease; }
 .brand-family__whatsapp:hover, .brand-family__whatsapp:focus-visible { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(37,211,102,.35); }
 
 /* ---------- Cinematic tilt + glare hover (studio/gallery imagery cards) ---------- */
