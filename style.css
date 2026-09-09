@@ -1143,6 +1143,15 @@ body.dark-header .site-header { color: var(--base-fg); }
 /* Large top banner image (about page) */
 .hero-banner { position: relative; width: 100%; aspect-ratio: 21 / 9; overflow: hidden; background: var(--base-bg); }
 .hero-banner img, .hero-banner video { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 768px) {
+  /* 21:9 squeezed into a narrow phone viewport comes out barely 150-180px
+     tall - too short to see the actual subject in these shots (the person,
+     the desk, the gear all sit below the frame's vertical center). Give
+     mobile its own taller ratio matching the source's native 16:9 instead
+     of forcing the cinematic banner crop onto a viewport it was never
+     composed for. */
+  .hero-banner { aspect-ratio: 16 / 9; }
+}
 
 /* ---------- Color band system ----------
    Each new colour starts one .color-band with a .color-band__wave
