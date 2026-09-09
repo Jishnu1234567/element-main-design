@@ -158,6 +158,8 @@
       menuToggle.classList.remove('is-open');
       menuToggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
+      menuOverlay.style.setProperty('--overlay-color', '#1e1a17');
+      items.forEach(function (item) { item.style.color = '#fff'; });
     }
 
     menuToggle.addEventListener('click', function () {
@@ -165,10 +167,15 @@
     });
 
     items.forEach(function (item) {
-      item.addEventListener('mouseenter', function () {
+      // mouseenter/mouseleave give this effect on desktop; touch devices
+      // never fire hover events at all, so without touchstart here the
+      // overlay just sits at its default color the whole time on mobile.
+      function activate() {
         menuOverlay.style.setProperty('--overlay-color', item.dataset.color);
-        item.style.color = item.dataset.hover;
-      });
+        items.forEach(function (other) { other.style.color = other === item ? item.dataset.hover : '#fff'; });
+      }
+      item.addEventListener('mouseenter', activate);
+      item.addEventListener('touchstart', activate, { passive: true });
       item.addEventListener('mouseleave', function () {
         item.style.color = '#fff';
       });
