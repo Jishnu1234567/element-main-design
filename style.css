@@ -401,12 +401,15 @@ body.dark-header .site-header { color: var(--base-fg); }
   justify-content: flex-start;
   display: flex;
   align-items: center;
-  gap: .5rem;
-  background: var(--color-brand-white);
+  gap: .75rem;
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: var(--color-brand-black);
   border-radius: 9999px;
-  padding: .5rem .5rem .5rem 1.1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  border: 1px solid rgba(255,255,255,.6);
+  padding: .55rem .55rem .55rem 1.3rem;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.22);
   opacity: 0;
   transition: opacity .6s ease .3s;
 }
@@ -434,6 +437,30 @@ body.dark-header .site-header { color: var(--base-fg); }
 .audio-toggle svg { width: 1.15rem; height: 1.15rem; }
 .audio-toggle__icon-off { display: none; }
 .audio-toggle.is-muted .audio-toggle__icon-on { display: none; }
+.audio-fab {
+  position: fixed;
+  left: clamp(1.1rem, 3vw, 2rem);
+  bottom: clamp(1.1rem, 3vw, 2rem);
+  z-index: 55;
+  width: 3rem;
+  height: 3rem;
+  background: rgba(30, 26, 23, .55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-brand-white);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  transition: background-color .2s ease, transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
+}
+.audio-fab:hover { background: rgba(30, 26, 23, .8); transform: scale(1.08); box-shadow: 0 14px 36px rgba(0,0,0,.45); }
+.audio-fab svg { width: 1.25rem; height: 1.25rem; }
+@media (max-width: 640px) {
+  /* The hero's own CTA button moves to bottom-left on narrow screens
+     (.hero-kinetic__secondary above), which would collide with a
+     bottom-left fixed button — keep the audio toggle up near the navbar
+     instead, out of that content's way. */
+  .audio-fab { top: clamp(1rem, 2vw, 1.5rem); left: clamp(1rem, 2vw, 1.5rem); bottom: auto; width: 2.5rem; height: 2.5rem; }
+  .audio-fab svg { width: 1.1rem; height: 1.1rem; }
+}
 .audio-toggle.is-muted .audio-toggle__icon-off { display: block; }
 
 /* ---------- Hero bottom content (heading, subtitle, CTA bar) ---------- */
