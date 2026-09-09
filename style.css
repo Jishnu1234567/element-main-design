@@ -389,7 +389,7 @@ body.dark-header .site-header { color: var(--base-fg); }
   50% { transform: translateY(10px); }
 }
 
-/* ---------- Floating pill navbar (homepage hero) ---------- */
+/* ---------- PillNav (homepage hero) ---------- */
 .hero-navbar {
   position: absolute;
   top: clamp(1rem, 2vw, 1.5rem);
@@ -398,60 +398,100 @@ body.dark-header .site-header { color: var(--base-fg); }
   z-index: 62;
   width: max-content;
   max-width: calc(100vw - 2rem);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: .6rem;
-  background: rgba(20, 16, 13, .38);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 9999px;
-  padding: .5rem .5rem .5rem 1.2rem;
-  box-shadow: 0 1px 1px rgba(0,0,0,.1), 0 16px 40px rgba(0,0,0,.35);
   opacity: 0;
   transition: opacity .6s ease .3s;
 }
 .hero-navbar.is-visible { opacity: 1; }
 .hero-navbar::before { content: none; }
-.hero-navbar__brand {
+.pill-nav {
   display: flex;
   align-items: center;
-  gap: .5rem;
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: -.02em;
-  white-space: nowrap;
-  color: var(--color-brand-white);
+  gap: .4rem;
+  background: #000;
+  border-radius: 9999px;
+  padding: .35rem;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1), 0 16px 40px rgba(0,0,0,.35);
 }
-.hero-navbar__brand img { height: 1.35rem; width: auto; display: block; }
-.hero-navbar .menu-toggle {
-  width: 2.75rem;
-  height: 2.75rem;
-  flex-direction: row;
-  align-items: flex-end;
-  gap: 3px;
-  background: var(--color-brand-gold);
+.pill-nav__logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
   border-radius: 50%;
-  transition: background-color .2s ease, transform .3s cubic-bezier(.2,.8,.2,1);
+  background: #fff;
 }
-.hero-navbar .menu-toggle:hover { background: var(--color-brand-tan-dark); transform: scale(1.06); }
-.hero-navbar .menu-toggle span {
-  background: var(--color-brand-black);
-  width: 3px;
-  height: 9px;
-  border-radius: 2px;
-  transition: transform .35s cubic-bezier(.68,-.4,.27,1.4), opacity .25s ease, height .25s ease;
+.pill-nav__logo img { height: 1.3rem; width: auto; display: block; filter: invert(1) brightness(0); }
+.pill-nav__items { display: flex; align-items: center; gap: .3rem; pointer-events: auto; }
+.pill-nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: #fff;
+  padding: .6rem 1.15rem;
+  pointer-events: auto;
 }
-.hero-navbar .menu-toggle span:nth-child(2) { height: 16px; }
-.hero-navbar .menu-toggle span:nth-child(3) { height: 11px; }
-.hero-navbar .menu-toggle span:nth-child(4) { height: 15px; }
-.hero-navbar .menu-toggle.is-open span { height: 15px; }
-.hero-navbar .menu-toggle.is-open span:nth-child(1) { transform: translateX(11px) rotate(45deg); }
-.hero-navbar .menu-toggle.is-open span:nth-child(2) { transform: translateX(4px) rotate(-45deg); }
-.hero-navbar .menu-toggle.is-open span:nth-child(3) { transform: translateX(-4px) rotate(45deg); }
-.hero-navbar .menu-toggle.is-open span:nth-child(4) { transform: translateX(-11px) rotate(-45deg); }
-.hero-navbar__controls { display: flex; align-items: center; gap: .6rem; pointer-events: auto; }
+.pill-nav__fill {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 160%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #000;
+  /* Resting xPercent/yPercent/scale are set by GSAP on load (gsap.set),
+     not here - once GSAP touches an element's transform it owns the
+     matrix, and a CSS translate(%) + scale() set beforehand gets
+     clobbered rather than composed on the first tween. no-JS fallback: */
+  transform: translate(-50%, 55%) scale(0);
+  will-change: transform;
+}
+.pill-nav__label {
+  position: relative;
+  z-index: 1;
+  font-family: Sora, sans-serif;
+  font-size: .88rem;
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;
+}
+.pill-nav__link.is-active .pill-nav__label { color: #fff; }
+@media (min-width: 901px) { .hero-navbar__controls { display: none; } }
+@media (max-width: 900px) {
+  .pill-nav__items { display: none; }
+  .pill-nav { padding: .3rem; }
+  .hero-navbar__controls { display: flex; align-items: center; gap: .6rem; pointer-events: auto; }
+  .hero-navbar .menu-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 3px;
+    background: var(--color-brand-gold);
+    border-radius: 50%;
+    transition: background-color .2s ease, transform .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .hero-navbar .menu-toggle:hover { background: var(--color-brand-tan-dark); transform: scale(1.06); }
+  .hero-navbar .menu-toggle span {
+    background: var(--color-brand-black);
+    width: 3px;
+    height: 9px;
+    border-radius: 2px;
+    transition: transform .35s cubic-bezier(.68,-.4,.27,1.4), opacity .25s ease, height .25s ease;
+  }
+  .hero-navbar .menu-toggle span:nth-child(2) { height: 16px; }
+  .hero-navbar .menu-toggle span:nth-child(3) { height: 11px; }
+  .hero-navbar .menu-toggle span:nth-child(4) { height: 15px; }
+  .hero-navbar .menu-toggle.is-open span { height: 15px; }
+  .hero-navbar .menu-toggle.is-open span:nth-child(1) { transform: translateX(11px) rotate(45deg); }
+  .hero-navbar .menu-toggle.is-open span:nth-child(2) { transform: translateX(4px) rotate(-45deg); }
+  .hero-navbar .menu-toggle.is-open span:nth-child(3) { transform: translateX(-4px) rotate(45deg); }
+  .hero-navbar .menu-toggle.is-open span:nth-child(4) { transform: translateX(-11px) rotate(-45deg); }
+}
 .audio-toggle {
   pointer-events: auto;
   width: 2.5rem;
