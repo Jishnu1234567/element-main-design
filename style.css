@@ -296,7 +296,7 @@ a .place-highlight { text-decoration: underline; text-decoration-thickness: 1px;
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 50;
+  z-index: 62;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -327,6 +327,7 @@ body.dark-header .site-header { color: var(--base-fg); }
 .menu-toggle {
   pointer-events: auto;
   position: relative;
+  z-index: 61;
   width: clamp(2.5rem, 2rem + 1.5vw, 3rem);
   height: clamp(2.5rem, 2rem + 1.5vw, 3rem);
   display: flex;
@@ -392,32 +393,65 @@ body.dark-header .site-header { color: var(--base-fg); }
 .hero-navbar {
   position: absolute;
   top: clamp(1rem, 2vw, 1.5rem);
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%);
-  z-index: 50;
-  width: max-content;
-  max-width: calc(100vw - 2rem);
-  justify-content: flex-start;
+  left: clamp(1rem, 2vw, 1.5rem);
+  right: clamp(1rem, 2vw, 1.5rem);
+  z-index: 62;
+  width: auto;
+  max-width: none;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: .75rem;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  opacity: 0;
+  transition: opacity .6s ease .3s;
+}
+.hero-navbar.is-visible { opacity: 1; }
+.hero-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -.02em;
+  white-space: nowrap;
   background: rgba(255, 255, 255, .92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: var(--color-brand-black);
   border-radius: 9999px;
   border: 1px solid rgba(255,255,255,.6);
-  padding: .55rem .55rem .55rem 1.3rem;
+  padding: .55rem 1.3rem .55rem 1rem;
   box-shadow: 0 1px 1px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.22);
-  opacity: 0;
-  transition: opacity .6s ease .3s;
 }
-.hero-navbar.is-visible { opacity: 1; }
-.hero-navbar__brand { display: flex; align-items: center; gap: .5rem; font-weight: 700; font-size: 1.05rem; letter-spacing: -.02em; white-space: nowrap; }
 .hero-navbar__brand img { height: 1.35rem; width: auto; display: block; }
-.hero-navbar .menu-toggle { width: 2.5rem; height: 2.5rem; background: var(--color-brand-tan); border-radius: 50%; }
-.hero-navbar .menu-toggle span { background: var(--color-brand-black); }
+.hero-navbar .menu-toggle {
+  width: 3rem;
+  height: 3rem;
+  flex-direction: row;
+  gap: 4px;
+  background: rgba(30, 26, 23, .55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.22);
+  transition: background-color .2s ease, transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.hero-navbar .menu-toggle:hover { background: rgba(30, 26, 23, .8); transform: scale(1.06); }
+.hero-navbar .menu-toggle span {
+  background: var(--color-brand-white);
+  width: 3px;
+  height: 19px;
+  border-radius: 3px;
+}
+.hero-navbar .menu-toggle span:nth-child(2) { height: 12px; align-self: flex-end; margin-bottom: 1px; }
+.hero-navbar .menu-toggle.is-open span:nth-child(1) { transform: translateX(6px) rotate(45deg); }
+.hero-navbar .menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+.hero-navbar .menu-toggle.is-open span:nth-child(3) { transform: translateX(-6px) rotate(-45deg); }
 .hero-navbar__controls { display: flex; align-items: center; gap: .6rem; pointer-events: auto; }
 .audio-toggle {
   pointer-events: auto;
@@ -454,12 +488,13 @@ body.dark-header .site-header { color: var(--base-fg); }
 .audio-fab:hover { background: rgba(30, 26, 23, .8); transform: scale(1.08); box-shadow: 0 14px 36px rgba(0,0,0,.45); }
 .audio-fab svg { width: 1.25rem; height: 1.25rem; }
 @media (max-width: 640px) {
-  /* The hero's own CTA button moves to bottom-left on narrow screens
-     (.hero-kinetic__secondary above), which would collide with a
-     bottom-left fixed button — keep the audio toggle up near the navbar
-     instead, out of that content's way. */
-  .audio-fab { top: clamp(1rem, 2vw, 1.5rem); left: clamp(1rem, 2vw, 1.5rem); bottom: auto; width: 2.5rem; height: 2.5rem; }
-  .audio-fab svg { width: 1.1rem; height: 1.1rem; }
+  /* Neither top corner nor bottom-left works here: the hero's own CTA
+     button moves to bottom-left on narrow screens (.hero-kinetic__secondary
+     above), and both top corners are now taken by the split hero-navbar
+     (brand pill left, menu button right). Stack the audio toggle above the
+     WhatsApp FAB on the bottom-right instead, clear of everything else. */
+  .audio-fab { top: auto; left: auto; right: clamp(1.1rem, 3vw, 2rem); bottom: 5.5rem; width: 2.75rem; height: 2.75rem; }
+  .audio-fab svg { width: 1.15rem; height: 1.15rem; }
 }
 .audio-toggle.is-muted .audio-toggle__icon-off { display: block; }
 
