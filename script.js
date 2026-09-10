@@ -274,22 +274,60 @@
     }
   }
 
+  /* ---------------- Shared full-size video lightbox (site-wide) ----------------
+     Reel-card and accordion-gallery panels are sized as fixed thumbnail
+     slots (a 9:16 card, or a flexing accordion strip) that don't reliably
+     match the source clip's own aspect ratio once expanded — playing the
+     video in place risks cropping it. Route playback through one shared,
+     full-size, uncropped lightbox instead (same look as the gallery
+     page's own video viewer), reused by every card on the site. */
+  var videoLb = null;
+  function openVideoLightbox(mp4, poster, alt) {
+    if (!videoLb) {
+      videoLb = document.createElement('div');
+      videoLb.className = 'gallery-lightbox';
+      videoLb.innerHTML =
+        '<button type="button" class="gallery-lightbox__close" aria-label="Close">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>' +
+        '</button>' +
+        '<figure class="gallery-lightbox__figure">' +
+          '<video class="gallery-lightbox__img" playsinline controls controlsList="nofullscreen noremoteplayback" disablePictureInPicture></video>' +
+        '</figure>';
+      document.body.appendChild(videoLb);
+      var vid = videoLb.querySelector('video');
+      // iOS Safari ignores controlsList and offers its own fullscreen
+      // button regardless; bounce straight back out if it's tapped.
+      vid.addEventListener('webkitbeginfullscreen', function () {
+        if (vid.webkitExitFullscreen) vid.webkitExitFullscreen();
+      });
+      function close() {
+        videoLb.classList.remove('is-open');
+        document.body.style.overflow = '';
+        vid.pause();
+        vid.removeAttribute('src');
+      }
+      videoLb.querySelector('.gallery-lightbox__close').addEventListener('click', close);
+      videoLb.addEventListener('click', function (e) { if (e.target === videoLb) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (videoLb.classList.contains('is-open') && e.key === 'Escape') close();
+      });
+      videoLb._video = vid;
+    }
+    var vid = videoLb._video;
+    vid.poster = poster || '';
+    vid.setAttribute('aria-label', alt || '');
+    vid.src = mp4;
+    vid.classList.add('is-shown');
+    videoLb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    vid.play().catch(function () {});
+  }
+
   /* ---------------- Featured reels: click-to-play ---------------- */
   document.querySelectorAll('.reel-card[data-mp4]').forEach(function (card) {
     card.addEventListener('click', function () {
-      var video = document.createElement('video');
-      video.controls = true;
-      video.autoplay = true;
-      video.playsInline = true;
-      video.poster = card.dataset.poster || '';
-      var source = document.createElement('source');
-      source.src = card.dataset.mp4;
-      source.type = 'video/mp4';
-      video.appendChild(source);
-      card.innerHTML = '';
-      card.appendChild(video);
-      video.play().catch(function () {});
-    }, { once: true });
+      openVideoLightbox(card.dataset.mp4, card.dataset.poster, card.getAttribute('aria-label') || '');
+    });
   });
 
   /* ---------------- Accordion gallery: hover-expand video panels ----------------
@@ -304,18 +342,7 @@
     if (!panels.length) return;
 
     function playVideo(panel) {
-      var video = document.createElement('video');
-      video.controls = true;
-      video.autoplay = true;
-      video.playsInline = true;
-      video.poster = panel.dataset.poster || '';
-      var source = document.createElement('source');
-      source.src = panel.dataset.mp4;
-      source.type = 'video/mp4';
-      video.appendChild(source);
-      panel.innerHTML = '';
-      panel.appendChild(video);
-      video.play().catch(function () {});
+      openVideoLightbox(panel.dataset.mp4, panel.dataset.poster, panel.getAttribute('aria-label') || '');
     }
 
     var isDesktop = window.matchMedia('(hover: hover)').matches && window.innerWidth >= 760;
@@ -335,7 +362,7 @@
       });
     } else {
       panels.forEach(function (panel) {
-        panel.addEventListener('click', function () { playVideo(panel); }, { once: true });
+        panel.addEventListener('click', function () { playVideo(panel); });
       });
     }
   });
