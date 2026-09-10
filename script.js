@@ -30,12 +30,20 @@
   var INTRO_SKIP = 3;
   var skipVideos = document.querySelectorAll('.hero__video, .hero-banner video, .feature-card__video, .lazy-bg-video');
   skipVideos.forEach(function (video) {
+    function bufferedPastIntro() {
+      var len = video.buffered.length;
+      return len > 0 && video.buffered.end(len - 1) >= INTRO_SKIP;
+    }
     function pastIntro() {
-      if (video.duration > INTRO_SKIP + 0.5 && video.currentTime < INTRO_SKIP) {
+      // Only seek once the target point is actually buffered — seeking ahead
+      // of the buffer stalls playback waiting for data, which on a cold
+      // cache leaves autoplay looking paused until the page is reloaded.
+      if (video.duration > INTRO_SKIP + 0.5 && video.currentTime < INTRO_SKIP && bufferedPastIntro()) {
         video.currentTime = INTRO_SKIP;
       }
     }
     video.addEventListener('loadedmetadata', pastIntro);
+    video.addEventListener('progress', pastIntro);
     video.addEventListener('playing', pastIntro);
     video.addEventListener('timeupdate', pastIntro);
   });

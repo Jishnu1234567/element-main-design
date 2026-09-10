@@ -91,6 +91,11 @@
 </head>
 <body class="dark-header">
 
+<audio id="introAudio" src="public/audio/logo-voiceover.mp3" preload="metadata" playsinline autoplay></audio>
+<script>
+  document.getElementById('introAudio').play().catch(function () {});
+</script>
+
 <!-- Original Navbar -->
 <header class="site-header" id="siteHeader">
   <a href="index.html" class="brand-logo" aria-label="Element Sound Studio home">
@@ -454,14 +459,19 @@
 <!-- Menu Overlay -->
 <div class="menu-overlay" id="menuOverlay">
   <nav class="menu-overlay__list">
-    <a class="menu-overlay__item" href="programs.html" data-color="#C9962E" data-hover="#F3EAD8">Programs</a>
     <a class="menu-overlay__item" href="index.html" data-color="#C97B4A" data-hover="#F3EAD8">Home</a>
     <a class="menu-overlay__item" href="about.html" data-color="#234C4C" data-hover="#B9C79A">About</a>
+    <a class="menu-overlay__item" href="programs.html" data-color="#C9962E" data-hover="#F3EAD8">Programs</a>
     <a class="menu-overlay__item" href="team.html" data-color="#7A2E3A" data-hover="#E8C4B8">Team</a>
     <a class="menu-overlay__item" href="gallery.html" data-color="#6E7B4F" data-hover="#F3EAD8">Gallery</a>
     <a class="menu-overlay__item" href="contact.html" data-color="#B85C38" data-hover="#F3EAD8">Contact</a>
   </nav>
 </div>
+
+<button class="audio-toggle audio-fab" id="audioToggle" type="button" aria-label="Mute intro audio" aria-pressed="false">
+  <svg class="audio-toggle__icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
+  <svg class="audio-toggle__icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m23 9-6 6"/><path d="m17 9 6 6"/></svg>
+</button>
 
 <!-- WhatsApp FAB -->
 <a class="whatsapp-fab" href="https://wa.me/919895314555?text=Hi!%20I%20would%20like%20to%20know%20more%20about%20Element%20Sound%20Studio." target="_blank" rel="noopener" aria-label="Chat with Element Sound Studio on WhatsApp">
@@ -478,6 +488,7 @@
 </div>
 
 <script src="script.min.js?v=14"></script>
+<script src="intro-audio.js?v=3"></script>
 <script src="vendor/gsap/gsap.min.js"></script>
 <script src="vendor/gsap/ScrollTrigger.min.js"></script>
 <script src="fly-text.min.js?v=5" defer></script>

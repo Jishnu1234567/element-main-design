@@ -1314,6 +1314,7 @@ body.dark-header .site-header { color: var(--base-fg); }
   transition: transform .35s cubic-bezier(.2,.8,.2,1), opacity .3s ease;
 }
 .gallery-lightbox__img.is-shown { transform: scale(1); opacity: 1; }
+.gallery-lightbox__video::-webkit-media-controls-fullscreen-button { display: none !important; }
 .gallery-lightbox__counter { font-family: 'Sora', sans-serif; font-size: .8rem; letter-spacing: .1em; color: rgba(255,255,255,.55); }
 
 .gallery-lightbox__close,
