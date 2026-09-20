@@ -57,7 +57,12 @@
   }
 
   toggle.addEventListener('click', function () {
-    if (muted) { setMuted(false); tryPlay(); } else { setMuted(true); }
+    if (muted || audio.paused || audio.ended) {
+      setMuted(false);
+      tryPlay();
+    } else {
+      setMuted(true);
+    }
   });
 
   // Always attempt on load — every fresh page load gets its own chance,

@@ -109,9 +109,9 @@
   --footer-bg: 237 225 201;
 
   --container-max: 90rem;
-  --gutter: clamp(1.5rem, .36rem + 1.79vw, 2.5rem);
-  --block-gap: clamp(3rem, .71rem + 3.57vw, 5rem);
-  --page-pad: clamp(1rem, -.71rem + 2.68vw, 2.5rem);
+  --gutter: clamp(1.5rem, calc(.36rem + 1.79vw), 2.5rem);
+  --block-gap: clamp(3rem, calc(.71rem + 3.57vw), 5rem);
+  --page-pad: clamp(1rem, calc(-.71rem + 2.68vw), 2.5rem);
 
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Sora', 'Helvetica Neue', Arial, sans-serif;
@@ -364,7 +364,7 @@ body.dark-header .site-header { color: var(--base-fg); }
   object-fit: cover;
   z-index: 1;
 }
-.hero__overlay { position: absolute; inset: 0; z-index: 2; background: rgba(0,0,0,.2); pointer-events: none; }
+.hero__overlay { position: absolute; inset: 0; z-index: 2; background: rgba(0,0,0,.42); pointer-events: none; }
 .hero__video-fallback {
   position: absolute;
   inset: 0;
@@ -450,16 +450,17 @@ body.dark-header .site-header { color: var(--base-fg); }
   left: clamp(1.1rem, 3vw, 2rem);
   bottom: clamp(1.1rem, 3vw, 2rem);
   z-index: 55;
-  width: 3rem;
-  height: 3rem;
-  background: rgba(30, 26, 23, .55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: var(--color-brand-white);
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  transition: background-color .2s ease, transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
+  width: 3.25rem;
+  height: 3.25rem;
+  background: var(--color-brand-gold);
+  color: var(--color-brand-black);
+  box-shadow: 0 8px 24px rgba(201,150,46,.45), 0 10px 30px rgba(0,0,0,.35);
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
 }
-.audio-fab:hover { background: rgba(30, 26, 23, .8); transform: scale(1.08); box-shadow: 0 14px 36px rgba(0,0,0,.45); }
+.audio-fab::before { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--color-brand-gold); opacity: .6; animation: audio-pulse 2.2s ease-out infinite; will-change: transform, opacity; pointer-events: none; }
+.audio-fab:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(201,150,46,.6), 0 14px 36px rgba(0,0,0,.45); }
+.audio-fab__label { position: absolute; left: calc(100% + .65rem); white-space: nowrap; background: var(--color-brand-gold); color: var(--color-brand-black); font-family: var(--font-body); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .65rem; border-radius: .5rem; pointer-events: none; opacity: 0; transform: translateX(-4px); transition: opacity .2s ease, transform .2s ease; }
+.audio-fab:hover .audio-fab__label { opacity: 1; transform: translateX(0); }
 .audio-fab svg { width: 1.25rem; height: 1.25rem; }
 @media (max-width: 640px) {
   /* Neither top corner nor bottom-left works here: the hero's own CTA
@@ -467,10 +468,12 @@ body.dark-header .site-header { color: var(--base-fg); }
      above), and both top corners are now taken by the split hero-navbar
      (brand pill left, menu button right). Stack the audio toggle above the
      WhatsApp FAB on the bottom-right instead, clear of everything else. */
-  .audio-fab { top: auto; left: auto; right: clamp(1.1rem, 3vw, 2rem); bottom: 5.5rem; width: 2.75rem; height: 2.75rem; }
+  .audio-fab { top: auto; left: auto; right: clamp(1.1rem, 3vw, 2rem); bottom: 5.5rem; width: 3rem; height: 3rem; }
+  .audio-fab .audio-fab__label { display: none; }
   .audio-fab svg { width: 1.15rem; height: 1.15rem; }
 }
 .audio-toggle.is-muted .audio-toggle__icon-off { display: block; }
+@media (prefers-reduced-motion: reduce) { .audio-fab::before { animation: none; display: none; } }
 
 /* ---------- Hero bottom content (heading, subtitle, CTA bar) ---------- */
 .hero__content {
@@ -938,6 +941,7 @@ body.dark-header .site-header { color: var(--base-fg); }
 }
 .testimonial-slide.is-active { display: block; }
 @keyframes fade-scale-in { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes audio-pulse { from { transform: scale(.9); opacity: .7; } to { transform: scale(1.6); opacity: 0; } }
 .testimonial-slide blockquote { margin: clamp(1.5rem,3vw,2rem) 0 1.5rem; font-family: var(--font-display); font-style: italic; font-size: clamp(1.15rem, 1rem + 1.6vw, 1.85rem); font-weight: 400; line-height: 1.4; color: var(--color-brand-teal); }
 .testimonial-slide .credit { text-align: right; font-weight: 600; font-size: clamp(1rem, .9rem + .3vw, 1.25rem); }
 .testimonial-dots { position: absolute; bottom: clamp(1rem, 2vw, 1.5rem); left: 50%; transform: translateX(-50%); display: flex; z-index: 2; }
@@ -972,6 +976,11 @@ body.dark-header .site-header { color: var(--base-fg); }
 @keyframes footer-aurora-a { from { transform: translate(0, 0) scale(1); } to { transform: translate(3rem, 2rem) scale(1.18); } }
 @keyframes footer-aurora-b { from { transform: translate(0, 0) scale(1); } to { transform: translate(-2.5rem, -2rem) scale(1.12); } }
 @media (prefers-reduced-motion: reduce) { .footer-aurora span { animation: none !important; } }
+@media (max-width: 720px) {
+  .footer-aurora span,
+  .footer-eq span { animation: none !important; }
+  .footer-spotlight { display: none; }
+}
 
 .footer-spotlight { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0; transition: opacity .5s ease; background: radial-gradient(circle 22rem at var(--fx, 50%) var(--fy, 50%), rgba(201,150,46,.16), transparent 70%); }
 .site-footer:hover .footer-spotlight { opacity: 1; }
@@ -1646,6 +1655,19 @@ body.dark-header .site-header { color: var(--base-fg); }
 @media (min-width: 640px) { .brand-family__pillars { grid-template-columns: repeat(3, 1fr); } }
 .brand-family__whatsapp { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem 1.1rem; border-radius: 2rem; background: #075E54; color: #fff; font-weight: 600; font-size: .9rem; text-decoration: none !important; transition: transform .2s ease, box-shadow .2s ease; }
 .brand-family__whatsapp:hover, .brand-family__whatsapp:focus-visible { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(37,211,102,.35); }
+.brand-family__whatsapp--text {
+  gap: .6rem;
+  padding: 0 0 .2rem;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-brand-gold);
+  border-bottom: 1.5px solid currentColor;
+  font-size: clamp(.95rem, .9rem + .2vw, 1.1rem);
+}
+.brand-family__whatsapp--text:hover,
+.brand-family__whatsapp--text:focus-visible {
+  box-shadow: none;
+}
 
 /* ---------- Cinematic tilt + glare hover (studio/gallery imagery cards) ---------- */
 .tilt-card { --rx: 0deg; --ry: 0deg; --gx: 50%; --gy: 50%; transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)); transition: transform .5s cubic-bezier(.16,1,.3,1); }
@@ -1655,6 +1677,7 @@ body.dark-header .site-header { color: var(--base-fg); }
 @media (prefers-reduced-motion: reduce) { .tilt-card { transition: none !important; transform: none !important; } }
 @media (hover: none) { .tilt-card { transform: none !important; } .tilt-card::after { display: none; } }
 .brand-family__whatsapp svg { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
+.brand-family__whatsapp--text svg { width: 1.4rem; height: 1.4rem; }
 
 /* ---------- Featured reels: click-to-play portrait video cards ---------- */
 .reel-grid { display: grid; gap: clamp(1rem, 2vw, 1.5rem); grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
