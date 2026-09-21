@@ -447,33 +447,33 @@ body.dark-header .site-header { color: var(--base-fg); }
 .audio-toggle.is-muted .audio-toggle__icon-on { display: none; }
 .audio-fab {
   position: fixed;
-  left: clamp(1.1rem, 3vw, 2rem);
-  bottom: clamp(1.1rem, 3vw, 2rem);
+  left: clamp(1.25rem, 3vw, 2.5rem);
+  bottom: clamp(1.25rem, 3vw, 2.5rem);
   z-index: 55;
-  width: 3.25rem;
-  height: 3.25rem;
-  background: var(--color-brand-gold);
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #e0a738 0%, #c9962e 100%);
   color: var(--color-brand-black);
-  box-shadow: 0 8px 24px rgba(201,150,46,.45), 0 10px 30px rgba(0,0,0,.35);
-  transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 20px rgba(201, 150, 46, 0.65), 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: transform .3s cubic-bezier(.2, .8, .2, 1), box-shadow .3s ease, border-color .3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.audio-fab::before { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--color-brand-gold); opacity: .6; animation: audio-pulse 2.2s ease-out infinite; will-change: transform, opacity; pointer-events: none; }
-.audio-fab:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(201,150,46,.6), 0 14px 36px rgba(0,0,0,.45); }
-.audio-fab__label { position: absolute; left: calc(100% + .65rem); white-space: nowrap; background: var(--color-brand-gold); color: var(--color-brand-black); font-family: var(--font-body); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .65rem; border-radius: .5rem; pointer-events: none; opacity: 0; transform: translateX(-4px); transition: opacity .2s ease, transform .2s ease; }
-.audio-fab:hover .audio-fab__label { opacity: 1; transform: translateX(0); }
-.audio-fab svg { width: 1.25rem; height: 1.25rem; }
+.audio-fab::before { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--color-brand-gold); opacity: .7; animation: audio-pulse 2.2s ease-out infinite; will-change: transform, opacity; pointer-events: none; }
+.audio-fab::after { content: ""; position: absolute; inset: -12px; border-radius: 50%; border: 1.5px solid rgba(201, 150, 46, 0.4); opacity: .4; animation: audio-pulse 2.2s ease-out infinite .6s; will-change: transform, opacity; pointer-events: none; }
+.audio-fab:hover { transform: scale(1.1); border-color: #fff; box-shadow: 0 0 28px rgba(201,150,46,.9), 0 14px 36px rgba(0,0,0,.5); }
+.audio-fab__label { position: absolute; left: calc(100% + .75rem); white-space: nowrap; background: var(--color-brand-gold); color: var(--color-brand-black); font-family: var(--font-body); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .35rem .75rem; border-radius: .5rem; box-shadow: 0 4px 14px rgba(0,0,0,.3); pointer-events: none; opacity: 0; transform: translateX(-6px); transition: opacity .25s ease, transform .25s ease; }
+.audio-fab:hover .audio-fab__label, .audio-fab:focus-visible .audio-fab__label { opacity: 1; transform: translateX(0); }
+.audio-fab svg { width: 1.35rem; height: 1.35rem; filter: drop-shadow(0 1px 2px rgba(0,0,0,.35)); }
 @media (max-width: 640px) {
-  /* Neither top corner nor bottom-left works here: the hero's own CTA
-     button moves to bottom-left on narrow screens (.hero-kinetic__secondary
-     above), and both top corners are now taken by the split hero-navbar
-     (brand pill left, menu button right). Stack the audio toggle above the
-     WhatsApp FAB on the bottom-right instead, clear of everything else. */
-  .audio-fab { top: auto; left: auto; right: clamp(1.1rem, 3vw, 2rem); bottom: 5.5rem; width: 3rem; height: 3rem; }
+  .audio-fab { top: auto; left: auto; right: clamp(1.1rem, 3vw, 2rem); bottom: 5.75rem; width: 3.25rem; height: 3.25rem; }
   .audio-fab .audio-fab__label { display: none; }
-  .audio-fab svg { width: 1.15rem; height: 1.15rem; }
+  .audio-fab svg { width: 1.25rem; height: 1.25rem; }
 }
 .audio-toggle.is-muted .audio-toggle__icon-off { display: block; }
-@media (prefers-reduced-motion: reduce) { .audio-fab::before { animation: none; display: none; } }
+@media (prefers-reduced-motion: reduce) { .audio-fab::before, .audio-fab::after { animation: none; display: none; } }
 
 /* ---------- Hero bottom content (heading, subtitle, CTA bar) ---------- */
 .hero__content {

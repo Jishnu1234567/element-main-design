@@ -1,74 +1,123 @@
-/* Element Sound Studio — homepage intro voice-over.
+/* Element Sound Studio — Homepage Intro Audio */
 
-   IMPORTANT, please read before changing this file:
-   Every browser (Chrome, Safari, Firefox, Edge — desktop and mobile)
-   refuses to play audio with sound until the visitor has clicked,
-   tapped, or pressed a key on the page at least once. This is enforced
-   by the browser itself, not by this website, and there is no code
-   change on any site that can play sound before that first interaction
-   happens. This file does the best any website can do within that
-   rule: it tries to play immediately on every load (succeeds only if
-   the browser has already decided to trust this site from earlier
-   visits), and the moment it doesn't succeed, it quietly waits for the
-   visitor's very next interaction — anywhere on the page, not a
-   specific button — and plays then, with no visible prompt.
-   The speaker icon next to the menu button lets visitors mute it, or
-   replay it on demand, at any time. */
 (function () {
   'use strict';
+
   var audio = document.getElementById('introAudio');
   var toggle = document.getElementById('audioToggle');
+
   if (!audio || !toggle) return;
 
   var muted = false;
+  var fallbackArmed = false;
 
-  function setMuted(state) {
-    muted = state;
+  function updateButton() {
     toggle.classList.toggle('is-muted', muted);
+    toggle.classList.toggle('is-playing', !audio.paused && !audio.ended);
+
     toggle.setAttribute('aria-pressed', String(muted));
-    toggle.setAttribute('aria-label', muted ? 'Play intro audio' : 'Mute intro audio');
-    if (muted) audio.pause();
+    toggle.setAttribute(
+      'aria-label',
+      muted ? 'Play intro audio' : 'Mute intro audio'
+    );
+  }
+
+  function removeFallbackListeners() {
+    document.removeEventListener('pointerdown', resumeOnInteraction, true);
+    document.removeEventListener('touchstart', resumeOnInteraction, true);
+    document.removeEventListener('keydown', resumeOnInteraction, true);
+  }
+
+  function resumeOnInteraction() {
+    if (muted) return;
+
+    audio.play()
+      .then(function () {
+        updateButton();
+        removeFallbackListeners();
+      })
+      .catch(function () {
+        // Browser may still block playback.
+      });
   }
 
   function armFallback() {
-    function resumeOnInteraction() {
-      if (!muted) audio.play().catch(function () {});
-      document.removeEventListener('click', resumeOnInteraction, true);
-      document.removeEventListener('touchstart', resumeOnInteraction, true);
-      document.removeEventListener('keydown', resumeOnInteraction, true);
-      document.removeEventListener('pointerdown', resumeOnInteraction, true);
-    }
-    // Capture phase so this fires even if something else on the page
-    // stops propagation on the click (e.g. a button's own handler).
-    document.addEventListener('click', resumeOnInteraction, true);
+    if (fallbackArmed) return;
+
+    fallbackArmed = true;
+
+    /*
+     * Capture phase means this works even if another element
+     * stops the click event from bubbling.
+     */
+    document.addEventListener('pointerdown', resumeOnInteraction, true);
     document.addEventListener('touchstart', resumeOnInteraction, true);
     document.addEventListener('keydown', resumeOnInteraction, true);
-    document.addEventListener('pointerdown', resumeOnInteraction, true);
   }
 
-  function tryPlay() {
+  function playIntro() {
     if (muted) return;
-    var p = audio.play();
-    if (p && p.catch) {
-      p.catch(function () {
-        armFallback();
-      });
+
+    var promise = audio.play();
+
+    if (promise && promise.then) {
+      promise
+        .then(function () {
+          updateButton();
+          removeFallbackListeners();
+        })
+        .catch(function () {
+          /*
+           * Autoplay was blocked.
+           * Wait for the visitor's first interaction.
+           */
+          armFallback();
+          updateButton();
+        });
     }
   }
 
-  toggle.addEventListener('click', function () {
+  function setMuted(state) {
+    muted = state;
+
+    if (muted) {
+      audio.pause();
+    } else {
+      playIntro();
+    }
+
+    updateButton();
+  }
+
+  /* Button interaction */
+  toggle.addEventListener('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
     if (muted || audio.paused || audio.ended) {
       setMuted(false);
-      tryPlay();
     } else {
       setMuted(true);
     }
   });
 
-  // Always attempt on load — every fresh page load gets its own chance,
-  // and its own fallback-on-interaction if the immediate attempt is blocked.
-  tryPlay();
-  // Belt-and-braces: arm the fallback regardless of whether the play()
-  // promise had a chance to reject yet (some browsers resolve/reject late).
+  /* Keep UI synchronized with the actual audio */
+  audio.addEventListener('play', updateButton);
+  audio.addEventListener('pause', updateButton);
+  audio.addEventListener('ended', updateButton);
+
+  /*
+   * IMPORTANT:
+   * Try to play immediately when THIS PAGE loads.
+   */
+  playIntro();
+
+  /*
+   * Always prepare the browser-interaction fallback.
+   * If autoplay is allowed, these listeners are removed after playback starts.
+   */
   armFallback();
+
+  updateButton();
+
 })();
